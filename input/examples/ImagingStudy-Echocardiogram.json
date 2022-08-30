@@ -1,0 +1,28 @@
+{
+  "resourceType": "ImagingStudy",
+  "id": "4111",
+  "language": "en",
+  "status": "unknown",
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "endpoint": [ {
+    "reference": "Endpoint/1111"
+  } ],
+  "series": [ {
+    "uid": "1.3.6.1.4.1.5962.99.1.3577849546.1829541192.1575535912650.4627.0",
+    "modality": {
+      "system": "http://dicom.nema.org/resources/ontology/DCM",
+      "code": "US",
+      "display": "Ultrasound"
+    },
+    "instance": [ {
+      "uid": "1.3.6.1.4.1.5962.99.1.3577849546.1829541192.1575535912650.4647.0",
+      "sopClass": {
+        "system": "http://dicom.nema.org/resources/ontology/DCM",
+        "code": "US",
+        "display": "Ultrasound"
+      }
+    } ]
+  } ]
+}

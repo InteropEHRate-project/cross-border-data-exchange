@@ -1,0 +1,24 @@
+<div align="justify" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <p>
+    <b>Translation in a nutshell:</b> The different translations of a resource should be contained in a single resource and use extensions.
+  </p>
+  <a name="original"> </a>
+  <h3>Original language</h3>
+  <p>
+    The language attribute of the resource (Resource.language) contains the language in which it was created originally created and all attributes contain the original text in this language.
+  </p>
+
+  <a name="translation"> </a>
+  <h3>Translation</h3>
+  <p>
+    To translate a text attribute it is extended with the <a href="http://hl7.org/fhir/StructureDefinition/translation">Translation Extension</a>.
+    This extension contains a language (Extension.lang) and the translated text (Extension.content). Therefor, the to-be-translated attribute should have one extension for each different language.</p>
+
+  <p>
+    Information about the system or person providing the translation can be provided by extending the <a href="http://hl7.org/fhir/StructureDefinition/translation">Translation Extension</a> with the <a href="StructureDefinition-ExtendedTranslation-IEHR.html">ExtendedTranslation-IEHR Extension</a>.
+    The ExtendedTranslation-IEHR contains a reference to a <a href="http://hl7.org/fhir/StructureDefinition/Provenance">Provenance</a> resource with relevant information about the translation process, like the actor and the time of translation.
+    This provenance should be transmitted together with the resources, but if multiple resources were translated together they can reference the same provenance.
+    Thus, if for each language all resources are translated together into that language, it should be sufficient to have one provenance for each language.
+    All translations in the same language would also reference the same Provenance in the ExtendedTranslation-IEHR, too.
+  </p>
+</div>

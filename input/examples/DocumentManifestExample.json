@@ -1,0 +1,46 @@
+{
+  "resourceType": "DocumentManifest",
+  "id": "11",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentManifest-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/30"
+    }
+  } ],
+  "status": "current",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code": "GENRL",
+      "display": "General"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "created": "2022-04-06T11:26:45+02:00",
+  "author": [ {
+    "reference": "Practitioner/21"
+  } ],
+  "description": "This is an example manifest",
+  "content": [ {
+    "reference": "DocumentReference/34561"
+  }, {
+    "reference": "DocumentReference/34562"
+  }, {
+    "reference": "DocumentReference/34563"
+  }, {
+    "reference": "DocumentReference/34564"
+  }, {
+    "reference": "DocumentReference/34565"
+  }, {
+    "reference": "DocumentReference/34566"
+  }, {
+    "reference": "DocumentReference/34567"
+  }, {
+    "reference": "DocumentReference/34568"
+  } ]
+}

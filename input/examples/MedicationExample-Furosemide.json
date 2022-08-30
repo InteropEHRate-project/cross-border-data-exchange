@@ -1,0 +1,47 @@
+{
+  "resourceType": "Medication",
+  "id": "4749",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR" ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://www.whocc.no/atc",
+      "code": "C03CA01",
+      "display": "furosemide",
+      "_display": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/translation",
+          "extension": [ {
+            "url": "lang",
+            "valueCode": "it-IT"
+          }, {
+            "url": "content",
+            "valueString": "Furosemide (Lasix)"
+          } ]
+        } ]
+      }
+    } ]
+  },
+  "form": {
+    "coding": [ {
+      "system": "http://standardterms.edqm.eu",
+      "code": "10219000",
+      "display": "Tablet"
+    } ]
+  },
+  "amount": {
+    "numerator": {
+      "value": 25,
+      "unit": "mg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+    },
+    "denominator": {
+      "value": 1,
+      "unit": "tablet",
+      "system": "http://unitsofmeasure.org",
+      "code": "{tablet}"
+    }
+  }
+}

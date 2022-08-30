@@ -1,0 +1,35 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR",
+  "name": "ObservationBioSignal",
+  "title": "BioSignal-IEHR",
+  "status": "draft",
+  "publisher": "IEHR-Workgroup",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://interopehrate.eu/fhir/StructureDefinition/Observation-IEHR",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation.status",
+      "path": "Observation.status",
+      "fixedCode": "final",
+      "mustSupport": true
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
+      "max": "0",
+      "type": [ {
+        "code": "string"
+      } ]
+    }, {
+      "id": "Observation.component",
+      "path": "Observation.component",
+      "min": 1,
+      "mustSupport": true
+    } ]
+  }
+}

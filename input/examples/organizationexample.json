@@ -1,0 +1,15 @@
+{
+      "resourceType": "Organization",
+      "id": "34432",
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+}

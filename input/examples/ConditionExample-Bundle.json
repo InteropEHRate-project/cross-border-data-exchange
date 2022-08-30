@@ -1,0 +1,703 @@
+{
+  "resourceType": "Bundle",
+  "id": "396385",
+  "type": "collection",
+  "timestamp": "2022-06-30T12:53:19.098+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "ITA"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Organization/34432"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Organization/34432",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "34432",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Condition/1111",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "1111",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/1"
+        }
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "resolved",
+          "display": "Resolved"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "I24.9",
+          "display": "Acute ischemic heart disease, unspecified"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2021-03-22",
+      "abatementDateTime": "2021-09-22"
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Condition/1112",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "1112",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/2"
+        }
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "I50.9",
+          "display": "Heart Failure, Unspecified"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2021-03-20"
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Condition/1113",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "1113",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/3"
+        }
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "resolved",
+          "display": "resolved"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "J44.9",
+          "display": "Chronic obstructive pulmonary disease"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2021-02-20",
+      "abatementDateTime": "2021-09-22"
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Condition/1114",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "1114",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/4"
+        }
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "resolved",
+          "display": "Resolved"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "N18.9",
+          "display": "Chronic kidney disease, unspecified"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2021-02-20",
+      "abatementDateTime": "2021-09-22"
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Condition/1115",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "1115",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/5"
+        }
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "R94.5",
+          "display": "Abnormal results of liver function studies"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2020-02-20"
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Condition/1116",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "1116",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/6"
+        }
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "C80",
+          "display": "Malignant neoplasm, without specification of site"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2020-06-09"
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Condition/1117",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "1117",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/7"
+        }
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "95932-0",
+          "display": "Pulmonary hypertension [Class]"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "I27.0",
+          "display": "primary pulmonary hypertension"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2021-06-09"
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/1",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "1",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "Condition/1111"
+      } ],
+      "recorded": "2022-06-30T12:53:19.132+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-06-30T12:53:19.135+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/2",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "2",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "Condition/1112"
+      } ],
+      "recorded": "2022-06-30T12:53:30.343+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-06-30T12:53:30.343+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/3",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "3",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "Condition/1113"
+      } ],
+      "recorded": "2022-06-30T12:53:31.161+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-06-30T12:53:31.161+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/4",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "4",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "Condition/1114"
+      } ],
+      "recorded": "2022-06-30T12:53:32.004+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-06-30T12:53:32.004+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/5",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "5",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "Condition/1115"
+      } ],
+      "recorded": "2022-06-30T12:53:32.755+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-06-30T12:53:32.755+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/6",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "6",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "Condition/1116"
+      } ],
+      "recorded": "2022-06-30T12:53:33.613+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-06-30T12:53:33.613+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/7",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "7",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "Condition/1117"
+      } ],
+      "recorded": "2022-06-30T12:53:34.315+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-06-30T12:53:34.315+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  } ]
+}

@@ -1,0 +1,14 @@
+{
+  "resourceType": "Specimen",
+  "id": "1",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+      "code": "BLD",
+      "display": "Whole Blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "resourceType": "Composition",
+  "id": "158355",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/1"
+    }
+  } ],
+  "status": "preliminary",
+  "type": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "60591-5"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "date": "2021-10-04",
+  "author": [ {
+    "reference": "Practitioner/21"
+  }, {
+    "reference": "Organization/34432"
+  } ],
+  "title": "International Patient Summary",
+  "section": [ {
+    "title": "Allergies",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "48765-2",
+        "display": "Allergies and adverse reactions Document"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the allergy section</div>"
+    },
+    "entry": [ {
+      "reference": "AllergyIntolerance/1111"
+    }, {
+      "reference": "AllergyIntolerance/1112"
+    }, {
+      "reference": "AllergyIntolerance/1113"
+    }, {
+      "reference": "AllergyIntolerance/1114"
+    }, {
+      "reference": "AllergyIntolerance/1115"
+    } ]
+  }, {
+    "title": "Medication Section",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "10160-0",
+        "display": "History of Medication use Narrative"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the medications section</div>"
+    },
+    "entry": [ {
+      "reference": "MedicationStatement/7347"
+    }, {
+      "reference": "MedicationStatement/7358"
+    }, {
+      "reference": "MedicationStatement/7349"
+    }, {
+      "reference": "MedicationStatement/7301"
+    }, {
+      "reference": "MedicationStatement/73014"
+    } ]
+  }, {
+    "title": "Problems Section",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "11450-4",
+        "display": "Problem list - Reported"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the problems section</div>"
+    },
+    "entry": [ {
+      "reference": "Condition/1111"
+    }, {
+      "reference": "Condition/1112"
+    }, {
+      "reference": "Condition/1114"
+    }, {
+      "reference": "Condition/1115"
+    }, {
+      "reference": "Condition/1116"
+    }, {
+      "reference": "Condition/1117"
+    } ]
+  }, {
+    "title": "History of Past Illness",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "11348-0",
+        "display": "History of Past illness Narrative"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the history of past illnesses section</div>"
+    },
+    "entry": [ {
+      "reference": "Condition/1113"
+    } ]
+  }, {
+    "title": "VitalSign Section",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "8716-3",
+        "display": "Vital signs"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the vital sign section</div>"
+    }
+  }, {
+    "title": "Result Section",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "30954-2",
+        "display": "Relevant diagnostic tests/laboratory data Narrative"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the result section</div>"
+    },
+    "entry": [ {
+      "reference": "DiagnosticReport/3111"
+    } ]
+  }, {
+    "title": "History of Procedures Section",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "47519-4",
+        "display": "History of Procedures Document"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the history of procedures section</div>"
+    },
+    "entry": [ {
+      "reference": "Procedure/1111"
+    }, {
+      "reference": "Procedure/1112"
+    } ]
+  } ]
+}

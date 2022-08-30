@@ -1,0 +1,57 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <p>
+    This page explains how to choose the <a href="https://www.hl7.org/fhir/datatypes.html">Identifiers</a> (Resource.identifier) and IDs (Resource.id) for resources.
+    All resources should conform to these procedures, to make sure all identifiers are unique and resources can be unambiguously identified using their identifiers.
+  </p>
+  <a name="identifierGeneration"> </a>
+  <h3>Identifier Generation</h3>
+  <p>
+    The <a href="https://www.hl7.org/fhir/datatypes.html">Identifier</a> is a tuple containing a system and a value. Each resource can have multiple Identifiers and each Identifier describes one system where the resource can be found. <br/>
+  </p>
+
+  <p>
+    The system attribute of an Identifier contains the url, that defines the namespace for the identifier. In other words: this attribute contains the baseurl, where resources can be found.
+    The value attribute contains the name of this specific resource in the name space.
+  </p>
+  <p>
+    By combining the system with the value it should be possible to uniquely define a resource and use this to retrieve the resource from the system.
+    The original Identifier, the Identifier for the system on which the resource was first created, should have the use 'official'. Identifiers for systems, where this resource was moved to later, should have the use 'secondary'.
+    Additionally, the Organization, that owns this system and assigned the resource this Identifier can be referenced in the Identifier.assigner attribute.
+  </p>
+  <p>
+    Since the Identifier is a combination of a namespace and a value, the global uniqueness for Identifiers is given, if all local values are unique.
+    However, it is up to the Organization using these local namespaces to make sure, that they are unambiguous.
+    As such each Organization sharing data using the services defined in this project is expected to manage the namespace they use and make sure the names are unique.
+  </p>
+  
+  <p><b>Some examples using an Identifier:</b> <a href="Patient-3466.json.html">Patient - Example</a>, <a href="Organization-34432.json.html">Organization - Example</a>, <a href="Practitioner-21.json.html">Practitioner - Example</a> and <a href="Bundle-69208519.json.html">HospitalDischargeReport - Example</a>.</p>
+
+  <a name="idGeneration"> </a>
+  <h3>ID Generation</h3>
+  <p>
+    The ID is the logical ID of the resource (Resource.id) used by the server.
+  </p>
+  <p>
+    This value never changes while the resource remains on a server. The address of the resource on the server consists of the server's baseUrl and the reference to the resource.
+    The references to a resource are of the form 'ResourceType/id'.
+  </p>
+  <p>
+    However, if the resource is sent to a new server that server can assign it a new ID.
+    <b>Thus, it should not be assumed, that the resource has the same ID on different servers.</b>
+    Instead, the name of a resource on another server can be retrieved from the value attribute of an identifier (Identifier.value) with the url of the other server as system, if such an identifier is provided.
+    The ID consists of a string, that is unique to the resource.
+  </p>
+  <p>
+    <b>For example:</b> <br/>
+    A valid ID for a Condition could be '2163' and if the server this condition resource is stored on has the baseUrl 'http://interopEHRate.eu/fhir-resource/', then the Conditions can be found at 'http://interopEHRate.eu/fhir-resource/Condition/2163'.
+  </p>
+  <p>
+    Since the central server receives resources from many sources, it would be difficult for it to assign unique IDs.
+    So instead the uniqueness constrain is passed on to the organization:
+  </p>
+  <p>
+    Each organization has a unique prefix, that marks them as the provider of the resource and each resource already has an ID assigned by the server of the provider. The unique prefix should be an uri, that contains at least the provider domain.
+    While these IDs are not guaranteed to be globally unique, the combination of the organizations prefix + their local ID for the resource is unique, if the ID is unique on the organizations' server.
+    As such each Organization sharing data using the services defined in this project is expected to make sure, that their local IDs are unique on their local server and that resources are sent to the server with an ID, that is the concatenation of the organizations unique prefix and the resources local ID.
+  </p>
+</div>

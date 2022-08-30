@@ -1,0 +1,83 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "2",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/38"
+    }
+  } ],
+  "identifier": [ {
+    "system": "http://interopEHRate.eu/fhir-resource/",
+    "value": "MR1"
+  } ],
+  "status": "active",
+  "intent": "plan",
+  "category": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "outpatient",
+      "display": "Outpatient"
+    } ]
+  } ],
+  "medicationCodeableConcept": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "3142009",
+      "display": "Azacyclonol"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "encounter": {
+    "reference": "Encounter/1"
+  },
+  "authoredOn": "2022-07-05T09:49:36+02:00",
+  "requester": {
+    "reference": "Practitioner/21"
+  },
+  "dosageInstruction": [ {
+    "timing": {
+      "repeat": {
+        "frequency": 2,
+        "period": 1,
+        "periodUnit": "d",
+        "timeOfDay": [ "08:00:00", "16:00:00" ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+          "code": "BID",
+          "display": "BID"
+        } ]
+      }
+    },
+    "doseAndRate": [ {
+      "type": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+          "code": "ordered",
+          "display": "Ordered"
+        } ]
+      },
+      "doseQuantity": {
+        "value": 3,
+        "unit": "milliliter",
+        "system": "http://unitsofmeasure.org",
+        "code": "mL"
+      }
+    }, {
+      "type": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+          "code": "ordered",
+          "display": "Ordered"
+        } ]
+      }
+    } ]
+  } ]
+}

@@ -1,0 +1,534 @@
+{
+  "resourceType": "Bundle",
+  "id": "4317325",
+  "type": "collection",
+  "timestamp": "2022-04-06T13:48:45.436+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "ITA"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Organization/34432"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Practitioner/21",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "21",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Practitioner/MA01"
+      } ],
+      "name": [ {
+        "family": "Antonio",
+        "given": [ "Mark" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/MedicationRequest/43147",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "43147",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/32"
+        }
+      } ],
+      "status": "active",
+      "intent": "order",
+      "medicationReference": {
+        "reference": "Medication/4749"
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "authoredOn": "2021-10-15",
+      "requester": {
+        "reference": "Practitioner/21"
+      },
+      "dosageInstruction": [ {
+        "text": "1 pill at 08:00 AM",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d",
+            "timeOfDay": [ "08:00:00" ]
+          }
+        },
+        "route": {
+          "coding": [ {
+            "system": "http://standardterms.edqm.eu",
+            "code": "20053000",
+            "display": "Oral use"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/MedicationRequest/43158",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "43158",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/33"
+        }
+      } ],
+      "status": "active",
+      "intent": "order",
+      "medicationReference": {
+        "reference": "Medication/5820"
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "authoredOn": "2021-10-15",
+      "requester": {
+        "reference": "Practitioner/21"
+      },
+      "dosageInstruction": [ {
+        "text": "1 pill at 08:00 AM, 1 pill at 08:00 PM",
+        "timing": {
+          "repeat": {
+            "frequency": 2,
+            "period": 1,
+            "periodUnit": "d",
+            "timeOfDay": [ "08:00:00", "20:00:00" ]
+          }
+        },
+        "route": {
+          "coding": [ {
+            "system": "http://standardterms.edqm.eu",
+            "code": "20053000",
+            "display": "Oral use"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/MedicationRequest/43149",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "43149",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/34"
+        }
+      } ],
+      "status": "active",
+      "intent": "order",
+      "medicationReference": {
+        "reference": "Medication/4963"
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "authoredOn": "2021-10-15",
+      "requester": {
+        "reference": "Practitioner/21"
+      },
+      "dosageInstruction": [ {
+        "text": "1 subcutaneous injection at 08:00 PM up to INR >2, then stop",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d",
+            "timeOfDay": [ "20:00:00" ]
+          }
+        },
+        "route": {
+          "coding": [ {
+            "system": "http://standardterms.edqm.eu",
+            "code": "20066000",
+            "display": "Subcutaneous use"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/MedicationRequest/43101",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "43101",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/35"
+        }
+      } ],
+      "status": "active",
+      "intent": "order",
+      "medicationReference": {
+        "reference": "Medication/9165"
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "authoredOn": "2021-10-15",
+      "requester": {
+        "reference": "Practitioner/21"
+      },
+      "dosageInstruction": [ {
+        "text": "1 pill at 08:00 PM",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d",
+            "timeOfDay": [ "20:00:00" ]
+          }
+        },
+        "route": {
+          "coding": [ {
+            "system": "http://standardterms.edqm.eu",
+            "code": "20053000",
+            "display": "Oral use"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/MedicationRequest/431014",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "431014",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/36"
+        }
+      } ],
+      "status": "active",
+      "intent": "order",
+      "medicationReference": {
+        "reference": "Medication/9149"
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "authoredOn": "2021-10-15",
+      "requester": {
+        "reference": "Practitioner/21"
+      },
+      "dosageInstruction": [ {
+        "text": "1 pill at 08:00 AM",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d",
+            "timeOfDay": [ "08:00:00" ]
+          }
+        },
+        "route": {
+          "coding": [ {
+            "system": "http://standardterms.edqm.eu",
+            "code": "20053000",
+            "display": "Oral use"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/32",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "32",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "MedicationRequest/43147"
+      } ],
+      "recorded": "2022-04-06T13:48:45.577+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-04-06T13:48:45.578+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/33",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "33",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "MedicationRequest/43158"
+      } ],
+      "recorded": "2022-04-06T13:48:59.437+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-04-06T13:48:59.437+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/34",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "34",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "MedicationRequest/43149"
+      } ],
+      "recorded": "2022-04-06T13:48:59.509+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-04-06T13:48:59.509+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/35",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "35",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "MedicationRequest/43101"
+      } ],
+      "recorded": "2022-04-06T13:48:59.936+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-04-06T13:48:59.936+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/36",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "36",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "MedicationRequest/431014"
+      } ],
+      "recorded": "2022-04-06T13:48:59.992+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-04-06T13:48:59.992+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  } ]
+}

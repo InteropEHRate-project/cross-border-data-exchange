@@ -1,0 +1,46 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticConclusion-IEHR",
+  "name": "DiagnosticConclusion",
+  "title": "DiagnosticConclusion",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Condition.extension",
+      "path": "Condition.extension",
+      "slicing": {
+        "discriminator": [ {
+          "type": "value",
+          "path": "url"
+        } ],
+        "rules": "open"
+      },
+      "mustSupport": true
+    }, {
+      "id": "Conditon.code",
+      "path": "Condition.code",
+      "min": 1,
+      "max": "1",
+      "fixedCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "55110-1",
+          "display": "Conclusions [Interpretation] Document"
+        } ]
+      },
+      "mustSupport": true
+    }, {
+      "id": "Condition.note.text",
+      "path": "Condition.note.text",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

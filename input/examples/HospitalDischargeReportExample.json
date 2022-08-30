@@ -1,0 +1,205 @@
+{
+  "resourceType": "Composition",
+  "id": "69208519",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Composition-HospitalDischargeReport-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/16"
+    }
+  } ],
+  "status": "final",
+  "type": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "81218-0",
+      "display": "Discharge Sum C-CDA R2.1 Sections"
+    } ]
+  },
+  "date": "2022-05-31T11:16:01+02:00",
+  "author": [ {
+    "reference": "Practitioner/21"
+  } ],
+  "title": "Hospital discharge summary",
+  "section": [ {
+    "title": "Hospital Admission Dx",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "46241-6",
+        "display": "Hospital admission Dx Reported"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Hospital Admission section</div>"
+    },
+    "entry": [ {
+      "reference": "Condition/69208519"
+    } ]
+  }, {
+    "title": "Hospital Admission History And Physical Note",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "47039-3",
+        "display": "Hosp Admit H&P note"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Hospital Admission History section</div>"
+    }
+  }, {
+    "title": "History General",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "11329-0",
+        "display": "Hx general Reported"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the general history section</div>"
+    }
+  }, {
+    "title": "Physical Examination",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "29545-1",
+        "display": "Phys find"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the physical examination section</div>"
+    }
+  }, {
+    "title": "Medications On Admission",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "42346-7",
+        "display": "Medications on admission (narrative)"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the medications on admission section</div>"
+    }
+  }, {
+    "title": "Hospital Course",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "8648-8",
+        "display": "Hospital course"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the hospital course section</div>"
+    }
+  }, {
+    "title": "Relevant Diagnostic Tests And/Or Laboratory Data",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "30954-2",
+        "display": "Relevant Dx tests/lab data"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the laboratory data section</div>"
+    },
+    "entry": [ {
+      "reference": "Observation/69208519"
+    } ]
+  }, {
+    "title": "Hospital Discharge Studies Summary",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "11493-4",
+        "display": "Hospital discharge studies summary"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the studies summary section</div>"
+    }
+  }, {
+    "title": "Selected Medicine Administered During Hospitalization",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "8677-7",
+        "display": "Hx of Medication use"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the medicine administered during hospitalisation section</div>"
+    }
+  }, {
+    "title": "Hospital Discharge Dx",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "11535-2",
+        "display": "Hospital discharge Dx"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the hospital discharge Dx section</div>"
+    }
+  }, {
+    "title": "Discharge Medications",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "10183-2",
+        "display": "Hospital discharge medications"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the discharge medications section</div>"
+    },
+    "entry": [ {
+      "reference": "MedicationRequest/69208519"
+    } ]
+  }, {
+    "title": "Treatment Plan",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "18776-5",
+        "display": "Plan of care note"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the treatment plan section</div>"
+    }
+  }, {
+    "title": "Allergies",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "48765-2",
+        "display": "Allergies &or adverse reactions Doc"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the allergy section</div>"
+    }
+  } ]
+}

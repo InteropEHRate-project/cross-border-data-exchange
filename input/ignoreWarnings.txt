@@ -1,0 +1,3 @@
+== Suppressed Messages ==
+# The pdf is only added after the IG is generated, so it can not be resolved during creation
+The link 'cbde-ig.pdf' for "here" cannot be resolved

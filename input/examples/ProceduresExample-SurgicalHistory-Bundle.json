@@ -1,0 +1,128 @@
+{
+  "resourceType": "Bundle",
+  "id": "808080",
+  "type": "collection",
+  "timestamp": "2021-10-18T10:28:22.322+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "IT"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Organization/34432"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Organization/34432",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "34432",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Practitioner/21",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "21",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Practitioner/MA01"
+      } ],
+      "name": [ {
+        "family": "Antonio",
+        "given": [ "Mark" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Procedure/1111",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "1111",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips" ]
+      },
+      "language": "en",
+      "status": "completed",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "6025007",
+          "display": "Laparoscopic appendectomy"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "performedDateTime": "2001-01-01",
+      "performer": [ {
+        "actor": {
+          "reference": "Practitioner/21"
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Procedure/1112",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "1112",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips" ]
+      },
+      "language": "en",
+      "status": "completed",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "173422009",
+          "display": "Tonsillectomy"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "performedDateTime": "2005-01-01",
+      "performer": [ {
+        "actor": {
+          "reference": "Practitioner/21"
+        }
+      } ]
+    }
+  } ]
+}

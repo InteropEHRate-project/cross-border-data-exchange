@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Provenance-Signature-IEHR",
+  "name": "ProvenanceSignatureIEHR",
+  "title": "Provenance-Signature-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Signature",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Signature",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Signature.type",
+      "path": "Signature.type",
+      "definition": "A code that defines the signature of the primary or sole author of a health information document. \n\nFixed value: Verification Signature",
+      "max": "1",
+      "fixedCoding": {
+        "system": "urn:iso-astm:E1762-95:2013",
+        "code": "1.2.840.10065.1.12.1.5",
+        "display": "Verification Signature"
+      },
+      "mustSupport": true
+    }, {
+      "id": "Signature.onBehalfOf",
+      "path": "Signature.onBehalfOf",
+      "min": 0,
+      "max": "0",
+      "mustSupport": true
+    }, {
+      "id": "Signature.targetFormat",
+      "path": "Signature.targetFormat",
+      "min": 1,
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://interopehrate.eu/fhir/ValueSet/TargetFormat-IEHR"
+      }
+    }, {
+      "id": "Signature.sigFormat",
+      "path": "Signature.sigFormat",
+      "definition": "A mime type that indicates the technical format of the signature.  \n\nFixed value: JSON Digital Signature",
+      "min": 1,
+      "fixedCode": "application/jose",
+      "mustSupport": true
+    }, {
+      "id": "Signature.data",
+      "path": "Signature.data",
+      "min": 1,
+      "mustSupport": true
+    } ]
+  }
+}

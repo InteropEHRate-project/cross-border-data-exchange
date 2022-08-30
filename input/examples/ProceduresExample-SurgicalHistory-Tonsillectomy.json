@@ -1,0 +1,25 @@
+{
+  "resourceType": "Procedure",
+  "id": "1112",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips" ]
+  },
+  "language": "en",
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "173422009",
+      "display": "Tonsillectomy"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "performedDateTime": "2005-01-01",
+  "performer": [ {
+    "actor": {
+      "reference": "Practitioner/21"
+    }
+  } ]
+}

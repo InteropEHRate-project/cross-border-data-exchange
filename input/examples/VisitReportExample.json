@@ -1,0 +1,533 @@
+{
+  "resourceType": "Bundle",
+  "id": "58285",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Bundle-IEHR" ]
+  },
+  "type": "collection",
+  "timestamp": "2022-07-05T09:49:23.668+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Composition/1",
+    "resource": {
+      "resourceType": "Composition",
+      "id": "1",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Composition-VisitReport-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/38"
+        }
+      } ],
+      "status": "final",
+      "type": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "81214-9",
+          "display": "Continuity of Care Document - recommended C-CDA R2.0 and R2.1 sections"
+        } ]
+      },
+      "encounter": {
+        "reference": "Encounter/1"
+      },
+      "date": "2022-07-05T09:49:37+02:00",
+      "author": [ {
+        "reference": "Practitioner/21"
+      } ],
+      "title": "Medical visit",
+      "section": [ {
+        "title": "Allergies",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "48765-2",
+            "display": "Allergies and adverse reactions Document"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Allergies section</div>"
+        }
+      }, {
+        "title": "History of Medication use Narrative",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "10160-0",
+            "display": "Hx of Medication use"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the History of Medication section</div>"
+        },
+        "entry": [ {
+          "reference": "MedicationRequest/2"
+        } ]
+      }, {
+        "title": "Problem list - Reported",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "11450-4",
+            "display": "Problem list - Reported"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Problem list section</div>"
+        }
+      }, {
+        "title": "History of Procedures Document",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "47519-4",
+            "display": "History of Procedures Document"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the History of Procedures section</div>"
+        }
+      }, {
+        "title": "Relevant diagnostic tests/laboratory data Narrative",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "30954-2",
+            "display": "Relevant Dx tests/lab data"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the laboratory section section</div>"
+        },
+        "entry": [ {
+          "reference": "Observation/1"
+        } ]
+      }, {
+        "title": "Social history",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "29762-2",
+            "display": "Social Hx"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Social History section</div>"
+        }
+      }, {
+        "title": "Vital signs",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8716-3",
+            "display": "Vital signs"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Vital Signs section</div>"
+        }
+      }, {
+        "title": "Advance directives",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "42348-3",
+            "display": "Advance directives"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Advance directives section</div>"
+        }
+      }, {
+        "title": "History of Hospitalizations+Outpatient visits Narrative",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "46240-8",
+            "display": "Hx of Hospitalizations+OP visits"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the History of Hospitalizations+Outpatient visits section</div>"
+        }
+      }, {
+        "title": "History of family member diseases Narrative",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "10157-6",
+            "display": "Family member diseases Hx"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the History of family disease section</div>"
+        }
+      }, {
+        "title": "Functional status assessment note",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "47420-5",
+            "display": "Functional status note"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Functional status section</div>"
+        }
+      }, {
+        "title": "History of Immunization Narrative",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "11369-6",
+            "display": "Hx of Immunization"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the history of immunization section</div>"
+        }
+      }, {
+        "title": "Mental status Narrative",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "10190-7",
+            "display": "Mental status"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the mental status section</div>"
+        }
+      }, {
+        "title": "History of medical device use",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "46264-8",
+            "display": "Hx medical device use"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the medical device history section</div>"
+        }
+      }, {
+        "title": "Diet and nutrition Narrative",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "61144-2",
+            "display": "Diet+nutrition"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the diet and nutrition section</div>"
+        }
+      }, {
+        "title": "Payment sources Document",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "48768-6",
+            "display": "Payment sources Doc"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the payment document section</div>"
+        }
+      }, {
+        "title": "Plan of care note",
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "18776-5",
+            "display": "Plan of care note"
+          } ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the plan of care section</div>"
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Encounter/1",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "1",
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/38"
+        }
+      } ],
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "E1"
+      } ],
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "priority": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+          "code": "R",
+          "display": "routine"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "participant": [ {
+        "type": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+            "code": "PPRF",
+            "display": "primary performer"
+          } ]
+        } ],
+        "period": {
+          "start": "2021-03-03T11:30:00Z",
+          "end": "2021-03-03T11:55:00Z"
+        },
+        "individual": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "period": {
+        "start": "2021-03-03T11:30:00Z",
+        "end": "2021-03-03T11:55:00Z"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-uv-ips" ]
+      },
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "O1"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "imaging",
+          "display": "Imaging"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "18726-0",
+          "display": "Radiology studies (set)"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "encounter": {
+        "reference": "Encounter/1"
+      },
+      "effectiveDateTime": "2011-06-25T06:30:00Z",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueString": "Radiology",
+      "interpretation": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "N"
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/MedicationRequest/2",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "2",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/38"
+        }
+      } ],
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "MR1"
+      } ],
+      "status": "active",
+      "intent": "plan",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+          "code": "outpatient",
+          "display": "Outpatient"
+        } ]
+      } ],
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "3142009",
+          "display": "Azacyclonol"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "encounter": {
+        "reference": "Encounter/1"
+      },
+      "authoredOn": "2022-07-05T09:49:36+02:00",
+      "requester": {
+        "reference": "Practitioner/21"
+      },
+      "dosageInstruction": [ {
+        "timing": {
+          "repeat": {
+            "frequency": 2,
+            "period": 1,
+            "periodUnit": "d",
+            "timeOfDay": [ "08:00:00", "16:00:00" ]
+          },
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+              "code": "BID",
+              "display": "BID"
+            } ]
+          }
+        },
+        "doseAndRate": [ {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+              "code": "ordered",
+              "display": "Ordered"
+            } ]
+          },
+          "doseQuantity": {
+            "value": 3,
+            "unit": "milliliter",
+            "system": "http://unitsofmeasure.org",
+            "code": "mL"
+          }
+        }, {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+              "code": "ordered",
+              "display": "Ordered"
+            } ]
+          }
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "ITA"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Practitioner/21"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Organization/34432",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "34432",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Practitioner/21",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "21",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Practitioner/MA01"
+      } ],
+      "name": [ {
+        "family": "Antonio",
+        "given": [ "Mark" ]
+      } ]
+    }
+  } ],
+  "signature": {
+    "id": "Signature/04012022",
+    "type": [ {
+      "system": "urn:iso-astm:E1762-95:2013",
+      "code": "1.2.840.10065.1.12.1.5",
+      "display": "Verification Signature"
+    } ],
+    "when": "2022-07-05T09:49:41.264+02:00",
+    "who": {
+      "reference": "Practitioner/21"
+    },
+    "targetFormat": "json",
+    "sigFormat": "application/jose",
+    "data": "ZW1wdHk="
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "1113",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR" ]
+  },
+  "clinicalStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+      "code": "active",
+      "display": "Active"
+    } ]
+  },
+  "verificationStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+      "code": "confirmed",
+      "display": "Confirmed"
+    } ]
+  },
+  "type": "intolerance",
+  "category": [ "food" ],
+  "criticality": "low",
+  "code": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "102261002",
+      "display": "Strawberry (substance)"
+    } ]
+  },
+  "patient": {
+    "reference": "Patient/3466"
+  },
+  "onsetDateTime": "2004-10-04",
+  "reaction": [ {
+    "manifestation": [ {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "23924001",
+        "display": "Tight chest (finding)"
+      } ]
+    } ]
+  } ]
+}

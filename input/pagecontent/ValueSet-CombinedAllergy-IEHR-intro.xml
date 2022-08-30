@@ -1,0 +1,25 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<a name="prov"> </a>
+<h3>Content explanation</h3>
+<p>
+This ValueSet contains a list of codes from which at least one must be part of the concept in the code attribute of the <a href="StructureDefinition-AllergyIntolerance-IEHR.html">AllergyIntolerance-IEHR</a> profile.
+Each of the ValueSets that are a part of this set contains codes for a specific use case:
+</p>
+<p>
+<ul>
+<li>if the cause is a drug a code from the <a href="http://hl7.org/fhir/uv/ips/STU1/ValueSet-whoatc-uv-ips.html">WHO ATC - IPS</a> ValueSet should be used</li>
+<li>if only a general allergen is given a code from the <a href="ValueSet-ATCAllergens-IEHR.html">ATCAllergens - IEHR</a> ValueSet should be used</li>
+<li>if the cause can not be represented as one of the other use cases a code from the <a href="ValueSet-AllergySnomed.html">AllergySnomed - IEHR</a> ValueSet can be used. This should be the last resort, as not all countries have a snomed license and as such this codes might not be usable by all organizations</li>
+<li>if there is no allergy or no allergy is known a code from the <a href="http://hl7.org/fhir/uv/ips/STU1/ValueSet-absent-or-unknown-allergies-uv-ips.html">Absent or Unknown Allergies - IPS</a> ValueSet should be used</li>
+<li>if the local code provided is not in one of the ValueSets above and the semantic translator could not translate it into one such code, it should instead add the nullflavor 'OTH' from the system <a href="http://terminology.hl7.org/CodeSystem/v3-NullFlavor">http://terminology.hl7.org/CodeSystem/v3-NullFlavor</a></li>
+</ul>
+</p>
+<p>
+While the validator will accept resources where the concept has codes from different use cases, this behaviour is not intended and can cause issues.
+The use cases and ValueSet are designed to be unambiguous and as such it should not be possible to use codes from different use cases with the same meaning.
+</p>
+<p>
+A valid concept should contain the original/local codes provided by the original author and must contain an additional code, with either the same or the closest possible meaning to the local code, from one of the use cases, if the original code is not from this ValueSet.
+</p>
+
+</div>

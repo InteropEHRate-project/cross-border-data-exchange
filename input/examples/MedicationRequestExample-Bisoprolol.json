@@ -1,0 +1,43 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "43158",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/33"
+    }
+  } ],
+  "status": "active",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "Medication/5820"
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "authoredOn": "2021-10-15",
+  "requester": {
+    "reference": "Practitioner/21"
+  },
+  "dosageInstruction": [ {
+    "text": "1 pill at 08:00 AM, 1 pill at 08:00 PM",
+    "timing": {
+      "repeat": {
+        "frequency": 2,
+        "period": 1,
+        "periodUnit": "d",
+        "timeOfDay": [ "08:00:00", "20:00:00" ]
+      }
+    },
+    "route": {
+      "coding": [ {
+        "system": "http://standardterms.edqm.eu",
+        "code": "20053000",
+        "display": "Oral use"
+      } ]
+    }
+  } ]
+}

@@ -1,0 +1,36 @@
+{
+  "resourceType": "Observation",
+  "id": "3111",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Observation-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/2"
+    }
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "36643-5",
+      "display": "XR Chest 2 Views"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "effectiveDateTime": "2021-09-27",
+  "performer": [ {
+    "reference": "Organization/34432"
+  } ],
+  "valueString": "Checkup after heart pacemaker surgery",
+  "interpretation": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+      "code": "N",
+      "display": "Normal"
+    } ]
+  } ]
+}

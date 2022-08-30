@@ -1,0 +1,28 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Composition-IPS-IEHR",
+  "name": "CompositionIPSIEHR",
+  "title": "CompositionIPS-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Composition.section:sectionResults",
+      "path": "Composition.section",
+      "sliceName": "sectionResults"
+    }, {
+      "id": "Composition.section:sectionResults.entry:results-observation",
+      "path": "Composition.section.entry",
+      "sliceName": "results-observation",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-uv-ips" ]
+      } ]
+    } ]
+  }
+}

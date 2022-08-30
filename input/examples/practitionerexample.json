@@ -1,0 +1,12 @@
+{ 
+ "resourceType": "Practitioner",
+      "id": "21",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips" ]
+      },
+      "language": "en",
+      "name": [ {
+        "family": "Antonio",
+        "given": [ "Mark" ]
+      } ]
+}

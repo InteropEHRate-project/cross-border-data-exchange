@@ -1,0 +1,132 @@
+{
+  "resourceType": "Observation",
+  "id": "9114",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/4"
+    }
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "18106-5",
+      "display": "Cardiac echo study Procedure"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "effectivePeriod": {
+    "start": "2022-07-05",
+    "end": "2022-07-05"
+  },
+  "performer": [ {
+    "reference": "Organization/34432"
+  } ],
+  "component": [ {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "75989-4",
+        "display": "Left ventricular End systolic volume"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 50,
+      "unit": "mL",
+      "system": "http://unitsofmeasure.org",
+      "code": "mL"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "75988-6",
+        "display": "Left ventricular End diastolic volume"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 100,
+      "unit": "mL",
+      "system": "http://unitsofmeasure.org",
+      "code": "mL"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "8414-5",
+        "display": "Pulmonary artery Mean blood pressure"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 14,
+      "unit": "mm[Hg]",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "18115-6",
+        "display": "Tricuspid valve Regurgitation degree by US.doppler"
+      } ]
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "LA137-2",
+        "display": "None"
+      } ]
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "18113-1",
+        "display": "Mitral valve Regurgitation degree by US.doppler"
+      } ]
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "LA11841-6",
+        "display": "1+"
+      } ]
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "18043-0",
+        "display": "Left ventricular Ejection fraction by US"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 65,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "29430-6",
+        "display": "Interventricular septum Thickness during diastole by US 2D"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 8.92,
+      "unit": "mm",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm"
+    }
+  } ]
+}

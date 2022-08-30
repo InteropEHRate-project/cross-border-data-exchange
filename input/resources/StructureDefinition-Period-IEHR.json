@@ -1,0 +1,20 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Period-IEHR",
+  "name": "PeriodIEHR",
+  "title": "Period-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Period",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Period",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Period.start",
+      "path": "Period.start",
+      "min": 1
+    } ]
+  }
+}

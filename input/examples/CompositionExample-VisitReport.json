@@ -1,0 +1,257 @@
+{
+  "resourceType": "Composition",
+  "id": "1",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Composition-VisitReport-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/38"
+    }
+  } ],
+  "status": "final",
+  "type": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "81214-9",
+      "display": "Continuity of Care Document - recommended C-CDA R2.0 and R2.1 sections"
+    } ]
+  },
+  "encounter": {
+    "reference": "Encounter/1"
+  },
+  "date": "2022-07-05T09:49:37+02:00",
+  "author": [ {
+    "reference": "Practitioner/21"
+  } ],
+  "title": "Medical visit",
+  "section": [ {
+    "title": "Allergies",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "48765-2",
+        "display": "Allergies and adverse reactions Document"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Allergies section</div>"
+    }
+  }, {
+    "title": "History of Medication use Narrative",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "10160-0",
+        "display": "Hx of Medication use"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the History of Medication section</div>"
+    },
+    "entry": [ {
+      "reference": "MedicationRequest/2"
+    } ]
+  }, {
+    "title": "Problem list - Reported",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "11450-4",
+        "display": "Problem list - Reported"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Problem list section</div>"
+    }
+  }, {
+    "title": "History of Procedures Document",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "47519-4",
+        "display": "History of Procedures Document"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the History of Procedures section</div>"
+    }
+  }, {
+    "title": "Relevant diagnostic tests/laboratory data Narrative",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "30954-2",
+        "display": "Relevant Dx tests/lab data"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the laboratory section section</div>"
+    },
+    "entry": [ {
+      "reference": "Observation/1"
+    } ]
+  }, {
+    "title": "Social history",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "29762-2",
+        "display": "Social Hx"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Social History section</div>"
+    }
+  }, {
+    "title": "Vital signs",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "8716-3",
+        "display": "Vital signs"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Vital Signs section</div>"
+    }
+  }, {
+    "title": "Advance directives",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "42348-3",
+        "display": "Advance directives"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Advance directives section</div>"
+    }
+  }, {
+    "title": "History of Hospitalizations+Outpatient visits Narrative",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "46240-8",
+        "display": "Hx of Hospitalizations+OP visits"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the History of Hospitalizations+Outpatient visits section</div>"
+    }
+  }, {
+    "title": "History of family member diseases Narrative",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "10157-6",
+        "display": "Family member diseases Hx"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the History of family disease section</div>"
+    }
+  }, {
+    "title": "Functional status assessment note",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "47420-5",
+        "display": "Functional status note"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the Functional status section</div>"
+    }
+  }, {
+    "title": "History of Immunization Narrative",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "11369-6",
+        "display": "Hx of Immunization"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the history of immunization section</div>"
+    }
+  }, {
+    "title": "Mental status Narrative",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "10190-7",
+        "display": "Mental status"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the mental status section</div>"
+    }
+  }, {
+    "title": "History of medical device use",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "46264-8",
+        "display": "Hx medical device use"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the medical device history section</div>"
+    }
+  }, {
+    "title": "Diet and nutrition Narrative",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "61144-2",
+        "display": "Diet+nutrition"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the diet and nutrition section</div>"
+    }
+  }, {
+    "title": "Payment sources Document",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "48768-6",
+        "display": "Payment sources Doc"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the payment document section</div>"
+    }
+  }, {
+    "title": "Plan of care note",
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "18776-5",
+        "display": "Plan of care note"
+      } ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is the plan of care section</div>"
+    }
+  } ]
+}

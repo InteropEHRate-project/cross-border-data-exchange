@@ -1,0 +1,423 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+    <a name="requirements"></a>
+
+    <p>TThe following table shows the requirements for the profiles defined in this ImplementationGuide as well as the profiles used for realization and links to the handling instructions.</p>
+
+    <table border="1" style="border-collapse:collapse; width:100%" bordercolor="#548dd4">
+        <caption style="caption-side:top; text-align:left">Table 3.1: IEHR Profile Requirements mapped to the profiles used for realization and links to handling instructions</caption>
+        <tr>
+            <th style="color:white;background-color: #548dd4;">Super-category</th>
+            <th style="color:white;background-color: #548dd4;">Sub-category </th>
+            <th style="color:white;background-color: #548dd4;">Data</th>
+            <th style="color:white;background-color: #548dd4;">Used Profiles</th>
+            <th style="color:white;background-color: #548dd4;">Instructions</th>
+            <th style="color:white;background-color: #548dd4;">Rationale</th>
+        </tr>
+        <tr style="color:black;">
+            <td rowspan="4">Demographics</td>
+            <td rowspan="4">General Data</td>
+            <td>Name, Surname</td>
+            <td rowspan="4"><a href="StructureDefinition-Patient-IEHR.html">Patient-IEHR</a></td>
+            <td rowspan="4"><a href="instructions.html#namesurname">Patient Instructions</a></td>
+            <td rowspan="4">-</td>
+        </tr>
+		
+        <tr style="color:black;">
+            <td>administrative gender</td>
+        </tr>
+		
+        <tr style="color:black;">
+            <td>Backup Contacts</td>
+        </tr>
+		
+        <tr style="color:black;">
+            <td>Date of Birth</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="2">Allergies</td>
+            <td rowspan="2">General Data</td>
+            <td>Allergies (ATC drug codes, LOINC), intolerance codes</td>
+            <td rowspan="2"><a href="StructureDefinition-AllergyIntolerance-IEHR.html">AllergyIntolerance-IEHR</a></td>
+            <td rowspan="2"><a href="instructions.html#allergyIntolerance">Allergy/Intolerance Instructions</a></td>
+            <td rowspan="2">-</td>
+        </tr>
+        <tr style="color:black;">
+            <td>Allergies (ATC drug codes, LOINC), intolerance notes</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="8">Diseases</td>
+            <td rowspan="3">Main chronic conditions</td>
+            <td>Hypertension</td>
+            <td rowspan="9"><a href="StructureDefinition-Condition-IEHR.html">Condition-IEHR</a></td>
+            <td rowspan="9"><a href="instructions.html#disease">Disease Instructions</a></td>
+            <td rowspan="9">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Hypertension starting date</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Ischemic heart disease</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="5">General Data</td>
+            <td>Heart failure</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Pulmonary disease</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Abnormal kidney function</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Abnormal liver function</td>
+        </tr>
+        <tr style="color:black;">
+            <td>Active malignancy</td>
+        </tr>
+        <tr style="color:black;">
+            <td>Diseases</td>
+            <td>Eventual acute (ongoing) Diseases</td>
+            <td>Eventual acute (ongoing) Diseases</td>
+        </tr>		
+		
+        <tr style="color:black;">
+            <td rowspan="2">Diseases</td>
+            <td rowspan="2">General Data</td>
+            <td>Previous major surgery</td>
+            <td rowspan="2"><a href="http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips">Procedure-IPS</a> <br/>  <a href="StructureDefinition-Condition-IEHR.html">Condition-IEHR</a></td>
+            <td rowspan="2"><a href="instructions.html#procedures">Previous major surgery Instructions</a></td>
+            <td rowspan="2">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Previous major surgery date</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Medications</td>
+            <td>General Data</td>
+            <td>Current Medications, previous medications</td>
+            <td><a href="StructureDefinition-MedicationStatement-IEHR.html">MedicationStatement-IEHR</a></td>
+            <td><a href="instructions.html#medication">Medication Instructions</a></td>
+            <td>-</td>
+        </tr>
+		
+        <tr style="color:black;">
+            <td rowspan="4">History</td>
+            <td rowspan="4">previous visits (pdf and structured data)</td>
+            <td>diagnosis</td>
+            <td><a href="StructureDefinition-Composition-VisitReport-IEHR.html">MedicalVisit - IEHR</a> and<br/>
+                <a href="StructureDefinition-DiagnosticReport-ImagingReport-IEHR.html">DiagnosticReportImaging - IEHR</a> or
+                <a href="StructureDefinition-DiagnosticReport-LaboratoryReport-IEHR.html">DiagnosticReportLaboratoryResult - IEHR</a> depending on type of diagnosis</td>
+            <td rowspan="4"><a href="instructions.html#prevVisit">Previous Visits</a></td>
+            <td rowspan="4">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>diagnostic conclusion (text)</td>
+            <td><a href="StructureDefinition-DiagnosticConclusion-IEHR.html">DiagnosticConclusion-IEHR</a></td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>treatment plan (next visits, exams, etc)</td>
+            <td><a href="StructureDefinition-Composition-VisitReport-IEHR.html">MedicalVisit - IEHR</a> and <a href="StructureDefinition-TreatmentPlan-IEHR.html">TreatmentPlan - IEHR</a></td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>current Medications, previous medications</td>
+            <td><a href="StructureDefinition-Composition-VisitReport-IEHR.html">MedicalVisit - IEHR</a>and
+                <a href="StructureDefinition-MedicationStatement-IEHR.html">MedicationStatement-IEHR</a></td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>visit prescription</td>
+            <td>current visit prescribed drugs</td>
+            <td>prescribed drugs</td>
+            <td><a href="StructureDefinition-MedicationRequest-prescription-IEHR.html">MedicationRequest-Prescription</a></td>
+            <td><a href="instructions.html#requestPrescription">MedicationRequest-Prescription Instructions</a></td>
+            <td>-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="10">Vital Signs</td>
+            <td rowspan="10">Vital parameters for the last ambulatory</td>
+            <td>weight (Kg)</td>
+            <td rowspan="10"><a href="http://hl7.org/fhir/StructureDefinition/vitalsigns">VitalSigns</a></td>
+            <td rowspan="10"><a href="instructions.html#vitalsigns">VitalSigns Instructions</a></td>
+            <td rowspan="10">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>height (cm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>blood pressure (mmHg)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>resting heart rate (bpm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>peripheral edema (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>signs of lung congestion (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>pleural effusion (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>sign of ascites (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>jugular vein distension (presence/absence);</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Cardiac and lung auscultation (normal/abnormal)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="6">EKG</td>
+            <td rowspan="6">Latest EKG</td>
+            <td>rhythm (eg sinus rhythm, atrial fibrillation, paced, etc.)</td>
+            <td rowspan="6"><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport-BioSignalReport-IEHR</a> and <a href="StructureDefinition-Observation-BioSignal-IEHR.html">Observation-BioSignal-IEHR </a></td>
+            <td rowspan="6"><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a> / <a href="instructions.html#biosignal">Biosignal Instructions</a></td>
+            <td rowspan="6">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>heart rate (bpm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>PR</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>QRS intervals (msec)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>QTc intervals (msec)(optional)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>left bundle branch block (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="2">EKG</td>
+            <td rowspan="2">Latest EKG</td>
+            <td>EKG signal waveform</td>
+            <td rowspan="2"><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport-BioSignalReport-IEHR</a> and <a href="StructureDefinition-Media-IEHR.html">Media-IEHR</a></td>
+            <td rowspan="2"><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a> / <a href="instructions.html#biosignal">Biosignal Instructions</a></td>
+            <td rowspan="2">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>EKG signal pdf/other</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="2">EKG</td>
+            <td rowspan="2">Latest EKG</td>
+            <td>EKG report (text)</td>
+            <td rowspan="2"><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport-BioSignalReport-IEHR</a></td>
+            <td rowspan="2"><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a> / <a href="instructions.html#biosignal">Biosignal Instructions</a></td>
+            <td rowspan="2">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>EKG report (pdf/other)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="7">Echo</td>
+            <td rowspan="7">Latest echocardiogram</td>
+            <td>LVEF (%)</td>
+            <td rowspan="7"><a href="StructureDefinition-Observation-BioSignal-IEHR.html">BioSignal-IEHR</a> in <a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">BioSignalReport-IEHR</a></td>
+            <td rowspan="7"><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a></td>
+            <td rowspan="7">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>septum thickness</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>left ventricular end systolic/diastolic volume (mL)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>grade of diastolic dysfunction (0/1/2/3)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>estimated pulmonary artery pressure (mmHg)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>degree of mitral regurgitation (no, mild, moderate, severe)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>degree of tricuspid regurgitation (no, mild, moderate, severe)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Echo</td>
+            <td>Latest echocardiogram</td>
+            <td>DICOM movie</td>
+            <td><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport-BioSignalReport-IEHR</a> and <a href="http://hl7.org/fhir/R4/imagingstudy.html">Imagingstudy</a></td>
+            <td><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a></td>
+            <td>-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="2">Echo</td>
+            <td rowspan="2">Latest echocardiogram</td>
+            <td>Report pdf</td>
+            <td rowspan="2"><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport-BioSignalReport-IEHR</a></td>
+            <td rowspan="2"><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a></td>
+            <td rowspan="2">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Report text</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="2">X-Ray</td>
+            <td rowspan="2">Latest chest X-Ray</td>
+            <td>report</td>
+            <td rowspan="2"><a href="http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-ImagingReport-IEHR">DiagnosticReport-ImagingReport-IEHR</a></td>
+            <td rowspan="2"><a href="instructions.html#diagImage">ImagingReport Instructions</a></td>
+            <td rowspan="2">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>image</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Latest Holter monitoring</td>
+            <td>Latest Holter monitoring</td>
+            <td>mean heart rate (bpm)</td>
+            <td><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport-BioSignalReport-IEHR</a></td>
+            <td><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a></td>
+            <td>-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="3">Latest Holter monitoring</td>
+            <td rowspan="3">Latest Holter monitoring</td>
+            <td>number of premature ventricular beats</td>
+            <td rowspan="3"><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport-BioSignalReport-IEHR</a></td>
+            <td rowspan="3"><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a></td>
+            <td rowspan="3">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>number of ventricular tachycardias (with max length in bpm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>atrial fibrillation (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="10">Latest bio-humoral values</td>
+            <td rowspan="10">Latest bio-humoral values</td>
+            <td>hemoglobin (g/dl)</td>
+            <td rowspan="10"><a href="StructureDefinition-DiagnosticReport-LaboratoryReport-IEHR.html">DiagnosticReport-LaboratoryReport-IEHR</a></td>
+            <td rowspan="10"><a href="instructions.html#diagLab">LaboratoryReport Instructions</a></td>
+            <td rowspan="10">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>white blood count</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>creatinine (mg/dl)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>eGFR (ml/min/1.73m2)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>AST</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>ALT</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>GGT</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>bilirubin</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>BNP (ng/L)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>NT-proBNP (ng/L)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="3">Latest cardiac magnetic resonance</td>
+            <td rowspan="3">Latest cardiac magnetic resonance</td>
+            <td>LVEF (%)</td>
+            <td rowspan="3"><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport-BioSignalReport-IEHR</a></td>
+            <td rowspan="3"><a href="instructions.html#bioSignalRep">BioSignalReport Instructions</a></td>
+            <td rowspan="3">-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>left ventricular end systolic/diastolic volumes</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>late gadolinium enhancement (presence/absence).</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Surgical history</td>
+            <td>Surgical history</td>
+            <td>Surgical history</td>
+            <td><a href="http://www.hl7.org/fhir/uv/ips/STU1/StructureDefinition-Procedure-uv-ips.html">Procedure-IPS</a></td>
+            <td><a href="instructions.html#procedures">Procedures Instructions</a></td>
+            <td>-</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Encounter</td>
+            <td>Encounter</td>
+            <td>Encounter</td>
+            <td><a href="StructureDefinition-Encounter-IEHR.html">Encounter-IEHR</a></td>
+            <td><a href="instructions.html#encounter">Encounter Instructions</a></td>
+            <td>-</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,112 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+	<a name="transmissionSigning"> </a>
+	<h3>Signing on transmission</h3>
+	<p>
+		When resources are requested from a server, the response to the request is transmitted as a bundle.
+		If resources of the types listed above are part of the response, and they have no parents in the bundle, the server must create a Provenance for each of these resources.
+		Those Provenances must be added to the bundle and transmitted to the client as well.
+		<b>This step is mandatory</b> and the server is not allowed to send any of these resources without a Provenance, except if their parent is sent as well and a Provenance for the parent has been added to the bundle.
+	</p>
+
+	<p>This applies to the following resources, which must be signed though the Provenance.signature before they are transmitted:</p>
+	<ul>
+		<li>AllergyIntolerance</li>
+		<li>CarePlan</li>
+		<li>Composition</li>
+		<li>Condition</li>
+		<li>DiagnosticReport</li>
+		<li>DocumentReference</li>
+		<li>Encounter</li>
+		<li>Immunization</li>
+		<li>Media</li>
+		<li>MedicationRequest</li>
+		<li>MedicationStatement</li>
+		<li>Observation</li>
+		<li>Procedure</li>
+	</ul>
+
+	<p>
+		The following sections describe the process of adding a Provenance for a resource.
+	</p>
+
+	<a name="resourceinstructions"> </a>
+	<h4>Instructions for the to-be-signed resource</h4>
+	<p>
+		The to-be-signed resource is extended with a <a href="StructureDefinition-ProvenanceExtension-IEHR.html">ProvenanceExtension-IEHR</a> that references the Provenance containing the signature for the resource (Provenance.signature).
+		This Provenance must be part of the same bundle and must be referenced in this extension by its id (Provenance.id).
+	</p>
+
+	<a name="provenanceinstructions"> </a>
+	<h4>Instructions for the Provenance</h4>
+	<p>The provenance is represented as a <a href="StructureDefinition-Provenance-IEHR.html">Provenance-IEHR</a>.
+		<mark>There should be one <a href="StructureDefinition-Provenance-IEHR.html">Provenance-IEHR</a> in the bundle for each signed resource that is part of the bundle.</mark>
+		The following attributes of the <a href="StructureDefinition-Provenance-IEHR.html">Provenance-IEHR</a> resource are used to represent the required information:
+	</p>
+	<ul>
+		<li>The resource that is signed is referenced as the first entry in the target attribute (Provenance.target).</li>
+		<li>The instant of time at which the activity was recorded is stated at Provenance.recorded</li>
+		<li>The authors of the signed resources are represented as agents (Provenance.agents) where the type attributes contains the code 'author' and display 'Author' from the system <a href="http://terminology.hl7.org/CodeSystem/provenance-participant-type">http://terminology.hl7.org/CodeSystem/provenance-participant-type</a></li>
+		<li>The provider of the signed resources is represented as an agent (Provenance.agents) where the type attributes contains the code 'custodian' and display 'Custodian' from the system <a href="http://terminology.hl7.org/CodeSystem/provenance-participant-type">http://terminology.hl7.org/CodeSystem/provenance-participant-type</a></li>
+		<li>The signature is contained in the signature attribute (Provenance.signature)</li>
+	</ul>
+	<p>Find all examples of Provenance-IEHR <a href="StructureDefinition-Provenance-IEHR-examples.html">here</a>.</p>
+
+	<a name="signatureInstruction"> </a>
+	<h4>Instructions for the Signature</h4>
+	<p>
+		The signature itself is represented as a <a href="StructureDefinition-Provenance-Signature-IEHR.html">Provenance-Signature-IEHR</a>.
+		The following attributes of the <a href="StructureDefinition-Provenance-Signature-IEHR.html">Provenance-Signature-IEHR</a> resource are used to represent the required information:
+	</p>
+	<ul>
+		<li>Signature.when contains the information when the signature was created</li>
+		<li>Signature.who contains a reference to the party creating the signature. This must be the same party, that is the provider of the Provenance resource.</li>
+		<li>Signature.type is fixed to the code '1.2.840.10065.1.12.1.5' and display 'Verification Signature' from the codesystem 'urn:iso-astm:E1762-95:2013'</li>
+		<li>Signature.targetFormat contains the format of the signed resource, represented as a code from the <a href="ValueSet-TargetFormat-IEHR.html">TargetFormat ValueSet</a></li>
+		<li>Signature.sigFormat is fixed to the string 'application/jose', meaning the technical format of the signature is JSON Digital Signature</li>
+		<li>Signature.data contains the signature as a base64Binary</li>
+	</ul>
+
+	<a name="sigProcedure"> </a>
+	<h3>How to Sign a Resource</h3>
+	<p>
+		This section describes the procedure to sign a resource for transmission. The steps are repeated for each resource, that must be signed.
+		It is assumed, that the resources are sent as a <a href="StructureDefinition-Bundle-IEHR.html">Bundle-IEHR</a> and the Bundle is already set up, so that only the entries are missing.
+	</p>
+	<ol>
+		<li>Set up a <a href="StructureDefinition-Provenance-IEHR.html">Provenance-IEHR</a>
+			<ul>
+				<li>Create a new Provenance</li>
+				<li>Assign an id to the Provenance</li>
+				<li>Add the provider of the resource to the Provenance as Provenance.agent:Provider</li>
+				<li>Add the authors of the resource (can be multiple, but at least one) to the Provenance as Provenance.agent:authors</li>
+				<li>Set the Provenance.recorded attribute to the current time</li>
+				<li>Add a reference to the resource to the Provenance.target attribute</li>
+			</ul>
+		</li>
+		<li>Extend the resource with the <a href="StructureDefinition-ProvenanceExtension-IEHR.html">ProvenanceExtension-IEHR</a> and reference the Provenance in the extension</li>
+		<li>Use the signing service to create the base64Binary signature for the resource</li>
+		<li>Set up the <a href="StructureDefinition-Provenance-Signature-IEHR.html">Provenance-Signature-IEHR</a>
+			<ul>
+				<li>Create a new Signature</li>
+				<li>Add the Signature to the Provenance in the Provenance.signature attribute </li>
+				<li>Set the Provenance.signature.data attribute to the base64Binary signature</li>
+				<li>Set the Provenance.signature.targetFormat to the format of the base64Binary signature (json or xml)</li>
+				<li>Set the Provenance.signature.when to the current date </li>
+				<li>Set the Provenance.signature.sigFormat attribute to 'application/jose'</li>
+				<li>Set the Provenance.signature.type attribute to the code '1.2.840.10065.1.12.1.5' and the display 'Verification Signature' in the system 'urn:iso-astm:E1762-95:2013'</li>
+			</ul>
+		</li>
+		<li>Add both the resource and the Provenance to the Bundle as Bundle.entry.resource's</li>
+	</ol>
+	<p>
+		Once all resources and their provenances were added to the bundle, it can be validated and sent.
+	</p>
+
+	<a name="recieveSig"> </a>
+	<h3>How to Receive a Signed Resource </h3>
+	<p>
+		When the client receives a bundle as an answer to the request, it has to verify those resources.
+		For each parent resource in the bundle, that is of a type from the list above, the client has to find the corresponding Provenance in the bundle.
+		If it can not find the Provenance for a resource or is unable to verify the resource with the signature provided by its Provenance, the client has to refuse the resource and all its children.
+	</p>
+</div>

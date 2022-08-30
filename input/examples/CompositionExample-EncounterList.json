@@ -1,0 +1,41 @@
+{
+  "resourceType": "Composition",
+  "id": "db734647-fc99-424c-a864-7e3cda82e703",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR" ]
+  },
+  "language": "it-IT",
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/17"
+    }
+  } ],
+  "status": "final",
+  "type": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "34133-9",
+      "display": "Summary of episode note"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "date": "2021-06-18T16:01:26.000+02:00",
+  "author": [ {
+    "reference": "Practitioner/21"
+  } ],
+  "title": "Fondazione Gabriele Monasterio Encounter list",
+  "confidentiality": "N",
+  "custodian": {
+    "reference": "Organization/34432"
+  },
+  "section": [ {
+    "entry": [ {
+      "reference": "Encounter/6129269"
+    }, {
+      "reference": "Encounter/123456"
+    } ]
+  } ]
+}

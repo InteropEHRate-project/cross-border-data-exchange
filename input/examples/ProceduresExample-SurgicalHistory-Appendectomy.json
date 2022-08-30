@@ -1,0 +1,25 @@
+{
+  "resourceType": "Procedure",
+  "id": "1111",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips" ]
+  },
+  "language": "en",
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "6025007",
+      "display": "Laparoscopic appendectomy"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "performedDateTime": "2001-01-01",
+  "performer": [ {
+    "actor": {
+      "reference": "Practitioner/21"
+    }
+  } ]
+}

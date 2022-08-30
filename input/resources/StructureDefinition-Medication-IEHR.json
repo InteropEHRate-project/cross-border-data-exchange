@@ -1,0 +1,59 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR",
+  "name": "MedicationIEHR",
+  "title": "Medication-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Medication",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Medication",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Medication",
+      "path": "Medication",
+      "constraint": [ {
+        "key": "iehr-1",
+        "severity": "error",
+        "human": "If the original code could not be translated it must be present",
+        "expression": "(code.coding.exists(code = 'OTH') and code.coding.all(extension.exists(url = 'http://interopehrate.eu/fhir/StructureDefinition/AutomaticallyGenerated-Extension-IEHR' and value = 'true'))).not()"
+      } ]
+    }, {
+      "id": "Medication.code",
+      "path": "Medication.code",
+      "min": 1,
+      "max": "1",
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://interopehrate.eu/fhir/ValueSet/CombinedMedication-IEHR"
+      }
+    }, {
+      "id": "Medication.ingredient.item[x]",
+      "path": "Medication.ingredient.item[x]",
+      "slicing": {
+        "discriminator": [ {
+          "type": "type",
+          "path": "$this"
+        } ],
+        "rules": "open"
+      },
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://hl7.org/fhir/uv/ips/ValueSet/whoatc-uv-ips"
+      }
+    }, {
+      "id": "Medication.ingredient.item[x]:itemCodeableConcept",
+      "path": "Medication.ingredient.item[x]",
+      "sliceName": "itemCodeableConcept",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://hl7.org/fhir/uv/ips/ValueSet/whoatc-uv-ips"
+      }
+    } ]
+  }
+}

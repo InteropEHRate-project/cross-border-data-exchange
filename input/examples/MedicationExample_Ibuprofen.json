@@ -1,0 +1,14 @@
+{
+  "resourceType": "Medication",
+  "id": "11223344",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR" ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://www.whocc.no/atc",
+      "code": "M01AE01",
+      "display": "ibuprofen"
+    } ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "1",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-ImagingReport-IEHR" ]
+  },
+  "language": "en",
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/6"
+    }
+  } ],
+  "identifier": [ {
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "PRN"
+      } ]
+    },
+    "value": "97170e06-9de2-4976-9efe-73300344a1ac"
+  } ],
+  "status": "final",
+  "category": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code": "RAD",
+      "display": "Radiology"
+    } ]
+  } ],
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "30954-2",
+      "display": "Relevant diagnostic tests/laboratory data Narrative"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "effectiveDateTime": "2022-04-04T14:59:49+02:00",
+  "performer": [ {
+    "reference": "Organization/34432"
+  } ],
+  "resultsInterpreter": [ {
+    "reference": "Organization/34432"
+  } ],
+  "imagingStudy": [ {
+    "reference": "ImagingStudy/1"
+  } ]
+}

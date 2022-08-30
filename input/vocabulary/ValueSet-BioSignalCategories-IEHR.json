@@ -1,0 +1,20 @@
+{
+  "resourceType": "ValueSet",
+  "url": "http://interopehrate.eu/fhir/ValueSet/BioSignalCategories-IEHR",
+  "name": "BioSignalCategoriesValueSetIEHR",
+  "title": "BioSignalCategories ValueSet-IEHR",
+  "status": "draft",
+  "description": "ValueSet containing only codes for categorizing of DiagnosticReports that are used for bio signals.",
+  "compose": {
+    "include": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "concept": [ {
+        "code": "EC",
+        "display": "Electrocardiac (e.g., EKG, EEC, Holter)"
+      }, {
+        "code": "EN",
+        "display": "Electroneuro (EEG, EMG,EP,PSG)"
+      } ]
+    } ]
+  }
+}

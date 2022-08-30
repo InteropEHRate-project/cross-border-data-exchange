@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Attachment-IEHR",
+  "name": "AttachmentIEHR",
+  "title": "Attachment-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Attachment",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Attachment",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Attachment",
+      "path": "Attachment",
+      "constraint": [ {
+        "key": "attIEHR-1",
+        "severity": "error",
+        "human": "At least one of data and url SHALL be present",
+        "expression": "data.exists() or url.exists()"
+      } ]
+    }, {
+      "id": "Attachment.extension",
+      "path": "Attachment.extension",
+      "slicing": {
+        "discriminator": [ {
+          "type": "value",
+          "path": "url"
+        } ],
+        "rules": "open"
+      }
+    }, {
+      "id": "Attachment.contentType",
+      "path": "Attachment.contentType",
+      "definition": "This attribute contains the MIME type of the attachment. All valid mime types are allowed",
+      "min": 1,
+      "mustSupport": true
+    }, {
+      "id": "Attachment.language",
+      "path": "Attachment.language",
+      "definition": "This attribute contains the language of the attached document, if applicable",
+      "comment": "The exact constrains to this attribute are still under consideration"
+    }, {
+      "id": "Attachment.data",
+      "path": "Attachment.data",
+      "definition": "This attribute contains the attached document as a base64 stream of bytes,if the attachment is provided in the document",
+      "mustSupport": true
+    }, {
+      "id": "Attachment.url",
+      "path": "Attachment.url",
+      "definition": "This attribute points to the address where the attachment ist stored, if the attachment is not provided in the document",
+      "mustSupport": true
+    } ]
+  }
+}

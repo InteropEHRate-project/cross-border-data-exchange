@@ -1,0 +1,31 @@
+{
+  "resourceType": "Immunization",
+  "id": "20220607",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Immunization-IEHR" ]
+  },
+  "language": "en",
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/40"
+    }
+  } ],
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [ {
+      "system": "http://www.whocc.no/atc",
+      "code": "J07BB01",
+      "display": "influenza, inactivated, whole virus"
+    } ]
+  },
+  "patient": {
+    "reference": "Patient/3466"
+  },
+  "occurrenceDateTime": "2022-01-01",
+  "performer": [ {
+    "actor": {
+      "reference": "Practitioner/21"
+    }
+  } ]
+}

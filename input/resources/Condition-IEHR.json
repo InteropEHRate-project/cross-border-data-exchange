@@ -1,0 +1,95 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR",
+  "name": "ConditionIEHR",
+  "title": "Condition-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Condition",
+      "path": "Condition",
+      "constraint": [ {
+        "key": "iehr-1",
+        "severity": "error",
+        "human": "If the original code could not be translated it must be present",
+        "expression": "(code.coding.exists(code = 'OTH') and code.coding.all(extension.exists(url = 'http://interopehrate.eu/fhir/StructureDefinition/AutomaticallyGenerated-Extension-IEHR' and value = 'true'))).not()"
+      } ]
+    }, {
+      "id": "Condition.extension",
+      "path": "Condition.extension",
+      "slicing": {
+        "discriminator": [ {
+          "type": "value",
+          "path": "url"
+        } ],
+        "rules": "open"
+      }
+    }, {
+      "id": "Condition.extension:Provenance",
+      "path": "Condition.extension",
+      "sliceName": "Provenance",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Extension",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Condition.category",
+      "path": "Condition.category",
+      "short": "Concept - reference to a terminology or just  text",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://hl7.org/fhir/uv/ips/ValueSet/problem-type-uv-ips"
+      }
+    }, {
+      "id": "Condition.code",
+      "path": "Condition.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://interopehrate.eu/fhir/ValueSet/CombinedCondition-IEHR"
+      }
+    }, {
+      "id": "Condition.subject",
+      "path": "Condition.subject",
+      "min": 1,
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Condition.onset[x]",
+      "path": "Condition.onset[x]",
+      "min": 1,
+      "type": [ {
+        "code": "Period",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Period-IEHR" ]
+      }, {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Condition.abatement[x]",
+      "path": "Condition.abatement[x]",
+      "type": [ {
+        "code": "Period",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Period-IEHR" ]
+      }, {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

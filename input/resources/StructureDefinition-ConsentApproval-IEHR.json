@@ -1,0 +1,70 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/ConsentApproval-IEHR",
+  "name": "ConsentApprovalIEHR",
+  "title": "ConsentApproval-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Provenance",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Provenance",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Provenance",
+      "path": "Provenance",
+      "constraint": [ {
+        "key": "provIEHR-1",
+        "severity": "error",
+        "human": "The Author SHALL BE the same as the Signer (Signature.who)",
+        "expression": "agent.where(type.coding.code='author').first().who= signature.who"
+      } ]
+    }, {
+      "id": "Provenance.target",
+      "path": "Provenance.target",
+      "max": "1",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Consent-IEHR" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Provenance.agent",
+      "path": "Provenance.agent",
+      "max": "1",
+      "mustSupport": true
+    }, {
+      "id": "Provenance.agent.type",
+      "path": "Provenance.agent.type",
+      "definition": "An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place. \n\nFixed value: Custodian \n A party that originates the resource and therefore has responsibility for the information given in the resource and ownership of this resource",
+      "min": 1,
+      "fixedCodeableConcept": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+          "code": "author",
+          "display": "Author"
+        } ]
+      },
+      "mustSupport": true
+    }, {
+      "id": "Provenance.agent.who",
+      "path": "Provenance.agent.who",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Provenance.signature",
+      "path": "Provenance.signature",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Signature",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/ConsentApproval-Signature-IEHR" ]
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

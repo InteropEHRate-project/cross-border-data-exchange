@@ -1,0 +1,527 @@
+{
+  "resourceType": "Bundle",
+  "id": "1216512",
+  "type": "collection",
+  "timestamp": "2022-04-04T14:59:53.531+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "ITA"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Organization/34432"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Organization/34432",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "34432",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/DiagnosticReport/8911",
+    "resource": {
+      "resourceType": "DiagnosticReport",
+      "id": "8911",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-VitalSignReport-IEHR" ]
+      },
+      "language": "en",
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/9"
+        }
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PRN"
+          } ]
+        },
+        "value": "5g3-8c2-4d4"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "30954-2",
+          "display": "Relevant diagnostic tests/laboratory data Narrative"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-04-04",
+        "end": "2022-04-04"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "resultsInterpreter": [ {
+        "reference": "Organization/34432"
+      } ],
+      "result": [ {
+        "reference": "Observation/1111"
+      }, {
+        "reference": "Observation/1112"
+      }, {
+        "reference": "Observation/1113"
+      }, {
+        "reference": "Observation/1114"
+      }, {
+        "reference": "Observation/1115"
+      }, {
+        "reference": "Observation/1116"
+      }, {
+        "reference": "Observation/1117"
+      }, {
+        "reference": "Observation/1118"
+      }, {
+        "reference": "Observation/1119"
+      }, {
+        "reference": "Observation/1120"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1111",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1111",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8867-4",
+          "display": "Heart rate"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 62,
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1112",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1112",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "35094-2",
+          "display": "Blood Pressure Panel"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "component": [ {
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8480-6",
+            "display": "Systolic blood pressure"
+          } ]
+        },
+        "valueQuantity": {
+          "value": 112,
+          "unit": "mm[Hg]",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8462-4",
+            "display": "Diastolic blood pressure"
+          } ]
+        },
+        "valueQuantity": {
+          "value": 67,
+          "unit": "mm[Hg]",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1113",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1113",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "29463-7",
+          "display": "Body weight"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 85,
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1114",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1114",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8302-2",
+          "display": "Body height"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 195,
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1115",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1115",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "98151-4",
+          "display": "Degree of ascites"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA9634-2",
+          "display": "Absent"
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1116",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1116",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "44966-0",
+          "display": "Edema"
+        } ],
+        "text": "Peripheral Edema"
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA24844-5",
+          "display": "Peripheral"
+        }, {
+          "system": "http://loinc.org",
+          "code": "LA9634-2",
+          "display": "Absent"
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1117",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1117",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "80319-7",
+          "display": "Breath sounds by Auscultation"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA19732-9",
+          "display": "Clear"
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1118",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1118",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "69428-1",
+          "display": "Jugular Vein Distension"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA9634-2",
+          "display": "Absent"
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1119",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1119",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R09.89",
+          "display": "Lung Congestion"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA9633-4",
+          "display": "Present"
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/1120",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "1120",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/vitalsigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "J90",
+          "display": "Pleural effusion, not elsewhere classified"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA9633-4",
+          "display": "Present"
+        } ]
+      }
+    }
+  } ]
+}

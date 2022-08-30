@@ -1,0 +1,94 @@
+{
+  "resourceType": "Bundle",
+  "id": "3036701",
+  "language": "en",
+  "type": "collection",
+  "timestamp": "2020-11-26T09:51:03.316+01:00",
+  "entry": [ {
+    "fullUrl": "http://213.249.46.205:8080/NCP/fhir/Observation/987654",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "987654",
+      "status": "preliminary",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "10333-3",
+          "display": "Appearance of Cerebral spinal fluid",
+          "_display": {
+            "extension": [ {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [ {
+                "url": "lang",
+                "valueCode": "de-DE"
+              }, {
+                "url": "content",
+                "valueString": "Erscheinungsbild:Ersch:Pkt:CSF:Nom:"
+              }, {
+                "url": "http://interopehrate.eu/fhir/StructureDefinition/ExtendedTranslation-IEHR",
+                "valueReference": {
+                  "reference": "Provenance/1"
+                }
+              } ]
+            }, {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [ {
+                "url": "lang",
+                "valueCode": "it-IT"
+              }, {
+                "url": "content",
+                "valueString": "Aspetto:Asp:Pt:LCS:Nom:"
+              }, {
+                "url": "http://interopehrate.eu/fhir/StructureDefinition/ExtendedTranslation-IEHR",
+                "valueReference": {
+                  "reference": "Provenance/1"
+                }
+              } ]
+            }, {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [ {
+                "url": "lang",
+                "valueCode": "nl-NL"
+              }, {
+                "url": "content",
+                "valueString": "aspect:aspect:moment:liquor cerebrospinalis:nominaal:"
+              }, {
+                "url": "http://interopehrate.eu/fhir/StructureDefinition/ExtendedTranslation-IEHR",
+                "valueReference": {
+                  "reference": "Provenance/1"
+                }
+              } ]
+            } ]
+          }
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "http://213.249.46.205:8080/NCP/fhir/Device/4321",
+    "resource": {
+      "resourceType": "Device",
+      "id": "4321",
+      "status": "active",
+      "deviceName": [ {
+        "name": "TestDevice",
+        "type": "user-friendly-name"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://213.249.46.205:8080/NCP/fhir/Provenance/1",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "1",
+      "target": [ {
+        "reference": "Observation/987654"
+      } ],
+      "occurredDateTime": "2020-11-26T09:51:03+01:00",
+      "recorded": "2020-11-26T09:51:03.350+01:00",
+      "agent": [ {
+        "who": {
+          "reference": "Device/4321"
+        }
+      } ]
+    }
+  } ]
+}

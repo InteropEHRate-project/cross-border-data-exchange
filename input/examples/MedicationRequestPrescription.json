@@ -1,0 +1,47 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "1",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/39"
+    }
+  } ],
+  "status": "unknown",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "Medication/11223344"
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "authoredOn": "2021-09-30T13:01:28+02:00",
+  "requester": {
+    "reference": "Practitioner/21"
+  },
+  "dosageInstruction": [ {
+    "route": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "26643006",
+        "display": "Oral use"
+      } ]
+    },
+    "doseAndRate": [ {
+      "doseQuantity": {
+        "value": 600,
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+      },
+      "rateQuantity": {
+        "value": 3,
+        "unit": "per day",
+        "system": "http://unitsofmeasure.org",
+        "code": "/d"
+      }
+    } ]
+  } ]
+}

@@ -1,0 +1,348 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <a name="examples"> </a>
+<h3>List of Examples</h3>
+<p>This page contains a list with the name and a short description of some examples for each profile. For a full list of examples please refer to the artifact index. </p>
+
+<a name="auditExample"> </a>
+<h4>Examples for <a href="StructureDefinition-AuditEvent-IEHR.html">AuditEvent - IEHR</a></h4>
+<a href="AuditEvent-1.html">AuditEvent Example</a>
+<p>
+This example shows the use of the AuditEvent-IEHR profile to represent an AuditEvent.
+</p>
+
+
+<a name="bioSignalExample"> </a>
+<h4>Examples for <a href="StructureDefinition-Observation-BioSignal-IEHR.html">BioSignal - IEHR</a></h4>
+<a href="Observation-6113.html">BioSignal Example - Blood Test</a>
+<p>
+This example shows the use of the BioSignal-IEHR profile to describe a blood test .
+</p>
+<a href="Observation-9114.html">BioSignal Example - Echocardiogram</a>
+<p>
+This example shows the use of the BioSignal-IEHR profile to describe an Echocardiogram.
+</p>
+<a href="Observation-9113.html">BioSignal Example - EKG</a>
+<p>
+This example shows the use of the BioSignal-IEHR profile to describe an EKG .
+</p>
+<a href="Observation-9114.html">BioSignal Example - HolterMonitoring</a>
+<p>
+This example shows the use of the BioSignal-IEHR profile to describe a HolterMonitoring.
+</p>
+
+<a name="ConditionExample"> </a>
+<h4>Examples for <a href="StructureDefinition-Condition-IEHR.html">Condition - IEHR</a></h4>
+
+<a href="Condition-b6fc0a56-704c-4196-af27-10a0c2195c08.html">Condition-IEHR Example - FTGM </a>
+<p>This example is based on raw data provided by FTGM and describes the use of the Condition-IEHRprofile to describe an Hypertension Condition.</p>
+
+<a name="diagConclusionExample"> </a>
+<h4>Examples for <a href="StructureDefinition-DiagnosticConclusion-IEHR.html">DiagnosticConclusion - IEHR</a></h4>
+
+<a href="Condition-290320222.html">DiagnosticConclusion Example - FTGM</a>
+<p>
+This example shows the use of the Condition DiagnosticConclusion - IEHR profile to describe unstructured conclusions as text.
+</p>
+
+<a name="BioReportExample"> </a>
+<h4>Examples for <a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport BioSignalReport - IEHR</a></h4>
+
+<a href="DiagnosticReport-4111.html">BioSignalReport Example - Echocardiogramm</a>
+<p>
+This example shows the use of the DiagnosticReport BioSignalReport - IEHR profile to describe a diagnosis resulting from an Echocardiogram observation.
+<br/>
+The Echocardiogram is referenced in the report and added to the Bundle as the content of a Media resource.
+</p>
+
+<a href="DiagnosticReport-9111.html">BioSignalReport-IEHR Example - EKG</a> / <a href="Bundle-909080.html">BioSignalReport-IEHR Example - EKG (Bundle)</a>
+<p>
+This example shows the use of the DiagnosticReport BioSignalReport-IEHR to represent a Report based upon a radiology image. 
+<br/>
+The image is referenced in the report and added to the Bundle as the content of a Media resource.
+</p>
+
+
+
+<a name="imageExample"> </a>
+<h4>Examples for <a href="StructureDefinition-DiagnosticReport-ImagingReport-IEHR.html">DiagnosticReport ImagingReport-IEHR</a></h4>
+<a href="#imageExample">ImagingReport-IEHR Example - SingleImage</a>
+<p>
+This example shows the use of the DiagnosticReport ImagingReport-IEHR to represent a Report based upon a radiology image. 
+<br/>
+The image is referenced in the report and added to the Bundle as the content of a Media resource.
+</p>
+
+<a href="Bundle-3035445.html">ImagingReport-IEHR Example - ImagingStudy</a>
+<p>
+This example shows the use of the DiagnosticReport ImagingReport-IEHR to represent a Report based upon an imaging study. 
+<br/>
+The imaging study is referenced in the report and added to the Bundle as an ImagingStudy resource
+</p>
+
+<a href="Bundle-808090.html">ImagingReport-IEHR Example - X-Ray - Bundle</a>
+<p>
+This example shows the use of the DiagnosticReport ImagingReport-IEHR to represent a diagnosis based on an X-Ray. 
+<br/>
+The X-Ray image is referenced in the report and added to the Bundle as a Media resource.
+</p>
+
+<a name="LabExample"> </a>
+<h4>Examples for <a href="StructureDefinition-DiagnosticReport-LaboratoryReport-IEHR.html">DiagnosticReportLaboratoryResult - IEHR</a></h4>
+
+
+<a href="#LabExample">LaboratoryReport Example - 1</a>
+<p>
+This example shows the use of the DiagnosticReportLaboratoryResult to represent a Report based upon three observations. 
+<br/>
+The observations are referenced in the report and added to the Bundle as Observation resources.
+</p>
+
+<a href="Bundle-404060.html">LaboratoryReport Example - 3</a>
+<p>
+This example shows the use of the DiagnosticReportImaging to represent a Report based upon bio-humoral values. 
+<br/>
+The observations are referenced in the report and added to the Bundle as Observation resources.
+</p>
+
+ <a name="vitalSignRepExample"> </a>
+<h4>Examples for <a href="StructureDefinition-DiagnosticReport-VitalSignReport-IEHR.html">DiagnosticReportVitalSignReport - IEHR</a></h4>
+
+<a name="DiagConclusionExample"> </a>
+<h4>Examples for <a href="StructureDefinition-DiagnosticConclusion-IEHR.html">DiagnosticConclusion - IEHR</a></h4>
+<a href="Condition-290320222.html">DiagnosticConclusion-IEHR Example</a>
+<p>...</p>
+
+<a name="manifestExample"> </a>
+<h4>Examples for <a href="StructureDefinition-DocumentManifest-IEHR.html">DocumentManifest-IEHR</a></h4>
+
+<a href="Bundle-321457432.html">DocumentManifest Example - multiple Bundle</a>
+<p>
+This example shows the use of the DocumentManifest to reference multiple documents. 
+<br/>
+The bundle contains a DocumentManifest and muliple DocumentReferences with each referencing one document. The DocumentReferences also contain additional informations about the author of the document.
+</p>
+
+
+<a name="referenceExample"> </a>
+<h4>Examples for <a href="StructureDefinition-DocumentReference-IEHR.html">DocumentReference - IEHR</a></h4>
+
+<a href="DocumentReference-3456.html">DocumentReference Example - MedicalDocument 1</a>
+<p>
+This example shows the use of the DocumentReference to reference a single document. 
+<br/>
+The document is referenced in the content attribute of the DocumentReference.
+</p>
+
+<a href="Bundle-321457.html">DocumentReference Example - MedicalDocument 2</a>
+<p>
+This example shows the use of the DocumentReference to reference a single document. 
+<br/>
+The document is referenced in the content attribute of the DocumentReference and the example contains additional informations about the author of the document.
+</p>
+
+
+<a href="DocumentReference-34561.html">DocumentReference Example - Cardiology Consult Note</a>
+<p>This example shows the use of the DocumentReference to reference a single document.</p>
+
+<a href="DocumentReference-34562.html">DocumentReference Example - Heart Disease Action Plan</a>
+<p>This example shows the use of the DocumentReference to reference a single document.</p>
+
+<a href="DocumentReference-34563.html">DocumentReference Example - Legal Document</a>
+<p>This example shows the use of the DocumentReference to reference a single document.</p>
+
+<a href="DocumentReference-34564.html">DocumentReference Example - Cardiology Consult Note</a>
+<p>This example shows the use of the DocumentReference to reference a single document.</p>
+
+<a href="DocumentReference-34565.html">DocumentReference Example - Cardiology Interventional Procedure Note</a>
+<p>This example shows the use of the DocumentReference to reference a single document.</p>
+
+<a href="DocumentReference-34566.html">DocumentReference Example - Cardiology Hospital Admission history and physical note</a>
+<p>This example shows the use of the DocumentReference to reference a single document.</p>
+
+<a href="DocumentReference-34567.html">DocumentReference Example - Patient's Home Education Note</a>
+<p>This example shows the use of the DocumentReference to reference a single document.</p>
+
+<a href="DocumentReference-34568.html">DocumentReference Example - Deprecated Plan of Care Note</a>
+<p>This example shows the use of the DocumentReference to reference a single document.</p>
+
+
+<a name="encounterExample"> </a>
+<h4>Examples for <a href="StructureDefinition-Encounter-IEHR.html">Encounter - IEHR</a></h4>
+<a href="Encounter-551.html">Encounter Example - Routine Encounter-PTH</a>
+<p>
+This example shows the use of the Encounter resource to document a routine encounter. 
+<br/>
+It contains informations about the priority, class, duration and participants of the encounter.
+</p>
+
+<a href="Bundle-363976534.html">Encounter Example - Emergency Encounter Heart Failure</a>
+<p>
+This example shows the use of the Encounter resource to document an emergency encounter. 
+<br/>
+It contains informations about the priority, class, duration and participants of the encounter.
+</p>
+
+<a name="dischargeExample"> </a>
+<h4>Examples for <a href="StructureDefinition-Composition-HospitalDischargeReport-IEHR.html">HospitalDischargeReport - IEHR</a></h4>
+<a href="Bundle-69208519.html">HospitalDischargeReport Example</a>
+<p>
+This example shows the use of the Composition resource to display a HospitalDischargeReport.
+</p>
+
+<a name="immunizationExample"></a>
+<h4>Examples for <a href="StructureDefinition-Immunization-IEHR.html">Immunization - IEHR</a></h4>
+<a href="Immunization-20220607.html">Immunization Example - Influenza</a>
+<p>
+This example shows the use of the Immunization-IEHR resource to display an Influenza immunization.
+</p>
+
+<a name="requestExample"> </a>
+<h4>Examples for <a href="StructureDefinition-MedicationRequest-prescription-IEHR.html">MedicationRequest-Prescription - IEHR</a></h4>
+
+<a href="MedicationRequest-43101.html">MedicationRequest Example - Pantoprazole</a>
+<p>
+This example shows the use of the MedicationRequest resource to display a Pantoprazole prescription.
+</p>
+<a href="MedicationRequest-431014.html">MedicationRequest Example - Paroxetina</a>
+<p>
+This example shows the use of the MedicationRequest resource to display a Paroxetina prescription..
+</p>
+<a href="MedicationRequest-43147.html">MedicationRequest Example - Furosemide</a>
+<p>
+This example shows the use of the MedicationRequest resource to display a Furosemide prescription..
+</p>
+
+<a name="translationExample"> </a>
+<h4>Examples for <a href="StructureDefinition-ExtendedTranslation-IEHR.html">Extended Translation - IEHR</a></h4>
+
+
+<a href="Bundle-30366.html">ExtendedTranslation Example - Practitioner</a>
+<p>
+This example shows the use of the ExtendedTranslation extension to provide additional informations about a translation. 
+<br/>
+It provides additional informations about a translation performed by a Practitioner.
+</p>
+
+<a href="Bundle-30367.html">ExtendedTranslation Example - Device</a>
+<p>
+This example shows the use of the ExtendedTranslation extension to provide additional informations about a translation. 
+<br/>
+It provides additional informations about a translation performed by a Device.
+</p>
+
+<a href="Bundle-3036701.html">ExtendedTranslation Example - multiple ExtendedTranslation with Device</a>
+<p>
+This example shows the use of the ExtendedTranslation extension to provide additional informations about multiple translation. 
+<br/>
+It provides additional informations about three translation performed by the same Device.
+</p>
+
+<a name="provenanceExample"> </a>
+<h4>Examples for <a href="StructureDefinition-Provenance-IEHR.html">Provenance - IEHR</a></h4>
+<a href="Provenance-1.html">Provenance Example - DocumentReference - Addendum Document</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an DocumentReference-IEHR referencing a PDF document as an attachment.</p>
+
+<a href="Provenance-2.html">Provenance Example - BioSignalReport - EKG</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an BioSignalReport-IEHR using the example of an EKG.</p>
+
+<a href="Provenance-3.html">Provenance Example - DocumentReference - Attachment</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an DocumentReference-IEHR referencing a PDF document as an attachment.</p>
+
+<a href="Provenance-4.html">Provenance Example - BioSignalReport - Echocardiogram</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an BioSignalReport-IEHR using the example of an Echocardiogram.</p>
+
+<a href="Provenance-5.html">Provenance Example - BioSignalReport - HolterMonitoring</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an BioSignalReport-IEHR using the example of an Holter Monitoring.</p>
+
+<a href="Provenance-6.html">Provenance Example - ImagingReport - ImagingStudy</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an ImagingReport-IEHR containing an ImagingStudy.</p>
+
+<a href="Provenance-7.html">Provenance Example - ImagingReport - X-Ray</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an ImagingReport-IEHR using the example of an X-Ray that is included as a Media resource.</p>
+
+<a href="Provenance-8.html">Provenance Example - LaboratoryReport - Blood Test</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an LaboratoryReport-IEHR using the example of a Blood Test.</p>
+
+<a href="Provenance-9.html">Provenance Example - VitalSignReport</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an VitalSignReport-IEHR documenting different types of vital signs.</p>
+
+<a href="Provenance-10.html">Provenance Example - DocumentReference - MedicalDocument 1</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an DocumentReference-IEHR referencing a PDF document as an attachment.</p>
+
+<a href="Provenance-12.html">Provenance Example - Composition - Past Visits</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a Composition resource using the example of past visits.</p>
+
+<a href="Provenance-14.html">Provenance Example - Composition MedicalVisitReport</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a Composition resource using the example of a medical visit report.</p>
+
+<a href="Provenance-16.html">Provenance Example - HospitalDischargeReport</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an HospitalDischargeReport-IEHR.</p>
+
+<a href="Provenance-17.html">Provenance Example - Composition EncounterList</a>
+<p>This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a Composition resource using the example of list of Encounters.</p>
+
+<a href="Provenance-28.html">Provenance Example - Condition - Hypertension </a>
+<a href="Provenance-30.html">Provenance Example - DocumentManifest</a>
+<a href="Provenance-31.html">Provenance Example - TreatmentPlan - FTGM</a>
+<a href="Provenance-32.html">Provenance Example - MedicationRequest - Furosemide</a>
+<a href="Provenance-33.html">Provenance Example - MedicationRequest - Bisoprolol</a>
+<a href="Provenance-34.html">Provenance Example - MedicationRequest - Fondaparinux</a>
+<a href="Provenance-35.html">Provenance Example - MedicationRequest - Pantoprazole</a>
+<a href="Provenance-36.html">Provenance Example - MedicationRequest - Paroxetina</a>
+<a href="Provenance-37.html">Provenance Example - TreatmentPlan</a>
+<a href="Provenance-38.html">Provenance Example - Composition MedicalVisitReport </a>
+<a href="Provenance-39.html">Provenance Example - MedicationRequest - FTGM </a>
+
+
+<a name="treatmentPlanExample"> </a>
+<h4>Examples for <a href="StructureDefinition-TreatmentPlan-IEHR.html">TreatmentPlan - IEHR</a></h4>
+<a href="CarePlan-1.html">TreatmentPlan-IEHR Example - minimal</a>
+<p>...</p>
+
+<a href="CarePlan-2.html">TreatmentPlan-IEHR Example - FTGM</a>
+<p>...</p>
+
+
+<a name="otherExample"> </a>
+<h4>Other examples</h4>
+
+<a href="Patient-3466.html">Patient Example</a>
+<p>
+This example shows the use of the Patient resource to describe the subject of a document. 
+<br/>
+The patient described in this example is used for all examples in this IG.
+</p>
+
+<a href="Organization-34432.html">Organization Example</a>
+<p>
+This example shows the use of the Organization resource. 
+<br/>
+The organization described in this example is used for all examples in this IG.
+</p>
+
+<a href="Practitioner-21.html">Practitioner Example</a>
+<p>
+This example shows the use of the Practitioner resource. 
+<br/>
+The practitioner described in this example is used for all examples in this IG.
+</p>
+
+
+
+<a href="Bundle-1216512.html">VitalSign Example</a>
+<p>
+This example shows the use of the VitalSign profile to describe the observation of vital signs
+<br/>
+It contains two observations and informations about the patient and the practitioner in a Bundle.
+</p>
+
+
+<a href="Bundle-404050.html">ObservationBundle Example - HolterMonitoring</a>
+<p>
+This example shows the use of multiple Observations to represent a HolterMonitoring. 
+<br/>
+The different measurements of the HolterMonitoring are captured in Observations and the Bundle contains these Observations.
+</p>
+
+
+</div>

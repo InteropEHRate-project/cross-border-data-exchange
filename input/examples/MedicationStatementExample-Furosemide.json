@@ -1,0 +1,33 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "7347",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/MedicationStatement-IEHR" ]
+  },
+  "status": "active",
+  "medicationReference": {
+    "reference": "Medication/4749"
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "effectiveDateTime": "2022-07-14T12:04:15+02:00",
+  "dosage": [ {
+    "text": "1 pill at 08:00 AM",
+    "timing": {
+      "repeat": {
+        "frequency": 1,
+        "period": 1,
+        "periodUnit": "d",
+        "timeOfDay": [ "08:00:00" ]
+      }
+    },
+    "route": {
+      "coding": [ {
+        "system": "http://standardterms.edqm.eu",
+        "code": "20053000",
+        "display": "Oral use"
+      } ]
+    }
+  } ]
+}

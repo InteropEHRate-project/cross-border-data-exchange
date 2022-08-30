@@ -1,0 +1,27 @@
+{
+  "resourceType": "AuditEvent",
+  "id": "1",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/AuditEvent-IEHR" ]
+  },
+  "type": {
+    "system": "http://dicom.nema.org/resources/ontology/DCM",
+    "code": "110114"
+  },
+  "period": {
+    "start": "2021-08-24T11:14:00.000Z",
+    "end": "2021-08-24T11:14:00.005Z"
+  },
+  "recorded": "2021-08-27T10:01:47.343+02:00",
+  "agent": [ {
+    "who": {
+      "reference": "Practitioner/21"
+    },
+    "requestor": true
+  } ],
+  "source": {
+    "observer": {
+      "reference": "Practitioner/21"
+    }
+  }
+}

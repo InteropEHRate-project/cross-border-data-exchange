@@ -1,0 +1,38 @@
+{
+  "resourceType": "CarePlan",
+  "id": "2",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/TreatmentPlan-IEHR" ]
+  },
+  "language": "it-IT",
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/31"
+    }
+  } ],
+  "status": "active",
+  "intent": "plan",
+  "category": [ {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "18776-5",
+      "display": "Plan of care note"
+    } ]
+  } ],
+  "title": "Treatment Plan",
+  "description": "Istruzioni di follow-up: Visita tra 3 mesi. prenotare Ecocardio basale doppler, ECG, pannello emocromo+formula, pannello coagulazione. Attività fisica moderata.",
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "encounter": {
+    "reference": "Encounter/363534"
+  },
+  "created": "2022-04-06T14:01:14+02:00",
+  "author": {
+    "reference": "Practitioner/21"
+  },
+  "addresses": [ {
+    "reference": "Condition/290320222"
+  } ]
+}

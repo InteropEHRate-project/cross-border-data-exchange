@@ -1,0 +1,44 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "1111",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR" ]
+  },
+  "clinicalStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+      "code": "active",
+      "display": "Active"
+    } ]
+  },
+  "verificationStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+      "code": "confirmed",
+      "display": "Confirmed"
+    } ]
+  },
+  "type": "allergy",
+  "category": [ "medication" ],
+  "criticality": "high",
+  "code": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "410652009",
+      "display": "Blood product (product)"
+    } ]
+  },
+  "patient": {
+    "reference": "Patient/3466"
+  },
+  "onsetDateTime": "2021-09-24",
+  "reaction": [ {
+    "manifestation": [ {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "39579001",
+        "display": "Anaphylaxis (disorder)"
+      } ]
+    } ]
+  } ]
+}

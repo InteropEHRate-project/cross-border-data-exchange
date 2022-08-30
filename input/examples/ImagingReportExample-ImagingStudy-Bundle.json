@@ -1,0 +1,131 @@
+{
+  "resourceType": "Bundle",
+  "id": "3035445",
+  "type": "collection",
+  "timestamp": "2022-04-04T14:59:49.349+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/DiagnosticReport/1",
+    "resource": {
+      "resourceType": "DiagnosticReport",
+      "id": "1",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-ImagingReport-IEHR" ]
+      },
+      "language": "en",
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/6"
+        }
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PRN"
+          } ]
+        },
+        "value": "97170e06-9de2-4976-9efe-73300344a1ac"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "RAD",
+          "display": "Radiology"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "30954-2",
+          "display": "Relevant diagnostic tests/laboratory data Narrative"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2022-04-04T14:59:49+02:00",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "resultsInterpreter": [ {
+        "reference": "Organization/34432"
+      } ],
+      "imagingStudy": [ {
+        "reference": "ImagingStudy/1"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "ITA"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Organization/34432"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Organization/34432",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "34432",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/ImagingStudy/1",
+    "resource": {
+      "resourceType": "ImagingStudy",
+      "id": "1",
+      "language": "en",
+      "status": "unknown",
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "endpoint": [ {
+        "reference": "Endpoint/1111"
+      } ],
+      "series": [ {
+        "uid": "3347124",
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "RG",
+          "display": "Radiographic imaging"
+        }
+      } ]
+    }
+  } ]
+}

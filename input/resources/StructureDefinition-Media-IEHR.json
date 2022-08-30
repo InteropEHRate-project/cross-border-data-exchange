@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Media-IEHR",
+  "name": "MediaIEHR",
+  "title": "Media-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Media",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Media",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Media.extension",
+      "path": "Media.extension",
+      "slicing": {
+        "discriminator": [ {
+          "type": "value",
+          "path": "url"
+        } ],
+        "rules": "open"
+      }
+    }, {
+      "id": "Media.extension:Provenance",
+      "path": "Media.extension",
+      "sliceName": "Provenance",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Extension",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Media.created[x]",
+      "path": "Media.created[x]",
+      "type": [ {
+        "code": "dateTime"
+      }, {
+        "code": "Period",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Period-IEHR" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Media.content",
+      "path": "Media.content",
+      "type": [ {
+        "code": "Attachment",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Attachment-IEHR" ]
+      } ]
+    } ]
+  }
+}

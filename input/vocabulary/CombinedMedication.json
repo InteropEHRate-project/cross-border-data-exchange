@@ -1,0 +1,20 @@
+{
+  "resourceType": "ValueSet",
+  "id": "CombinedMedication-IEHR",
+  "url": "http://interopehrate.eu/fhir/ValueSet/CombinedMedication-IEHR",
+  "name": "CombinedMedicationIEHR",
+  "title": "CombinedMedication - IEHR",
+  "status": "draft",
+  "description": "ValueSet with all relevant codes for the Medication-IEHR",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://hl7.org/fhir/uv/ips/ValueSet/whoatc-uv-ips" ]
+    }, {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "concept": [ {
+        "code": "OTH",
+        "display": "other"
+      } ]
+    } ]
+  }
+}

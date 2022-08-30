@@ -1,0 +1,290 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Composition-VisitReport-IEHR",
+  "name": "VisitReportIEHR",
+  "title": "VisitReport-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Composition.type",
+      "path": "Composition.type",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "81214-9"
+        } ]
+      }
+    }, {
+      "id": "Composition.section",
+      "path": "Composition.section",
+      "slicing": {
+        "discriminator": [ {
+          "type": "pattern",
+          "path": "code"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:RelevantDiagnosticTestsAndOrLaboratoryData",
+      "path": "Composition.section",
+      "sliceName": "sectionRelevantDiagnosticTestsAndOrLaboratoryData"
+    }, {
+      "id": "Composition.section:RelevantDiagnosticTestsAndOrLaboratoryData.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "30954-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:PlanOfCareNote",
+      "path": "Composition.section",
+      "sliceName": "sectionPlanOfCareNote"
+    }, {
+      "id": "Composition.section:PlanOfCareNote.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "18776-5"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:PlanOfCareNote.entry",
+      "path": "Composition.section.entry",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/TreatmentPlan-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:Allergies",
+      "path": "Composition.section",
+      "sliceName": "sectionAllergies"
+    }, {
+      "id": "Composition.section:Allergies.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "48765-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HistoryOfMedication",
+      "path": "Composition.section",
+      "sliceName": "sectionHistoryOfMedication"
+    }, {
+      "id": "Composition.section:HistoryOfMedication.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "10160-0"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:ProblemList",
+      "path": "Composition.section",
+      "sliceName": "sectionProblemList"
+    }, {
+      "id": "Composition.section:ProblemList.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11450-4"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HistoryOfProceduresDocument",
+      "path": "Composition.section",
+      "sliceName": "sectionHistoryOfProceduresDocument"
+    }, {
+      "id": "Composition.section:HistoryOfProceduresDocument.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "47519-4"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:SocialHx",
+      "path": "Composition.section",
+      "sliceName": "sectionSocialHx"
+    }, {
+      "id": "Composition.section:SocialHx.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "29762-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:VitalSigns",
+      "path": "Composition.section",
+      "sliceName": "sectionVitalSigns"
+    }, {
+      "id": "Composition.section:VitalSigns.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8716-3"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:AdvanceDirectives",
+      "path": "Composition.section",
+      "sliceName": "sectionAdvanceDirectives"
+    }, {
+      "id": "Composition.section:AdvanceDirectives.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "42348-3"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HistoryofHospitalizations",
+      "path": "Composition.section",
+      "sliceName": "sectionHistoryofHospitalizations"
+    }, {
+      "id": "Composition.section:HistoryofHospitalizations.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "46240-8"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HistoryOfFamilyMemberDiseases",
+      "path": "Composition.section",
+      "sliceName": "sectionHistoryOfFamilyMemberDiseases"
+    }, {
+      "id": "Composition.section:HistoryOfFamilyMemberDiseases.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "10157-6"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:FunctionalStatusAssessment",
+      "path": "Composition.section",
+      "sliceName": "sectionFunctionalStatusAssessment"
+    }, {
+      "id": "Composition.section:FunctionalStatusAssessment.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "47420-5"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HistoryofImmunization",
+      "path": "Composition.section",
+      "sliceName": "sectionHistoryofImmunization"
+    }, {
+      "id": "Composition.section:HistoryofImmunization.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11369-6"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:MentalStatus",
+      "path": "Composition.section",
+      "sliceName": "sectionMentalStatus"
+    }, {
+      "id": "Composition.section:MentalStatus.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "10190-7"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HistoryOfMedicalDevice",
+      "path": "Composition.section",
+      "sliceName": "sectionHistoryOfMedicalDevice"
+    }, {
+      "id": "Composition.section:HistoryOfMedicalDevice.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "46264-8"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:DietAndNutrition",
+      "path": "Composition.section",
+      "sliceName": "sectionDietAndNutrition"
+    }, {
+      "id": "Composition.section:DietAndNutrition.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "61144-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:PaymentSourceDocument",
+      "path": "Composition.section",
+      "sliceName": "sectionPaymentSourceDocument"
+    }, {
+      "id": "Composition.section:PaymentSourceDocument.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "48768-6"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:VisitDischargeDx",
+      "path": "Composition.section",
+      "sliceName": "sectionVisitDischargeDx"
+    }, {
+      "id": "Composition.section:VisitDischargeDx.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11535-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:PrescribedMedications",
+      "path": "Composition.section",
+      "sliceName": "sectionPrescribedMedications"
+    }, {
+      "id": "Composition.section:PrescribedMedications.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "10183-2"
+        } ]
+      }
+    } ]
+  }
+}

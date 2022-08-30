@@ -1,0 +1,88 @@
+{
+  "resourceType": "Observation",
+  "id": "9115",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/5"
+    }
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "18754-2",
+      "display": "Holter monitor study"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "effectivePeriod": {
+    "start": "2022-03-01",
+    "end": "2022-03-02"
+  },
+  "performer": [ {
+    "reference": "Organization/34432"
+  } ],
+  "component": [ {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "8878-1",
+        "display": "Heart rate 24 hour"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 75,
+      "unit": "heartbeats per minute",
+      "system": "http://unitsofmeasure.org",
+      "code": "{beats}/min"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "76126-2",
+        "display": "Premature ventricular contractions [#]"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 5,
+      "unit": "x",
+      "system": "http://unitsofmeasure.org",
+      "code": "{Number}"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "I47.2",
+        "display": "Ventricular tachycardia"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 10,
+      "unit": "x",
+      "system": "http://unitsofmeasure.org",
+      "code": "{Number}"
+    }
+  }, {
+    "code": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "I48.91",
+        "display": "Unspecified atrial fibrillation"
+      } ]
+    },
+    "valueQuantity": {
+      "value": 5,
+      "unit": "x",
+      "system": "http://unitsofmeasure.org",
+      "code": "{Number}"
+    }
+  } ]
+}

@@ -1,0 +1,192 @@
+{
+  "resourceType": "Bundle",
+  "id": "363976534",
+  "language": "en",
+  "type": "collection",
+  "timestamp": "2022-02-11T11:15:20.594+01:00",
+  "entry": [ {
+    "fullUrl": "http://cbdeexampleurl/fhir/Encounter/57312",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "57312",
+      "language": "en",
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "priority": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+          "code": "S",
+          "display": "stat"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "participant": [ {
+        "type": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+            "code": "ATND",
+            "display": "attender"
+          } ]
+        } ],
+        "period": {
+          "start": "2020-12-14T13:27:00+01:00",
+          "end": "2021-01-24T15:00:00+01:00"
+        },
+        "individual": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "period": {
+        "start": "2020-12-14T13:27:00+01:00",
+        "end": "2021-01-24T15:00:00+01:00"
+      },
+      "length": {
+        "value": 41,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      },
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "364006",
+          "display": "Acute left-sided heart failure"
+        } ]
+      } ],
+      "reasonReference": [ {
+        "reference": "Condition/34217456"
+      } ],
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/34217456"
+        },
+        "use": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+            "code": "AD",
+            "display": "Admission diagnosis"
+          } ]
+        }
+      } ],
+      "hospitalization": {
+        "admitSource": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+            "code": "emd",
+            "display": "From accident/emergency department"
+          } ]
+        },
+        "dietPreference": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/diet",
+            "code": "nut-free",
+            "display": "Nut Free"
+          } ]
+        } ],
+        "specialCourtesy": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+            "code": "NRM",
+            "display": "normal courtesy"
+          } ]
+        } ],
+        "dischargeDisposition": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+            "code": "home",
+            "display": "Home"
+          } ]
+        }
+      },
+      "location": [ {
+        "location": {
+          "reference": "Location/3244"
+        },
+        "status": "completed",
+        "physicalType": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "code": "bu",
+            "display": "Building"
+          } ]
+        },
+        "period": {
+          "start": "2020-12-14T13:27:00+01:00",
+          "end": "2021-01-24T15:00:00+01:00"
+        }
+      } ],
+      "serviceProvider": {
+        "reference": "Organization/34432"
+      }
+    }
+  }, {
+    "fullUrl": "http://cbdeexampleurl/fhir/Condition/34217456",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "34217456",
+      "language": "en",
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "remission",
+          "display": "Remission"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "severity": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "24484000",
+          "display": "Severe"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "364006",
+          "display": "Acute left-sided heart failure"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2020-12-14T13:02:00+01:00"
+    }
+  }, {
+    "fullUrl": "http://cbdeexampleurl/fhir/Location/3244",
+    "resource": {
+      "resourceType": "Location",
+      "id": "3244",
+      "language": "en",
+      "status": "active",
+      "name": "Fondazione Toscana Gabriele Monasterio",
+      "mode": "instance",
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "CVDX",
+          "display": "Cardiovascular diagnostics or therapeutics unit"
+        } ]
+      } ],
+      "physicalType": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+          "code": "bu",
+          "display": "Building"
+        } ]
+      }
+    }
+  } ]
+}

@@ -1,0 +1,77 @@
+{
+  "resourceType": "Composition",
+  "id": "3970941",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/12"
+    }
+  } ],
+  "status": "final",
+  "type": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "34133-9",
+      "display": "Summary of episode note"
+    } ]
+  },
+  "encounter": {
+    "reference": "Encounter/363534"
+  },
+  "date": "2021-10-18",
+  "author": [ {
+    "reference": "Organization/34432"
+  } ],
+  "title": "Visit Report MS01, 18.10.2021",
+  "confidentiality": "N",
+  "section": [ {
+    "extension": [ {
+      "url": "http://interopehrate.eu/fhir/StructureDefinition/ConfidentialityExtension-IEHR",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+          "code": "N",
+          "display": "normal"
+        } ]
+      }
+    } ],
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "11450-4",
+        "display": "Problem list - Reported"
+      } ]
+    },
+    "entry": [ {
+      "reference": "Condition/48239"
+    }, {
+      "reference": "Condition/482343"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://interopehrate.eu/fhir/StructureDefinition/ConfidentialityExtension-IEHR",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+          "code": "N",
+          "display": "normal"
+        } ]
+      }
+    } ],
+    "code": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "29549-3",
+        "display": "Medication administered"
+      } ]
+    },
+    "entry": [ {
+      "reference": "MedicationAdministration/733813"
+    }, {
+      "reference": "MedicationAdministration/733864"
+    } ]
+  } ]
+}

@@ -1,0 +1,76 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR",
+  "name": "CompositionIEHR",
+  "title": "Composition-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/clinicaldocument",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Composition.extension",
+      "path": "Composition.extension",
+      "slicing": {
+        "discriminator": [ {
+          "type": "value",
+          "path": "url"
+        } ],
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.extension:Provenance",
+      "path": "Composition.extension",
+      "sliceName": "Provenance",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Extension",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR" ]
+      } ]
+    }, {
+      "id": "Compositon.subject",
+      "path": "Composition.subject",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR", "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips", "http://hl7.org/fhir/StructureDefinition/Group", "http://hl7.org/fhir/StructureDefinition/Device", "http://hl7.org/fhir/StructureDefinition/Location" ]
+      } ]
+    }, {
+      "id": "Compositon.encounter",
+      "path": "Composition.encounter",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Encounter-IEHR" ]
+      } ]
+    }, {
+      "id": "Compositon.event.period",
+      "path": "Composition.event.period",
+      "type": [ {
+        "code": "Period",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Period-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section.extension",
+      "path": "Composition.section.extension",
+      "slicing": {
+        "discriminator": [ {
+          "type": "value",
+          "path": "url"
+        } ],
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section.extension:ConfidentialityCode",
+      "path": "Composition.section.extension",
+      "sliceName": "ConfidentialityCode",
+      "max": "1",
+      "type": [ {
+        "code": "Extension",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/ConfidentialityExtension-IEHR" ]
+      } ]
+    } ]
+  }
+}

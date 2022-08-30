@@ -1,0 +1,77 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/DocumentManifest-IEHR",
+  "name": "DocumentManifestIEHR",
+  "title": "DocumentManifest-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DocumentManifest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DocumentManifest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "DocumentManifest.extension",
+      "path": "DocumentManifest.extension",
+      "slicing": {
+        "discriminator": [ {
+          "type": "value",
+          "path": "url"
+        } ],
+        "rules": "open"
+      },
+      "mustSupport": true
+    }, {
+      "id": "DocumentManifest.type",
+      "path": "DocumentManifest.type",
+      "definition": "The code specifying the type of clinical activity that resulted in the creation of the DocumentManifest",
+      "min": 1,
+      "mustSupport": true
+    }, {
+      "id": "DocumentManifest.subject",
+      "path": "DocumentManifest.subject",
+      "definition": "The person or group the documents referenced in the manifest are about",
+      "min": 1,
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR", "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips", "http://hl7.org/fhir/StructureDefinition/Group", "http://hl7.org/fhir/StructureDefinition/Device" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "DocumentManifest.created",
+      "path": "DocumentManifest.created",
+      "definition": "The date when the manifest was created. The attribute does not change when the manifest is modified, the modification date ist saved in DocumentManifest.meta.lastUpdated instead.",
+      "min": 1,
+      "mustSupport": true
+    }, {
+      "id": "DocumentManifest.author",
+      "path": "DocumentManifest.author",
+      "definition": "The author of the manifest. This does not necessarily have to be the author of the referenced documents.",
+      "comment": "The exact constrains on this attribute are still under consideration",
+      "min": 1,
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips", "http://hl7.org/fhir/uv/ips/StructureDefinition/PractitionerRole-uv-ips", "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips", "http://hl7.org/fhir/StructureDefinition/Device", "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR", "http://hl7.org/fhir/StructureDefinition/RelatedPerson" ]
+      } ]
+    }, {
+      "id": "DocumentManifest.content",
+      "path": "DocumentManifest.content",
+      "definition": "The documents that are part of this manifest",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "DocumentManifest.related",
+      "path": "DocumentManifest.related",
+      "definition": "Items that are in some way related to the DocumentManifest. They are either represented with an Identifier or with a Reference to another resource",
+      "comment": "The exact constrains on this attribute are still under consideration"
+    }, {
+      "id": "DocumentManifest.related.ref",
+      "path": "DocumentManifest.related.ref",
+      "definition": "Reference to another resource, that is in some way related to the DocumentManifest",
+      "comment": "The exact constrains on this attribute are still under consideration"
+    } ]
+  }
+}

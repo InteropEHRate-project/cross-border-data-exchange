@@ -1,0 +1,455 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Composition-HospitalDischargeReport-IEHR",
+  "name": "HospitalDischargeReportIEHR",
+  "title": "HospitalDischargeReport-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Composition.type",
+      "path": "Composition.type",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "81218-0"
+        } ]
+      }
+    }, {
+      "id": "Composition.section",
+      "path": "Composition.section",
+      "slicing": {
+        "discriminator": [ {
+          "type": "pattern",
+          "path": "code"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:HospitalAdmissionDx",
+      "path": "Composition.section",
+      "sliceName": "sectionHospitalAdmissionDx"
+    }, {
+      "id": "Composition.section:HospitalAdmissionDx.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "46241-6"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HospitalAdmissionDx.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:HospitalAdmissionDx.entry:structuredAdmissionDx",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredAdmissionDx",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-LaboratoryReport-IEHR", "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-ImagingReport-IEHR", "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-BioSignalReport-IEHR", "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips" ]
+      } ]
+    }, {
+      "id": "Composition.section:HospitalAdmissionDx.entry:unstructuredAdmissionDx",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredAdmissionDx",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:HospitalAdmissionHistoryAndPhysicalNote",
+      "path": "Composition.section",
+      "sliceName": "sectionHospitalAdmissionHistoryAndPhysicalNote"
+    }, {
+      "id": "Composition.section:HospitalAdmissionHistoryAndPhysicalNote.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "47039-3"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HospitalAdmissionHistoryAndPhysicalNote.entry",
+      "path": "Composition.section.entry",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:HistoryGeneral",
+      "path": "Composition.section",
+      "sliceName": "sectionHistoryGeneral"
+    }, {
+      "id": "Composition.section:HistoryGeneral.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11329-0"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:PhysicalExamination",
+      "path": "Composition.section",
+      "sliceName": "sectionPhysicalExamination"
+    }, {
+      "id": "Composition.section:PhysicalExamination.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "29545-1"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:PhysicalExamination.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:PhysicalExamination.entry:structuredPhysicalExamination",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredPhysicalExamination",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:PhysicalExamination.entry:unstructuredPhysicalExamination",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredPhysicalExamination",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:MedicationsOnAdmission",
+      "path": "Composition.section",
+      "sliceName": "sectionMedicationsOnAdmission"
+    }, {
+      "id": "Composition.section:MedicationsOnAdmission.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "42346-7"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:MedicationsOnAdmission.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:MedicationsOnAdmission.entry:structuredMedicationsOnAdmission",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredMedicationsOnAdmission",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips" ]
+      } ]
+    }, {
+      "id": "Composition.section:MedicationsOnAdmission.entry:unstructuredMedicationsOnAdmission",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredMedicationsOnAdmission",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:HospitalCourse",
+      "path": "Composition.section",
+      "sliceName": "sectionHospitalCourse"
+    }, {
+      "id": "Composition.section:HospitalCourse.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8648-8"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:RelevantDiagnosticTestsAndOrLaboratoryData",
+      "path": "Composition.section",
+      "sliceName": "sectionRelevantDiagnosticTestsAndOrLaboratoryData"
+    }, {
+      "id": "Composition.section:RelevantDiagnosticTestsAndOrLaboratoryData.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "30954-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:RelevantDiagnosticTestsAndOrLaboratoryData.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:RelevantDiagnosticTestsAndOrLaboratoryData.entry:structuredRelevantDiagnosticTestsAndOrLaboratoryData",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredRelevantDiagnosticTestsAndOrLaboratoryData",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:RelevantDiagnosticTestsAndOrLaboratoryData.entry:unstructuredRelevantDiagnosticTestsAndOrLaboratoryData",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredRelevantDiagnosticTestsAndOrLaboratoryData",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:HospitalDischargeStudiesSummary",
+      "path": "Composition.section",
+      "sliceName": "sectionHospitalDischargeStudiesSummary"
+    }, {
+      "id": "Composition.section:HospitalDischargeStudiesSummary.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11493-4"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:SelectedMedicineAdministeredDuringHospitalization",
+      "path": "Composition.section",
+      "sliceName": "sectionSelectedMedicineAdministeredDuringHospitalization"
+    }, {
+      "id": "Composition.section:SelectedMedicineAdministeredDuringHospitalization.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8677-7"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:SelectedMedicineAdministeredDuringHospitalization.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:SelectedMedicineAdministeredDuringHospitalization.entry:structuredMedication",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredMedication",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips" ]
+      } ]
+    }, {
+      "id": "Composition.section:SelectedMedicineAdministeredDuringHospitalization.entry:unstructuredMedication",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredMedication",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:HospitalDischargeDx",
+      "path": "Composition.section",
+      "sliceName": "sectionHospitalDischargeDx"
+    }, {
+      "id": "Composition.section:HospitalDischargeDx.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11535-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:HospitalDischargeDx.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:HospitalDischargeDx.entry:structuredHospitalDischargeDx",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredHospitalDischargeDx",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-LaboratoryReport-IEHR", "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-ImagingReport-IEHR", "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-BioSignalReport-IEHR", "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips" ]
+      } ]
+    }, {
+      "id": "Composition.section:HospitalDischargeDx.entry:unstructuredHospitalDischargeDx",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredHospitalDischargeDx",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:DischargeMedications",
+      "path": "Composition.section",
+      "sliceName": "sectionDischargeMedications"
+    }, {
+      "id": "Composition.section:DischargeMedications.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "10183-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:DischargeMedications.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:DischargeMedications.entry:structuredDischargeMedication",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredDischargeMedication",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips", "http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:DischargeMedications.entry:unstructuredDischargeMedication",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredDischargeMedication",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:TreatmentPlan",
+      "path": "Composition.section",
+      "sliceName": "sectionTreatmentPlan"
+    }, {
+      "id": "Composition.section:TreatmentPlan.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "18776-5"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:TreatmentPlan.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:TreatmentPlan.entry:structuredTreatmentPlan",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredTreatmentPlan",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/TreatmentPlan-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:TreatmentPlan.entry:unstructuredTreatmentPlan",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredTreatmentPlan",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    }, {
+      "id": "Composition.section:Allergies",
+      "path": "Composition.section",
+      "sliceName": "sectionAllergies"
+    }, {
+      "id": "Composition.section:Allergies.code",
+      "path": "Composition.section.code",
+      "patternCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "48765-2"
+        } ]
+      }
+    }, {
+      "id": "Composition.section:Allergies.entry",
+      "path": "Composition.section.entry",
+      "slicing": {
+        "discriminator": [ {
+          "type": "profile",
+          "path": "$this.resolve()"
+        } ],
+        "ordered": false,
+        "rules": "open"
+      }
+    }, {
+      "id": "Composition.section:Allergies.entry:structuredAllergies",
+      "path": "Composition.section.entry",
+      "sliceName": "structuredAllergies",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips" ]
+      } ]
+    }, {
+      "id": "Composition.section:Allergies.entry:unstructuredAllergies",
+      "path": "Composition.section.entry",
+      "sliceName": "unstructuredAllergies",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR" ]
+      } ]
+    } ]
+  }
+}

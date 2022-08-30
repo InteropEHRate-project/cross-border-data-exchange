@@ -1,0 +1,25 @@
+{
+  "resourceType": "MedicationAdministration",
+  "id": "733813",
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/12"
+    }
+  } ],
+  "status": "completed",
+  "category": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/medication-admin-category",
+      "code": "outpatient",
+      "display": "Outpatient"
+    } ]
+  },
+  "medicationReference": {
+    "reference": "Medication/9149"
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "effectiveDateTime": "2021-10-18T13:12:00Z"
+}

@@ -1,0 +1,478 @@
+<div align="justify" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+    <p>Within the scope of the InteropEHRate project, custom profiles have been created, which handling is described and linked with examples in the following.</p>
+    <a name="instructions"> </a>
+    <h3>Demographics</h3>
+    <p>
+        The demographics of the patient are represented in a <a href="StructureDefinition-Patient-IEHR.html">Patient-IEHR</a> resource.
+    </p>
+    <a name="namesurname"> </a>
+    <h4>Name, Surname</h4>
+    <p>
+        The <a href="StructureDefinition-Patient-IEHR.html">Patient-IEHR</a> resource has a mandatory <i>name</i> attribute, that contains a HumanName.
+        The (first) name(s) of a patient is/are stored in the <i>given</i> attribute of HumanName (<i>Patient.name.given</i>). This attribute contains a list of names for the patient. If the patient has only one name the list has only one entry, but if the patient has multiple names the list should contain each of them as a sepreate entry.
+        The <i>surname</i> attribute of the HumanName (<i>Patient.name.surname</i>) contains the surname of the patient.
+    </p>
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="adminGender"> </a>
+    <h4>Administrative Gender</h4>
+    <p>
+        The <a href="StructureDefinition-Patient-IEHR.html">Patient-IEHR</a> resource has a mandatory <i>gender</i> attribute, that contains the administrative gender of the patient. It is bonded to the <a href="http://hl7.org/fhir/ValueSet/administrative-gender">Administrative Gender ValueSet</a> (male | female | other | unknown).
+    </p>
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="backUpContacts"> </a>
+    <h4>Backup Contacts</h4>
+    <p>
+        The <a href="StructureDefinition-Patient-IEHR.html">Patient-IEHR</a> resource has a contact attribute, that can contain multiple contacts for the patient. For each contact the following attributes can be filled out: relationship to the patient, name, contact detail, address, gender and the period during which the person acts as a contact of the patient.
+    </p>
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="dateOfBirth"> </a>
+    <h4>General Data: Date of Birth</h4>
+    <p>
+        The <a href="StructureDefinition-Patient-IEHR.html">Patient-IEHR</a> resource has a birthDate attribute, that contains the birthDate of the patient.<br/>
+    </p>
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="allergyIntolerance"> </a>
+    <h3>Allergies/Intolerance</h3>
+    <p>
+        The allergies and intolerances of a patient are represented in an <a href="StructureDefinition-AllergyIntolerance-IEHR.html">AllergyIntolerance-IEHR</a> resource.
+    </p>
+    <p>
+        The following attributes of the <a href="StructureDefinition-AllergyIntolerance-IEHR.html">AllergyIntolerance-IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>AllergyIntolerance.type contains a code from the <a href="http://hl7.org/fhir/ValueSet/allergy-intolerance-type">type ValueSet</a> declaring, if the resource describes an allergy or an intolerance.</li>
+        <li>AllergyIntolerance.code contains the code for the trigger of the reaction. The system for this code depends on the substance causing the reaction:
+            <ul>
+                <li>reactions caused by a drug are described by an ATC code from the <a href="http://hl7.org/fhir/uv/ips/STU1/ValueSet-whoatc-uv-ips.html">WHO ATC - IPS ValueSet</a></li>
+                <li>reactions caused by other substances are described by an SNOMED code from the <a href="http://hl7.org/fhir/uv/ips/STU1/ValueSet-allergy-intolerance-substance-condition-gps-uv-ips.html">Allergy intolerance substance condition (GPS) - IPS ValueSet</a></li>
+            </ul> </li>
+        <li>AllergyIntolerance.note contains an Annotation and the Annotation.text attribute can be used to add unstructured notes about the Allergy/Intolerance.</li>
+    </ul>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="disease"> </a>
+    <h3>Diseases</h3>
+    <p>
+        The diseases of a patient are represented in a <a href="StructureDefinition-Condition-IEHR.html">Condition-IEHR</a> resource.
+    </p>
+    <p>
+        The following attributes of the <a href="StructureDefinition-Condition-IEHR.html">Condition-IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>Condition.category should contain the LOINC code 75326-9 to display, that the condition resource describes a problem.</li>
+        <li>Condition.code contains the ICD10 code for the specific condition. Some examples are:
+            <ul>
+                <li>I10 for Essential (primary) hypertension</li>
+                <li>I25* for Chronic Ischemic Heart Disease</li>
+                <li>I50.9 for Heart Failure, Unspecified</li>
+                <li>J44.9 for Chronic obstructive pulmonary disease, unspecified</li>
+                <li>R94.4 for Abnormal results of kidney function studies</li>
+                <li>R94.5 for Abnormal results of liver function studies</li>
+                <li>C80.1 for Malignant (primary) neoplasm, unspecified</li>
+            </ul>
+        </li>
+        <li>Condition.onset[x] contains information about the start of the Condition
+            <ul>
+                <li>Condition.onsetDateTime is used if the onsetDate is known</li>
+                <li>Condition.onsetPeriod can instead be used if only the period during which the Condition appeared is known</li>
+            </ul>
+        </li>
+        <li>Condition.clinicalStatus contains a code about the current status of the condition taken from the <a href="http://hl7.org/fhir/R4/valueset-condition-clinical.html">ClinicalStatus ValueSet</a></li>
+        <li>Condition.verificationStatus contains a code about the verification of the condition taken from the <a href="http://hl7.org/fhir/R4/valueset-condition-ver-status.html">VerificationStatus ValueSet</a></li>
+    </ul>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="procedures"> </a>
+    <h3>Procedures</h3>
+    <p>
+        The procedures done on a patient are represented in <a href="http://www.hl7.org/fhir/uv/ips/STU1/StructureDefinition-Procedure-uv-ips.html">Procedure-IPS</a> resource.
+    </p>
+    <p>
+        The following attributes of the <a href="http://www.hl7.org/fhir/uv/ips/STU1/StructureDefinition-Procedure-uv-ips.html">Procedure-IPS</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>Procedure.status contains a code about the status of the Procedure from the <a href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus ValueSet</a>
+            <ul>
+                <li>"completed" or "stopped" depending on the outcome of a procedure in the past</li>
+            </ul></li>
+
+        <li>Procedure.category may contain a code classifying the procedure
+            <ul>
+                <li>387713003 for surgical procedures (as defined in the <a href="http://hl7.org/fhir/R4/valueset-procedure-category.html">Procedure Category Codes (SNOMED CT) ValueSet</a>)</li>
+            </ul></li>
+        <li>Procedure.code contains the SNOMED code for the specific Procedure</li>
+        <li>Procedure.subject contains a mandatory reference to the patient </li>
+        <li>Procedure.performed[x] contains information about when the procedure was performed or will be performed
+            <ul>
+                <li>Procedure.performedDateTime is used if the date of the Procedure is known</li>
+                <li>Procedure.performedPeriod can instead be used if only the period during which Procedure was performed is known</li>
+            </ul>
+        </li>
+        <li>Procedure.complicationDetail contains references to Conditions caused by complications during the procedure. For information about representing Conditions see <a href="#disease">Diseases</a></li>
+    </ul>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="prevVisit"> </a>
+    <h3>Previous Visits</h3>
+    <p>
+        The report of a previous visit is represented in a <a href="StructureDefinition-Composition-VisitReport-IEHR.html">MedicalVisit-IEHR</a> resource.
+        This resource is based on the <a href="https://www.hl7.org/fhir/composition.html">Composition</a> resource and the resources with the actual information are referenced in the sections.
+    </p>
+    <p>
+        The following attributes of the <a href="StructureDefinition-Composition-VisitReport-IEHR.html">MedicalVisit-IEHR</a> resource are used to represent the general information:
+    </p>
+    <ul>
+        <li>Composition.extension.ProvenanceExtension-IEHR contains a mandatory reference to the Provenance containing the signature for this resource (for more information about the Provenance and Signature see <a href="signature.html">Signing Instructions</a>)</li>
+        <li>Composition.typ is fixed to the LOINC code 81214-9</li>
+        <li>Composition.encounter attribute contains a reference to the <a href="StructureDefinition-Encounter-IEHR.html">Encounter-IEHR</a> detailing the visit.</li>
+        <li>Composition.date contains the time when the composition was last edited</li>
+        <li>Composition.author contains at least one reference an author of the composition</li>
+        <li>Composition.title contains the title of the composition</li>
+        <li>Composition.section.extension.ConfidentialityExtension-IEHR can contain a different confidentiality code for the specific section. If the extension is not present in a section, the section uses the general code provided in Composition.confidentiality</li>
+    </ul>
+
+    <a name="prevDiag"> </a>
+    <h3>DiagnosticReports</h3>
+    <p>
+        The diagnostic of a patient is represented in a <a href="StructureDefinition-DiagnosticReport-ImagingReport-IEHR.html">DiagnosticReport Imaging - IEHR</a> or a <a href="StructureDefinition-DiagnosticReport-LaboratoryReport-IEHR.html">DiagnosticReport Laboratory - IEHR</a> resource depending on the kind of report.
+        If it is part of a MedicalVisit the report is referenced in the Composition in the section with the name RelevantDiagnosticTestsAndOrLaboratoryData and the LOINC code 30954-2.
+    </p>
+    <a name="diagImage"> </a>
+    <h4>ImagingReport</h4>
+    <p>
+        The <a href="StructureDefinition-DiagnosticReport-ImagingReport-IEHR.html">DiagnosticReport Imaging - IEHR</a> is used for reports based on tests, that create images or signals (e.g. X-RAY or ECG) and must contain at least one image or reference a DICOM study.
+        The following attributes of the <a href="StructureDefinition-DiagnosticReport-ImagingReport-IEHR.html">DiagnosticReport Imaging - IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>DiagnosticReport.language contains the language of the report content</li>
+        <li>DiagnosticReport.extension:<a href="StructureDefinition-ProvenanceExtension-IEHR.html">ProvenanceExtension-IEHR</a> contains a reference to the Provenance containing the signature of the resource (for more information about the Provenance and Signature see <a href="signature.html">Signing Instructions</a>)</li>
+        <li>DiagnosticReport.extension:<a href="StructureDefinition-UnstructuredResultExtension-IEHR.html">UnstructuredResultExtension-IEHR</a> can be used to reference observations, that are represented as unstructured files</li>
+        <li>DiagnosticReport.identifier contains an Identifier containing a system, where the report is stored and a value with the name the report has on that system (for more information about the Identifier see <a href="id_generation.html">Identifier Instructions</a>)</li>
+        <li>DiagnosticReport.status contains a code about the status of the report from the <a href="http://hl7.org/fhir/ValueSet/diagnostic-report-status">DiagnosticReportStatus ValueSet</a></li>
+        <li>DiagnosticReport.category contains a code from the <a href="ValueSet-ImagingCategory-IEHR.html">ImagingCatergoy-IEHR ValueSet</a> describing the imaging category</li>
+        <li>DiagnosticReport.code contains a code that describes the report, preferably from the the <a href="http://hl7.org/fhir/ValueSet/report-codes">Report Codes Value Set</a>. If no fitting one is found a code from a different set can be used.</li>
+        <li>DiagnosticReport.subject contains a mandatory reference to the patient</li>
+        <li>DiagnosticReport.encounter contains an optional reference to an <a href="StructureDefinition-Encounter-IEHR.html">Encounter-IEHR</a> containing information about the encounter during which the report was created</li>
+        <li>DiagnosticReport.effective[x] contains the relevant time for the report
+            <ul>
+                <li>DiagnosticReport.effectiveDateTime contains the date when the information the report is based on was collected</li>
+                <li>DiagnosticReport.effectivePeriod contains the period during which the information the report is based on was collected. This is used if it took longer than a single day to collect the information or if the exact date is unknown</li>
+            </ul>
+        </li>
+        <li>DiagnosticReport.performer contains at least one reference to the practitioner or organization who performed the tests the report is based on</li>
+        <li>DiagnosticReport.resultInterpreter contains at least one reference to the practitioner or organization who interpreted the tests the report is based on</li>
+        <li>DiagnosticReport.result contains references to the <a href="StructureDefinition-Observation-IEHR.html">Observation-IEHRs </a> made during the diagnosis</li>
+        <li>DiagnosticReport.media references a <a href="StructureDefinition-Media-IEHR.html">Media-IEHR</a> resource containing the media generated during the tests in the Media.content attribute. Either this attribute or the DiagnosticReport.imagingStudy attribute must be present for the report to be valid.</li>
+        <li>DiagnosticReport.imagingStudy references a <a href="http://hl7.org/fhir/R4/imagingstudy.html">ImagingStudy</a> resource containing information about the DICOM study generated during the tests. Either a this attribute or the DiagnosticReport.media attribute must be present for the report to be valid.</li>
+        <li>DiagnosticReport.presentedForm can contain an <a href="StructureDefinition-Attachment-IEHR.html">Attachment-IEHR</a> with a pdf representation of the whole DiagnosticReport.</li>
+        <li>DiagnosticReport.conclusion contains a textual conclusion of the DiagnosticReport</li>
+    </ul>
+    <p>Find all examples of ImagingReport-IEHR <a href="StructureDefinition-DiagnosticReport-ImagingReport-IEHR-examples.html">here</a>.</p>
+
+    <a name="diagLab"> </a>
+    <h4>LaboratoryReport</h4>
+    <p>
+        The <a href="StructureDefinition-DiagnosticReport-LaboratoryReport-IEHR.html">DiagnosticReport Laboratory - IEHR</a> is used for reports based on test performed on specimen in a laboratory.
+        The following attributes of the <a href="StructureDefinition-DiagnosticReport-LaboratoryReport-IEHR.html">DiagnosticReport Laboratory - IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>DiagnosticReport.language contains the language of the report content</li>
+        <li>DiagnosticReport.extension:<a href="StructureDefinition-ProvenanceExtension-IEHR.html">ProvenanceExtension-IEHR</a> contains a reference to the Provenance containing the signature of the resource (for more information about the Provenance and Signature see <a href="signature.html">Signing Instructions</a>)</li>
+        <li>DiagnosticReport.extension:<a href="StructureDefinition-UnstructuredResultExtension-IEHR.html">UnstructuredResultExtension-IEHR</a> can be used to reference observations, that are represented as unstructured files</li>
+        <li>DiagnosticReport.identifier contains an Identifier containing a system, where the report is stored and a value with the name the report has on that system (for more information about the Identifier see <a href="id_generation.html">Identifier Instructions</a>)</li>
+        <li>DiagnosticReport.category is fixed to the code 'LAB' from the system 'http://terminology.hl7.org/CodeSystem/v2-0074'</li>
+        <li>DiagnosticReport.code contains a code that describes the report, preferably from the the <a href="http://hl7.org/fhir/ValueSet/report-codes">Report Codes Value Set</a>. If no fitting one is found a code from a different set can be used.
+            <ul>30954-2 - Relevant diagnostic tests/laboratory data Narrative, for latest bio-humoral values</ul>
+        </li>
+        <li>DiagnosticReport.subject contains a mandatory reference to the patient</li>
+        <li>DiagnosticReport.encounter contains an optional reference to an <a href="StructureDefinition-Encounter-IEHR.html">Encounter-IEHR</a> containing information about the encounter during which the report was created</li>
+        <li>DiagnosticReport.effective[x] contains the relevant time for the report
+            <ul>
+                <li>DiagnosticReport.effectiveDateTime contains the date when the information the report is based on was collected</li>
+                <li>DiagnosticReport.effectivePeriod contains the period during which the information the report is based on was collected. This is used if it took longer than a single day to collect the informatin or if the exact date is unknown</li>
+            </ul>
+        </li>
+        <li>DiagnosticReport.performer contains at least one reference to the practitioner or organization who performed the tests the report is based on</li>
+        <li>DiagnosticReport.resultInterpreter contains at least one reference to the practitioner or organization who interpreted the tests the report is based on</li>
+        <li>DiagnosticReport.specimen references at least one <a href="http://hl7.org/fhir/R4/specimen.html">Specimen</a> resource with information about the specimen used in the tests</li>
+        <li>DiagnosticReport.result contains references to the <a href="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips">ObservationResults Laboratory (IPS)</a> made during the diagnosis
+        </li>
+        <li>DiagnosticReport.presentedForm can contain an <a href="StructureDefinition-Attachment-IEHR.html">Attachment-IEHR</a> with a pdf representation of the whole DiagnosticReport.</li>
+        <li>DiagnosticReport.conclusion contains a textual conclusion of the DiagnosticReport</li>
+    </ul>
+    <p>Find all examples of LaboratoryReport-IEHR <a href="StructureDefinition-DiagnosticReport-LaboratoryReport-IEHR-examples.html">here</a>.</p>
+
+    <a name="bioSignalRep"> </a>
+    <h4>BioSignalReport</h4>
+    <p>
+        The <a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport BioSignalReport - IEHR</a> is used for reports regarding bio signals.
+        The following attributes of the <a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport BioSignal - IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>DiagnosticReport.language contains the language of the report content</li>
+        <li>DiagnosticReport.extension:<a href="StructureDefinition-ProvenanceExtension-IEHR.html">ProvenanceExtension-IEHR</a> contains a reference to the Provenance containing the signature of the resource (for more information about the Provenance and Signature see <a href="signature.html">Signing Instructions</a>)</li>
+        <li>DiagnosticReport.extension:<a href="StructureDefinition-UnstructuredResultExtension-IEHR.html">UnstructuredResultExtension-IEHR</a> can be used to reference observations, that are represented as unstructured files</li>
+        <li>DiagnosticReport.identifier contains an Identifier containing a system, where the report is stored and a value with the name the report has on that system (for more information about the Identifier see <a href="id_generation.html">Identifier Instructions</a>)</li>
+        <li>DiagnosticReport.status contains a code about the status of the report from the <a href="http://hl7.org/fhir/ValueSet/diagnostic-report-status">DiagnosticReportStatus ValueSet</a></li>
+        <li>DiagnosticReport.category contains a code from the <a href="ValueSet-BioSignalCategories-IEHR.html">BioSignalCategories-IEHR ValueSet</a> describing the BioSignal category
+            <ul>
+                <li>EC - Electrocaridac (e.g, EKG, EEC, Holter) for Echocardiogram and EKG</li>
+            </ul>
+        </li>
+        <li>DiagnosticReport.code contains a code that describes the report, preferably from the the <a href="http://hl7.org/fhir/ValueSet/report-codes">Report Codes Value Set</a>. If no fitting one is found a code from a different set can be used.</li>
+        <li>DiagnosticReport.subject contains a mandatory reference to the patient</li>
+        <li>DiagnosticReport.encounter contains an optional reference to an <a href="StructureDefinition-Encounter-IEHR.html">Encounter-IEHR</a> containing information about the encounter during which the report was created</li>
+        <li>DiagnosticReport.effective[x] contains the relevant time for the report
+            <ul>
+                <li>DiagnosticReport.effectiveDateTime contains the date when the information the report is based on was collected</li>
+                <li>DiagnosticReport.effectivePeriod contains the period during which the information the report is based on was collected. This is used if it took longer than a single day to collect the information or if the exact date is unknown</li>
+            </ul>
+        </li>
+        <li>DiagnosticReport.performer contains at least one reference to the practitioner or organization who performed the tests the report is based on</li>
+        <li>DiagnosticReport.resultInterpreter contains at least one reference to the practitioner or organization who interpreted the tests the report is based on</li>
+        <li>DiagnosticReport.result contains a reference to the <a href="StructureDefinition-Observation-BioSignal-IEHR.html">Observation-BioSignal-IEHR</a>
+            <ul>
+                <li>Each data requirement is realized as a component of the BioSignal (Observation.component). See <a href="#biosignal">BioSignal Instructions</a></li>
+            </ul>
+        </li>
+        <li>DiagnosticReport.imagingStudy references a <a href="http://hl7.org/fhir/R4/imagingstudy.html">ImagingStudy</a> resource containing information about the DICOM study generated during the tests.
+            <ul>
+                <li>e.g. the DICOM movie generated during the holter monitoring, echocardiogram or magnetic resonance</li>
+            </ul>
+        </li>
+        <li>DiagnosticReport.media contains the images taking, e.g. during an EKG.</li>
+        <li>DiagnosticReport.presentedForm can contain an <a href="StructureDefinition-Attachment-IEHR.html">Attachment-IEHR</a> with a pdf representation of the whole DiagnosticReport.</li>
+        <li>DiagnosticReport.conclusion can contain the conclusion of the report as a free text. </li>
+    </ul>
+    <p>Find all examples of BioSignalReport-IEHR <a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR-examples.html">here</a>.</p>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="diagConclusion"> </a>
+    <h4>DiagnosticConclusion (free text)</h4>
+    <p>
+        A free text conclusion of a diagnosis can be represented in two different ways
+    </p>
+    <ul>
+        <li>as the DiagnosticReport.conclusion attribute of a DiagnosticReport, if the conclusion is part of a DiagnosticReport (see <a href="#prevDiag">DiagnosticReports</a>)</li>
+        <li>as a <a href="StructureDefinition-DiagnosticConclusion-IEHR.html">DiagnosticConclusion-IEHR</a> resource, if it should be transmittable without the rest of the diagnosis</li>
+    </ul>
+
+    <p>
+        The following attributes of the <a href="StructureDefinition-DiagnosticConclusion-IEHR.html">DiagnosticConclusion-IEHR</a> resource are used to represent the diagnostic conclusion:
+    </p>
+    <ul>
+        <li>Condition.code is fixed to the LOINC code 55110-1 with the display 'Conclusions [Interpretation] Document'</li>
+        <li>Condition.subject contains a mandatory reference to the patient that was diagnosed</li>
+        <li>Condition.note.text contains the free text conclusion</li>
+    </ul>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="previousVisitTreatment"> </a>
+    <h3>TreatmentPlan</h3>
+    <p>
+        The TreatmentPlan of a patient is represented in a <a href="StructureDefinition-TreatmentPlan-IEHR.html">TreatmentPlan-IEHR</a> resource.
+        If it is part of a MedicalVisit the report is referenced in the Composition in the section with the name PlanOfCareNote and the LOINC code 18776-5.
+    </p>
+    <p>
+        The following attributes of the <a href="StructureDefinition-TreatmentPlan-IEHR.html">TreatmentPlan-IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>CarePlan.extension:ProvenanceExtension-IEHR contains a reference to the Provenance containing the signature of the resource (for more information about the Provenance and Signature see <a href="signature.html">Signing Instructions</a>)</li>
+        <li>CarePlan.status contains a code about the status of the CarePlan from the <a href="http://hl7.org/fhir/R4/valueset-request-status.html">RequestStatus ValueSet</a></li>
+        <li>Careplan.intent is fixed to the code 'plan' from the system <a href="http://hl7.org/fhir/request-intent">http://hl7.org/fhir/request-intent </a></li>
+        <li>CarePlan.category is fixed to the LOINC code 18776-5 with the display 'Plan of care note'</li>
+        <li>CarePlan.description contained the content of the plan as a free text</li>
+        <li>CarePlan.subject contains a mandatory reference to the patient that was diagnosed</li>
+        <li>CarePlan.encounter contains a reference to the <a href="StructureDefinition-Encounter-IEHR.html">Encounter-IEHR</a> detailing the visit during which the plan was created</li>
+        <li>CarePlan.created contains the date when the plan was first recorded</li>
+        <li>CarePlan.author contains a reference to the author of the plan</li>
+        <li>CarePlan.addresses contains a reference to issue addressed by the plan. There are two possibilities to describe the issue:
+            <ul>
+                <li><a href="StructureDefinition-Condition-IEHR.html">Condition-IEHR</a> for a structured representation of the issues</li>
+                <li><a href="StructureDefinition-DiagnosticConclusion-IEHR.html">DiagnosticConclusion-IEHR</a> for an unstructured representation of the issues</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="medication"> </a>
+    <h3>Medication</h3>
+    <p>
+        Information about the representation of the medication of the patient can be found <a href="#medicationStatement">here</a>
+        If it is part of a MedicalVisit the report is referenced in different sections depending on the status of the medication:
+    </p>
+    <ul>
+        <li>the current medication is referenced in the section with the name PrescribedMedications and the LOINC code 10183-2</li>
+        <li>the past medication is referenced in the section with the name HistoryOfMedication and the LOINC code 10160-0</li>
+    </ul>
+    <p>The medication is represented as described in the section <a href="#medicationStatement">MedicationStatement</a></p>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="medicationStatement"> </a>
+    <h4>MedicationStatement</h4>
+    <p>
+        The medication of a patient are represented in a <a href="StructureDefinition-MedicationStatement-IEHR.html">MedicationStatement-IEHR</a> resource.
+    </p>
+    <p>
+        The following attributes of the <a href="StructureDefinition-MedicationStatement-IEHR.html">MedicationStatement-IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>MedicationStatement.subject contains a mandatory reference to the patient </li>
+        <li>MedicationStatement.medication contains references to a <a href="StructureDefinition-Medication-IEHR.html">Medication-IEHR</a> resource with information about the drug</li>
+        <li>MedicationStatement.dosage contains information about the dosage of the medication</li>
+        <li>Medication.code contains an ATC code for the specific drug used </li>
+        <li>Medication.ingredient.item can contain additional ATC codes for the ingredients of the drug </li>
+    </ul>
+
+    <a name="requestPrescription"> </a>
+    <h4>Prescribed drugs</h4>
+    <p>
+        The drugs prescribed for a patient are represented in <a href="StructureDefinition-MedicationRequest-prescription-IEHR.html">MedicationRequest-Prescription-IEHR</a> resources. <br/>
+    </p>
+    <p>
+        The following attributes of the <a href="StructureDefinition-MedicationRequest-prescription-IEHR.html">MedicationRequest-Prescription-IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>MedicationRequest.extension:ProvenanceExtension-IEHR contains a reference to the Provenance containing the signature of the resource (for more information about the Provenance and Signature see <a href="signature.html">Signing Instructions</a>)</li>
+        <li>MedicationRequest.medicationReference contains a reference to the prescribed drug, represented by a <a href="StructureDefinition-Medication-IEHR.html">Medication-IEHR</a> </li>
+        <li>MedicationRequest.subject contains a mandatory reference to the patient who was prescribed the medication</li>
+        <li>MedicationRequest.authoredOn contains the date when the prescription was first authored</li>
+        <li>MedicationRequest.requester contains a mandatory reference to the person authoring the prescription</li>
+        <li>MedicationRequest.dosageInstruction contains information about the dosage of the medication</li>
+    </ul>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="observations"> </a>
+    <h3>Observations</h3>
+    <p>
+        Observations are measurements and simple assertions made about a patient. They are represented as an <a href="StructureDefinition-Observation-IEHR.html">Observation-IEHR</a>, <a href="StructureDefinition-Observation-BioSignal-IEHR.html">BioSignal-IEHR</a> or <a href="http://hl7.org/fhir/StructureDefinition/vitalsigns">VitalSigns</a> depending on what they emerge.
+        Usually, they are related to a DiagnosticReport.
+    </p>
+
+    <a name="vitalsigns"> </a>
+    <h4>VitalSigns</h4>
+    <p>
+        The vitalsigns of a patient are represented in <a href="http://hl7.org/fhir/StructureDefinition/vitalsigns">VitalSigns</a> resources.
+        The following attributes of the <a href="http://hl7.org/fhir/StructureDefinition/vitalsigns">VitalSigns</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>Observation.status contains a code about the status of the Observation from the <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus ValueSet</a></li>
+        <li>Observation.category contains the fixed code 'vital-signs' from the system <a href="http://terminology.hl7.org/CodeSystem/observation-category">http://terminology.hl7.org/CodeSystem/observation-category</a></li>
+        <li>Observation.code contains a code from the <a href="http://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html">VitalSigns ValueSet</a>, if it contains a fitting one. If no fitting one is found a code from a different set can be used</li>
+        <li>Observation.subject contains a mandatory reference to the patient who was observed</li>
+        <li>Observation.effective contains the date when the vital sign was observed</li>
+    </ul>
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="observationiehr"> </a>
+    <h4>Observation-IEHR</h4>
+    <p>
+        General observations regarding a patient are represented in <a href="StructureDefinition-Observation-IEHR.html">Observation-IEHR</a> resources.
+        The following attributes of the <a href="StructureDefinition-Observation-IEHR.html">Observation-IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>Observation.extension:ProvenanceExtension-IEHR contains a reference to the Provenance containing the signature of the resource (for more information about the Provenance and Signature see <a href="signature.html">Signing Instructions</a>)</li>
+        <li>Observation.status contains a code regarding the status of the Observation from the <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus ValueSet</a></li>
+        <li>Observation.code contains a code from the value set <a href="http://hl7.org/fhir/ValueSet/observation-codes">LOINC Codes</a> referring to the type of Observation</li>
+        <li>Observation.subject contains a mandatory reference to the patient who was observed</li>
+        <li>Observation.effective contains the date when the bio-signal was observed</li>
+        <li>Observation.effective[x] contains the relevant time for the observation
+            <ul>
+                <li>Observation.effectiveDateTime contains the date when the observed value was collected</li>
+                <li>Observation.effectivePeriod contains the period during which the observed value was collected. This is used if it took longer than a single day to collect the information or if the exact date is unknown</li>
+            </ul>
+        </li>
+        <li>Observation.performer contains at least one reference to the practitioner or organization who is responsible for the observation</li>
+        <li>Observation.value[x] contains the observation's actual result</li>
+    </ul>
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="biosignal"> </a>
+    <h4>BioSignals</h4>
+    <p>
+        The bio-signals of a patient are represented in <a href="StructureDefinition-Observation-BioSignal-IEHR.html">BioSignal-IEHR</a> resources.
+        The following attributes of the <a href="StructureDefinition-Observation-BioSignal-IEHR.html">BioSignal-IEHR</a> resource are used in addition to the <a href="StructureDefinition-Observation-IEHR.html">Observation-IEHR</a> attributes listed above to represent the required information:
+    </p>
+    <ul>
+        <li>Observation.status contains the fixed code 'final' regarding the status of the Observation from the <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus ValueSet</a></li>
+        <li>Observation.code contains a code from the value set <a href="http://hl7.org/fhir/ValueSet/observation-codes">LOINC Codes</a> referring to the type of Observation
+            <ul>
+                <li>18106-5 - Cardiac echo study Procedure for Echocardiogram</li>
+                <li>18810-2 - EKG Study observation overall (narrative) for EKG</li>
+                <li>18754-2 - Holter monitoring study for Holter monitoring</li>
+            </ul>
+        </li>
+        <li>Observation.subject contains a mandatory reference to the patient who was observed</li>
+        <li>Observation.effective[x] contains the relevant time for the bio-signal
+            <ul>
+                <li>Observation.effectiveDateTime contains the date when the observed value was collected</li>
+                <li>Observation.effectivePeriod contains the period during which the observed value was collected. This is used if it took longer than a single day to collect the information or if the exact date is unknown</li>
+            </ul>
+        </li>        <li>Observation.performer contains at least one reference to the practitioner or organization who is responsible for the observation</li>
+        <li>Observation.component contains the results that emerge from the bio-signal
+            <ul>
+                <li>Echocardiogram
+                    <ul>
+                        <li>75989-4 - Left ventricular End systolic volume</li>
+                        <li>75988-6 - Left ventricular End diastolic volume</li>
+                        <li>8414-5 - Pulmonary artery Mean blood pressure</li>
+                        <li>18115-6 - Tricuspid valve Regurgitation degree by US.doppler (code); LA137-2 - none (value)</li>
+                        <li>18113-1 - Mitral valve Regurgitation degree by US.doppler (code); LA11841-6 - 1+ (value)</li>
+                        <li>18043-0 - Left ventricular Ejection fraction by US</li>
+                        <li>29430-6 - Interventricular septum Thickness during diastole by US 2D</li>
+                    </ul>
+                </li>
+                <li>EKG
+                    <ul>
+                        <li>76281-5 - Type of arrhythmia on EKG (code); LA17718-0 - Sinus rhythm (value)</li>
+                        <li>8867-4 - Heart rate</li>
+                        <li>76281-5 - Type of arrhythmia on EKG (code); LA17091-2 - Left bundle branch block</li>
+                        <li>8625-6 - P-R Interval</li>
+                        <li>8633-0 - QRS duration</li>
+                        <li>8634-8 - Q-T Interval</li>
+                    </ul>
+                </li>
+                <li>Holter
+                    <ul>
+                        <li>8878-1 - Hear rate 24 hour</li>
+                        <li>76126-2 - Premature ventricular contractions [#]</li>
+                        <li>I47.2 (ICD-10) - Ventricular tachycardia</li>
+                        <li>I48.91 (ICD-10) - Unspecified atrial fibrillation</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>Find all examples of BioSignal-IEHR <a href="StructureDefinition-Observation-BioSignal-IEHR-examples.html">here</a>.</p>
+
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+    <a name="encounter"> </a>
+    <h3>Encounter</h3>
+    <p>
+        A medical encounter, both in- and outpatient encounters, is represented in a <a href="StructureDefinition-Encounter-IEHR.html">Encounter-IEHR</a> resource.
+        The following attributes of the <a href="StructureDefinition-Encounter-IEHR.html">Encounter-IEHR</a> resource are used to represent the required information:
+    </p>
+    <ul>
+        <li>Encounter.extension:ProvenanceExtension-IEHR contains a reference to the Provenance containing the signature of the resource (for more information about the Provenance and Signature see <a href="signature.html">Signing Instructions</a>)</li>
+        <li>Encounter.status contains a code from the <a href="http://hl7.org/fhir/ValueSet/encounter-status">Encounter Status Value Set</a> that describes the current state of the encounter</li>
+        <li>Encounter.subject contains a reference to the patient who was present at the encounter</li>
+        <li>Encounter.participant contains optional participants like practitioner or practitionerRoles involved in the encounter</li>
+        <li>Encounter.period contains the period in which the encounter took place</li>
+    </ul>
+    <p>Back to the <a href="requirements.html#requirements">Requirements Table</a>.</p>
+
+</div>

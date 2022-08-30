@@ -1,0 +1,20 @@
+{
+  "resourceType": "ValueSet",
+  "id": "CombinedCondition-IEHR",
+  "url": "http://interopehrate.eu/fhir/ValueSet/CombinedCondition-IEHR",
+  "name": "CombinedConditionIEHR",
+  "title": "CombinedCondition - IEHR",
+  "status": "draft",
+  "description": "ValueSet with all relevant codes for the Condition-IEHR",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://interopehrate.eu/fhir/ValueSet/ICD10ValueSet-IEHR" ]
+    }, {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "concept": [ {
+        "code": "OTH",
+        "display": "other"
+      } ]
+    } ]
+  }
+}

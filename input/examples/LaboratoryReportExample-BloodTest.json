@@ -1,0 +1,72 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "6111",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-LaboratoryReport-IEHR" ]
+  },
+  "language": "en",
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/8"
+    }
+  } ],
+  "identifier": [ {
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "PRN"
+      } ]
+    },
+    "value": "1a1-2b2-3c3-4d4"
+  } ],
+  "status": "final",
+  "category": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code": "LAB",
+      "display": "Laboratory"
+    } ]
+  } ],
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "30954-2",
+      "display": "Relevant diagnostic tests/laboratory data Narrative"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "effectiveDateTime": "2021-09-13",
+  "performer": [ {
+    "reference": "Organization/34432"
+  } ],
+  "resultsInterpreter": [ {
+    "reference": "Organization/34432"
+  } ],
+  "specimen": [ {
+    "reference": "Specimen/1"
+  } ],
+  "result": [ {
+    "reference": "Observation/6113"
+  }, {
+    "reference": "Observation/6114"
+  }, {
+    "reference": "Observation/6115"
+  }, {
+    "reference": "Observation/6116"
+  }, {
+    "reference": "Observation/6117"
+  }, {
+    "reference": "Observation/6122"
+  }, {
+    "reference": "Observation/6118"
+  }, {
+    "reference": "Observation/6119"
+  }, {
+    "reference": "Observation/6120"
+  }, {
+    "reference": "Observation/6121"
+  } ]
+}

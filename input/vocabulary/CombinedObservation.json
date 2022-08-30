@@ -1,0 +1,20 @@
+{
+  "resourceType": "ValueSet",
+  "id": "CombinedObservation-IEHR",
+  "url": "http://interopehrate.eu/fhir/ValueSet/CombinedObservation-IEHR",
+  "name": "CombinedObservationIEHR",
+  "title": "CombinedObservation - IEHR",
+  "status": "draft",
+  "description": "ValueSet with all relevant codes for the Observation-IEHR",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://hl7.org/fhir/ValueSet/observation-codes" ]
+    }, {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "concept": [ {
+        "code": "OTH",
+        "display": "other"
+      } ]
+    } ]
+  }
+}

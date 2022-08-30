@@ -1,0 +1,69 @@
+{
+  "resourceType": "Bundle",
+  "id": "30366",
+  "language": "en",
+  "type": "collection",
+  "timestamp": "2020-11-12T12:15:33.263+01:00",
+  "entry": [ {
+    "fullUrl": "http://213.249.46.205:8080/NCP/fhir/Observation/987654",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "987654",
+      "status": "preliminary",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "10333-3",
+          "display": "Appearance of Cerebral spinal fluid",
+          "_display": {
+            "extension": [ {
+              "url": "http://hl7.org/fhir/StructureDefinition/translation",
+              "extension": [ {
+                "url": "lang",
+                "valueCode": "de-DE"
+              }, {
+                "url": "content",
+                "valueString": "Erscheinungsbild:Ersch:Pkt:CSF:Nom:"
+              }, {
+                "url": "http://interopehrate.eu/fhir/StructureDefinition/ExtendedTranslation-IEHR",
+                "valueReference": {
+                  "reference": "Provenance/1"
+                }
+              } ]
+            } ]
+          }
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "http://213.249.46.205:8080/NCP/fhir/Practitioner/21",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "21",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips" ]
+      },
+      "language": "en",
+      "name": [ {
+        "family": "Antonio",
+        "given": [ "Mark" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://213.249.46.205:8080/NCP/fhir/Provenance/1",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "1",
+      "target": [ {
+        "reference": "Observation/987654"
+      } ],
+      "occurredDateTime": "2020-11-12T12:15:33+01:00",
+      "recorded": "2020-11-12T12:15:33.287+01:00",
+      "agent": [ {
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ]
+    }
+  } ]
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "id": "CombinedAllergy-IEHR",
+  "url": "http://interopehrate.eu/fhir/ValueSet/CombinedAllergy-IEHR",
+  "name": "CombinedAllergyIEHR",
+  "title": "CombinedAllergy - IEHR",
+  "status": "draft",
+  "description": "ValueSet with all relevant codes for the Allergy-IEHR",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://interopehrate.eu/fhir/ValueSet/AllergySnomed" ]
+    }, {
+      "valueSet": [ "http://hl7.org/fhir/uv/ips/ValueSet/whoatc-uv-ips" ]
+    }, {
+      "valueSet": [ "http://interopehrate.eu/fhir/ValueSet/ATCAllergens-IEHR" ]
+    }, {
+      "valueSet": [ "http://hl7.org/fhir/uv/ips/ValueSet/absent-or-unknown-allergies-uv-ips" ]
+    }, {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "concept": [ {
+        "code": "OTH",
+        "display": "other"
+      } ]
+    } ]
+  }
+}

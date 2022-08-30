@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "url": "http://interopehrate.eu/fhir/ValueSet/NullFlavor-IEHR",
+  "name": "NullFlavorValueSetIEHR",
+  "title": "NullFlavor ValueSet - IEHR",
+  "status": "draft",
+  "description": "This ValueSet contains the code that should be used if the original code can not be translated in the required system",
+  "compose": {
+    "include": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "concept": [ {
+        "code": "OTH",
+        "display": "other"
+      } ]
+    } ]
+  }
+}

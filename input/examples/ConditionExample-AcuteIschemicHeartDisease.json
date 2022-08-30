@@ -1,0 +1,39 @@
+{
+  "resourceType": "Condition",
+  "id": "1111",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/1"
+    }
+  } ],
+  "clinicalStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code": "resolved",
+      "display": "Resolved"
+    } ]
+  },
+  "verificationStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+      "code": "confirmed",
+      "display": "Confirmed"
+    } ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "I24.9",
+      "display": "Acute ischemic heart disease, unspecified"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "onsetDateTime": "2021-03-22",
+  "abatementDateTime": "2021-09-22"
+}

@@ -1,0 +1,90 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/Immunization-IEHR",
+  "name": "ImmunizationIEHR",
+  "title": "Immunization-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "constraint": [ {
+        "key": "iehr-1",
+        "severity": "error",
+        "human": "If the original code could not be translated it must be present",
+        "expression": "(vaccineCode.coding.exists(code = 'OTH') and vaccineCode.coding.all(extension.exists(url = 'http://interopehrate.eu/fhir/StructureDefinition/AutomaticallyGenerated-Extension-IEHR' and value = 'true'))).not()"
+      } ]
+    }, {
+      "id": "Immunization.extension:Provenance",
+      "path": "Immunization.extension",
+      "sliceName": "Provenance",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Extension",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Immunization.status",
+      "path": "Immunization.status",
+      "mustSupport": true
+    }, {
+      "id": "Immunization.vaccineCode",
+      "path": "Immunization.vaccineCode",
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://interopehrate.eu/fhir/ValueSet/CombinedImmunization-IEHR"
+      }
+    }, {
+      "id": "Immunization.patient",
+      "path": "Immunization.patient",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Immunization.encounter",
+      "path": "Immunization.encounter",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Encounter-IEHR" ]
+      } ]
+    }, {
+      "id": "Immunization.occurrence[x]",
+      "path": "Immunization.occurrence[x]",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      }, {
+        "code": "string"
+      } ]
+    }, {
+      "id": "Immunization.performer",
+      "path": "Immunization.performer",
+      "min": 1
+    }, {
+      "id": "Immunization.performer.actor",
+      "path": "Immunization.performer.actor",
+      "min": 1,
+      "max": "1"
+    }, {
+      "id": "Immunization.protocolApplied.targetDisease",
+      "path": "Immunization.protocolApplied.targetDisease",
+      "binding": {
+        "strength": "preferred",
+        "valueSet": "http://hl7.org/fhir/uv/ips/ValueSet/targetDiseases-uv-ips"
+      }
+    } ]
+  }
+}

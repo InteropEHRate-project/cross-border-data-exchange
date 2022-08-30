@@ -1,0 +1,27 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <a name="extensions"> </a>
+<h3>List of Extensions</h3>
+<p>This page contains a list with the name and a short description for all the extensions, that are defined in this IG. </p>
+
+<a href="StructureDefinition-ConfidentialityExtension-IEHR.html">ConfidentialityExtension-IEHR</a>
+<p>
+The composition only allows to set the confidentiality for the whole resource. <br/>
+This extension can be used to specify different confidentialities for each section.
+</p>
+
+<a href="StructureDefinition-ConsentApprovalExtension-IEHR.html">ConsentApprovalExtension-IEHR</a>
+<p>
+This extension adds a mandatory ConsentApproval-IEHR to the Consent-IEHR and thus contributes to turning a mere consent into an approved and signed consent.
+</p>
+
+<a href="StructureDefinition-ExtendedTranslation-IEHR.html">Extended Translation - IEHR</a>
+<p>
+This extension adds additional information to a translation extension. <br/>
+It is used to document the date of the translation and the identity of the person, or the device, that provided the translation.
+</p>
+
+<a href="StructureDefinition-UnstructuredResultExtension-IEHR.html">UnstructuredResultExtension-IEHR</a>
+<p>
+This extension can be used to add a Signature-IEHR to a resource, that does not have a signature attribute.
+</p>
+</div>

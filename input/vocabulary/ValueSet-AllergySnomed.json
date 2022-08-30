@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "url": "http://interopehrate.eu/fhir/ValueSet/AllergySnomed",
+  "name": "AllergySnomedIEHR",
+  "title": "AllergySnomed - IEHR",
+  "status": "draft",
+  "description": "This ValueSet is based on the SNOMED allergy valueset from the IPS, but codes that are duplicates to atc codes were removed.",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://hl7.org/fhir/uv/ips/ValueSet/allergy-intolerance-substance-condition-gps-uv-ips" ]
+    } ],
+    "exclude": [ {
+      "system": "http://snomed.info/sct",
+      "concept": [ {
+        "code": "256435007",
+        "display": "Feathers (substance)"
+      }, {
+        "code": "418689008",
+        "display": "Allergy to grass pollen"
+      }, {
+        "code": "232350006",
+        "display": "Allergy to dust mite protein (finding)"
+      }, {
+        "code": "703934009",
+        "display": "Allergy to fungus (finding)"
+      }, {
+        "code": "256277009",
+        "display": "Grass pollen (substance)"
+      }, {
+        "code": "406470001",
+        "display": "Insect allergen (substance)"
+      }, {
+        "code": "406465008",
+        "display": "Food allergen (substance)"
+      }, {
+        "code": "300910009",
+        "display": "Allergy to pollen (finding)"
+      }, {
+        "code": "717234006",
+        "display": "Allergy to anima"
+      } ]
+    } ]
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "resourceType": "Bundle",
+  "id": "3201111",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Bundle-IEHR" ]
+  },
+  "language": "it-IT",
+  "identifier": {
+    "system": "http://interopEHRate.eu/fhir-resource",
+    "value": "db734647-fc99-424c-a864-7e3cda82e703"
+  },
+  "type": "document",
+  "timestamp": "2022-04-06T11:42:38.226+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Composition/db734647-fc99-424c-a864-7e3cda82e703",
+    "resource": {
+      "resourceType": "Composition",
+      "id": "db734647-fc99-424c-a864-7e3cda82e703",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR" ]
+      },
+      "language": "it-IT",
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/17"
+        }
+      } ],
+      "status": "final",
+      "type": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "34133-9",
+          "display": "Summary of episode note"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "date": "2021-06-18T16:01:26.000+02:00",
+      "author": [ {
+        "reference": "Practitioner/21"
+      } ],
+      "title": "Fondazione Gabriele Monasterio Encounter list",
+      "confidentiality": "N",
+      "custodian": {
+        "reference": "Organization/34432"
+      },
+      "section": [ {
+        "entry": [ {
+          "reference": "Encounter/6129269"
+        }, {
+          "reference": "Encounter/123456"
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Encounter/6129269",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "6129269",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Encounter-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/17"
+        }
+      } ],
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "participant": [ {
+        "individual": {
+          "reference": "PractitionerRole/455736449"
+        }
+      } ],
+      "period": {
+        "start": "2019-11-04",
+        "end": "2019-11-04"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Encounter/123456",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "123456",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Encounter-IEHR" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/17"
+        }
+      } ],
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "participant": [ {
+        "id": "PractitionerRole/455736449"
+      } ],
+      "period": {
+        "start": "2021-12-08",
+        "end": "2021-12-08"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "ITA"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Organization/34432"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Practitioner/21",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "21",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Practitioner/MA01"
+      } ],
+      "name": [ {
+        "family": "Antonio",
+        "given": [ "Mark" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Organization/34432",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "34432",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/PractitionerRole/455736449",
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "455736449",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/PractitionerRole-uv-ips" ]
+      },
+      "practitioner": {
+        "reference": "Practitioner/21"
+      },
+      "organization": {
+        "reference": "Organization/34432"
+      },
+      "code": [ {
+        "coding": [ {
+          "system": "urn:oid:2.16.840.1.113883.2.9.6.2.7",
+          "code": "221",
+          "display": "Medical doctors"
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Provenance/17",
+    "resource": {
+      "resourceType": "Provenance",
+      "id": "17",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR" ]
+      },
+      "target": [ {
+        "reference": "Composition/db734647-fc99-424c-a864-7e3cda82e703"
+      } ],
+      "recorded": "2022-04-06T11:42:38.228+02:00",
+      "agent": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author",
+            "display": "Author"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      }, {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "custodian",
+            "display": "Custodian"
+          } ]
+        },
+        "who": {
+          "reference": "Practitioner/21"
+        }
+      } ],
+      "signature": [ {
+        "id": "Signature/04012022",
+        "type": [ {
+          "system": "urn:iso-astm:E1762-95:2013",
+          "code": "1.2.840.10065.1.12.1.5",
+          "display": "Verification Signature"
+        } ],
+        "when": "2022-04-06T11:42:38.228+02:00",
+        "who": {
+          "reference": "Practitioner/21"
+        },
+        "targetFormat": "json",
+        "sigFormat": "application/jose",
+        "data": "ZW1wdHk="
+      } ]
+    }
+  } ],
+  "signature": {
+    "id": "Signature/04012022",
+    "type": [ {
+      "system": "urn:iso-astm:E1762-95:2013",
+      "code": "1.2.840.10065.1.12.1.5",
+      "display": "Verification Signature"
+    } ],
+    "when": "2022-04-06T11:42:42.957+02:00",
+    "who": {
+      "reference": "Practitioner/21"
+    },
+    "targetFormat": "json",
+    "sigFormat": "application/jose",
+    "data": "ZW1wdHk="
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "url": "http://interopehrate.eu/fhir/ValueSet/ATCAllergens-IEHR",
+  "name": "ATCAllergensIEHR",
+  "title": "ATCAllergens - IEHR",
+  "status": "draft",
+  "description": "ValueSet containing codes for allergens from the WHO ATC code system",
+  "compose": {
+    "include": [ {
+      "system": "http://www.whocc.no/atc",
+      "concept": [ {
+        "code": "V01AA01",
+        "display": "feather"
+      }, {
+        "code": "V01AA02",
+        "display": "grass pollen"
+      }, {
+        "code": "V01AA03",
+        "display": "house dust mites"
+      }, {
+        "code": "V01AA04",
+        "display": "mould fungus and yeast fungus"
+      }, {
+        "code": "V01AA05",
+        "display": "tree pollen"
+      }, {
+        "code": "V01AA07",
+        "display": "insects"
+      }, {
+        "code": "V01AA08",
+        "display": "food"
+      }, {
+        "code": "V01AA09",
+        "display": "textiles"
+      }, {
+        "code": "V01AA10",
+        "display": "flowers"
+      }, {
+        "code": "V01AA11",
+        "display": "animals"
+      }, {
+        "code": "V01AA20",
+        "display": "various"
+      } ]
+    } ]
+  }
+}

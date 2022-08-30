@@ -1,0 +1,27 @@
+{
+  "resourceType": "Condition",
+  "id": "290320222",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticConclusion-IEHR" ]
+  },
+  "language": "it-IT",
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/31"
+    }
+  } ],
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "55110-1",
+      "display": "Conclusions [Interpretation] Document"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "note": [ {
+    "text": "Questo è un esempio di DiagnosticConclusion per estendere i dati grezzi forniti da FTGM."
+  } ]
+}

@@ -1,0 +1,771 @@
+{
+  "resourceType": "Bundle",
+  "id": "404060",
+  "type": "collection",
+  "timestamp": "2022-06-14T10:15:39.867+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "ITA"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Organization/34432"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Organization/34432",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "34432",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/DiagnosticReport/6111",
+    "resource": {
+      "resourceType": "DiagnosticReport",
+      "id": "6111",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-LaboratoryReport-IEHR" ]
+      },
+      "language": "en",
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PRN"
+          } ]
+        },
+        "value": "1a1-2b2-3c3-4d4"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "LAB",
+          "display": "Laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "30954-2",
+          "display": "Relevant diagnostic tests/laboratory data Narrative"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectiveDateTime": "2021-09-13",
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "resultsInterpreter": [ {
+        "reference": "Organization/34432"
+      } ],
+      "specimen": [ {
+        "reference": "Specimen/1"
+      } ],
+      "result": [ {
+        "reference": "Observation/6113"
+      }, {
+        "reference": "Observation/6114"
+      }, {
+        "reference": "Observation/6115"
+      }, {
+        "reference": "Observation/6116"
+      }, {
+        "reference": "Observation/6117"
+      }, {
+        "reference": "Observation/6122"
+      }, {
+        "reference": "Observation/6118"
+      }, {
+        "reference": "Observation/6119"
+      }, {
+        "reference": "Observation/6120"
+      }, {
+        "reference": "Observation/6121"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Specimen/1",
+    "resource": {
+      "resourceType": "Specimen",
+      "id": "1",
+      "type": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+          "code": "BLD",
+          "display": "Whole Blood"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6113",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6113",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "76625-3",
+          "display": "Alanine aminotransferase [Enzymatic activity/volume] in Blood"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 40,
+        "unit": "U/l",
+        "system": "http://unitsofmeasure.org",
+        "code": "U/l"
+      },
+      "referenceRange": [ {
+        "low": {
+          "value": 10,
+          "unit": "U/l",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/l"
+        },
+        "high": {
+          "value": 50,
+          "unit": "U/l",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/l"
+        },
+        "appliesTo": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "248153007",
+            "display": "Male"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6114",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6114",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "48136-6",
+          "display": "Aspartate aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 30,
+        "unit": "U/l",
+        "system": "http://unitsofmeasure.org",
+        "code": "U/l"
+      },
+      "referenceRange": [ {
+        "low": {
+          "value": 10,
+          "unit": "U/l",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/l"
+        },
+        "high": {
+          "value": 50,
+          "unit": "U/l",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/l"
+        },
+        "appliesTo": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "248153007",
+            "display": "Male"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6115",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6115",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "1968-7",
+          "display": "Bilirubin.direct [Mass/volume] in Serum or Plasma"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 0.3,
+        "unit": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/dL"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6116",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6116",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "38483-4",
+          "display": "Creatinine [Mass/volume] in Blood"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 1,
+        "unit": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/dL"
+      },
+      "referenceRange": [ {
+        "low": {
+          "value": 0.74,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "high": {
+          "value": 1.35,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6117",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6117",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "69405-9",
+          "display": "Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum, Plasma or Blood"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 40,
+        "unit": "mL/min/{1.73_m2}",
+        "system": "http://unitsofmeasure.org",
+        "code": "mL/min/{1.73_m2}"
+      },
+      "referenceRange": [ {
+        "low": {
+          "value": 20,
+          "unit": "mL/min/{1.73_m2}",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL/min/{1.73_m2}"
+        },
+        "high": {
+          "value": 60,
+          "unit": "mL/min/{1.73_m2}",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL/min/{1.73_m2}"
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6122",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6122",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "2324-2",
+          "display": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 55,
+        "unit": "/uL",
+        "system": "http://unitsofmeasure.org",
+        "code": "/uL"
+      }
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6118",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6118",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "718-7",
+          "display": "Hemoglobin [Mass/volume] in Blood"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 15,
+        "unit": "g/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "g/dL"
+      },
+      "referenceRange": [ {
+        "low": {
+          "value": 13.5,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "high": {
+          "value": 17.5,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "appliesTo": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "248153007",
+            "display": "Male"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6119",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6119",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "6690-2",
+          "display": "Leukocytes [#/volume] in Blood by Automated count"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 5000,
+        "unit": "/uL",
+        "system": "http://unitsofmeasure.org",
+        "code": "/uL"
+      },
+      "referenceRange": [ {
+        "low": {
+          "value": 3400,
+          "unit": "/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        },
+        "high": {
+          "value": 9600,
+          "unit": "/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6120",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6120",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "42637-9",
+          "display": "Natriuretic peptide B [Mass/volume] in Blood"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 80,
+        "unit": "pg/mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "pg/mL"
+      },
+      "referenceRange": [ {
+        "high": {
+          "value": 100,
+          "unit": "pg/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL"
+        },
+        "appliesTo": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "248153007",
+            "display": "Male"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Observation/6121",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6121",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips" ]
+      },
+      "extension": [ {
+        "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+        "valueReference": {
+          "reference": "Provenance/8"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "33763-4",
+          "display": "Natriuretic peptide.B prohormone N-Terminal [Moles/volume] in Serum or Plasma"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3466"
+      },
+      "effectivePeriod": {
+        "start": "2022-06-14T10:15:39+02:00",
+        "end": "2022-06-14T10:15:39+02:00"
+      },
+      "performer": [ {
+        "reference": "Organization/34432"
+      } ],
+      "valueQuantity": {
+        "value": 70,
+        "unit": "pg/mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "pg/mL"
+      },
+      "referenceRange": [ {
+        "high": {
+          "value": 84,
+          "unit": "pg/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL"
+        },
+        "appliesTo": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "248153007",
+            "display": "Male"
+          } ]
+        } ]
+      } ]
+    }
+  } ]
+}

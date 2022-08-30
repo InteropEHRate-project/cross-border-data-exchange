@@ -1,0 +1,27 @@
+{
+  "resourceType": "Patient",
+  "id": "3466",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+  },
+  "language": "it-IT",
+  "identifier": [ {
+    "system": "http://interopEHRate.eu/fhir-resource/",
+    "value": "Patient/MS01"
+  } ],
+  "name": [ {
+    "family": "Smith",
+    "given": [ "Markus" ]
+  } ],
+  "gender": "male",
+  "birthDate": "2013-12-05",
+  "address": [ {
+    "use": "home",
+    "type": "physical",
+    "city": "Rome",
+    "country": "IT"
+  } ],
+  "generalPractitioner": [ {
+    "reference": "Organization/34432"
+  } ]
+}

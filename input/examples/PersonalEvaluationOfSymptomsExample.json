@@ -1,0 +1,68 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "3429",
+  "name": "PersonalEvaluationOfSymptoms",
+  "status": "active",
+  "date": "2021-10-06T12:54:52+02:00",
+  "item": [ {
+    "linkId": "1",
+    "text": "Cutaneous symptoms (please describe)",
+    "type": "string",
+    "repeats": false
+  }, {
+    "linkId": "2",
+    "text": "Nausea",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "3",
+    "text": "Constipation",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "4",
+    "text": "Palpitation",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "5",
+    "text": "Cough",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "6",
+    "text": "Swollen feet or legs",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "7",
+    "text": "Cold hands or feet",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "8",
+    "text": "Cramps",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "9",
+    "text": "Persistent dry cough",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "10",
+    "text": "Frequent urination",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "11",
+    "text": "Decreased sexual desire",
+    "type": "boolean",
+    "repeats": false
+  }, {
+    "linkId": "12",
+    "text": "Other (please specify)",
+    "type": "string",
+    "repeats": false
+  } ]
+}

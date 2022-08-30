@@ -1,0 +1,293 @@
+{
+  "resourceType": "Bundle",
+  "id": "1883451",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Bundle-IEHR" ]
+  },
+  "type": "collection",
+  "timestamp": "2022-07-05T09:18:51.766+02:00",
+  "entry": [ {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Patient/3466",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3466",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Patient/MS01"
+      } ],
+      "name": [ {
+        "family": "Smith",
+        "given": [ "Markus" ]
+      } ],
+      "gender": "male",
+      "birthDate": "2013-12-05",
+      "address": [ {
+        "use": "home",
+        "type": "physical",
+        "city": "Rome",
+        "country": "ITA"
+      } ],
+      "generalPractitioner": [ {
+        "reference": "Organization/34432"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/Organization/34432",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "34432",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips" ]
+      },
+      "language": "it-IT",
+      "identifier": [ {
+        "system": "http://interopEHRate.eu/fhir-resource/",
+        "value": "Organization/FTGM01"
+      } ],
+      "name": "Fondazione Gabriele Monasterio",
+      "address": [ {
+        "line": [ "Via Giuseppe Moruzzi 1" ],
+        "city": "Pisa",
+        "country": "IT"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/AllergyIntolerance/1111",
+    "resource": {
+      "resourceType": "AllergyIntolerance",
+      "id": "1111",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR" ]
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "type": "allergy",
+      "category": [ "medication" ],
+      "criticality": "high",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "410652009",
+          "display": "Blood product (product)"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2021-09-24",
+      "reaction": [ {
+        "manifestation": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "39579001",
+            "display": "Anaphylaxis (disorder)"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/AllergyIntolerance/1112",
+    "resource": {
+      "resourceType": "AllergyIntolerance",
+      "id": "1112",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR" ]
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "type": "intolerance",
+      "category": [ "medication" ],
+      "criticality": "low",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "13132007",
+          "display": "Product containing dextran (medicinal product)"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2021-03-21",
+      "reaction": [ {
+        "manifestation": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "23924001",
+            "display": "Tight chest (finding)"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/AllergyIntolerance/1113",
+    "resource": {
+      "resourceType": "AllergyIntolerance",
+      "id": "1113",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR" ]
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "type": "intolerance",
+      "category": [ "food" ],
+      "criticality": "low",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "102261002",
+          "display": "Strawberry (substance)"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2004-10-04",
+      "reaction": [ {
+        "manifestation": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "23924001",
+            "display": "Tight chest (finding)"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/AllergyIntolerance/1114",
+    "resource": {
+      "resourceType": "AllergyIntolerance",
+      "id": "1114",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR" ]
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "type": "intolerance",
+      "category": [ "environment" ],
+      "criticality": "low",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "256260009",
+          "display": "Tree and shrub pollen (substance)"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2017-07-04",
+      "reaction": [ {
+        "manifestation": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "49727002",
+            "display": "Cough (finding)"
+          } ]
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "http://interopEHRate.eu/fhir-resource/AllergyIntolerance/1115",
+    "resource": {
+      "resourceType": "AllergyIntolerance",
+      "id": "1115",
+      "meta": {
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR" ]
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "type": "intolerance",
+      "category": [ "biologic" ],
+      "criticality": "high",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "3526007",
+          "display": "Rabies vaccine, human (product)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "256260009",
+          "display": "Tree and shrub pollen (substance)"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/3466"
+      },
+      "onsetDateTime": "2020-11-11",
+      "reaction": [ {
+        "manifestation": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "698247007",
+            "display": "Cardiac arrhythmia (disorder)"
+          } ]
+        } ]
+      } ]
+    }
+  } ]
+}

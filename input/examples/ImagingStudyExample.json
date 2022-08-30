@@ -1,0 +1,20 @@
+{
+  "resourceType": "ImagingStudy",
+  "id": "1",
+  "language": "en",
+  "status": "unknown",
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "endpoint": [ {
+    "reference": "Endpoint/1111"
+  } ],
+  "series": [ {
+    "uid": "3347124",
+    "modality": {
+      "system": "http://dicom.nema.org/resources/ontology/DCM",
+      "code": "RG",
+      "display": "Radiographic imaging"
+    }
+  } ]
+}

@@ -1,0 +1,399 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+    <a name="purpose"> </a>
+    <h3>Purpose</h3>
+    <p>
+        The goal of this Implementation Guide is to specify the HL7 FHIR profiles to exchange data within cross-border medical scenarios defined in the project InteropEHRate (IEHR) and evaluated in project pilot.
+        This includes both administrative and medical information relevant to the pilot. Wherever possible, existing profiles / IGs are used without changing them in order to ensure the highest possible standardization.
+    </p>
+    <a name="background"> </a>
+    <h3>Project Background</h3>
+    <p>
+        This ImplementationGuide is part of the InteropEHRate project. Details on the project background are available at <a href="https://www.interopehrate.eu/">interopEHRate.eu</a>.
+    </p>
+    <center>
+        <figure>
+            <img height="100" src="IEHR_logo.png" alt="IEHR logo"/>
+            <figcaption>Fig. 1.1: Official logo of the InteropEHRate project</figcaption>
+        </figure>
+    </center>
+    <br/>
+    <p>InteropEHRate in a nutshell -
+        In short, the project enables patients to be in full control of the usage and the routes of their health data.
+        The central instrument, being laid in "patients' hands" is the Smart EHR (S-EHR), leveraging a set of new protocols for secure and cross border exchange of health data.
+    </p>
+    <p>Read more about this project's goal and purpose <a href="background.html">here</a>.</p>
+
+    <a name="scope"> </a>
+    <h3>Project Scope</h3>
+    <p>
+        Within the project, 2 scenarios (medial visit abroad, emergency access) regarding cross-border data exchange have been analysed (<a href="https://www.interopehrate.eu/wp-content/uploads/2020/10/InteropEHRate-D2.2-User-Requirements-for-cross-border-HR-integration-v2.pdf">D2.2 – User Requirements for cross-border HR integration-v2</a>).
+        The scenario medical visit abroad focuses on an information exchange between a healthcare professional (HCP) and a patient based on the patient as the actual data provider, while the scenario emergency access supports data exchange without the patient’s involvement.
+        The data requirements have been adopted and are the basis for the following data sets.
+    </p>
+
+    <table border="1" style="border-collapse:collapse; width:100%" bordercolor="#548dd4">
+        <caption style="caption-side:top; text-align:left">Table 1.1: IEHR Data Requirements</caption>
+        <tr>
+            <th style="color:white;background-color: #548dd4;">Super-category</th>
+            <th style="color:white;background-color: #548dd4;">Sub-category </th>
+            <th style="color:white;background-color: #548dd4;">Data</th>
+        </tr>
+        <tr style="color:black;">
+            <td rowspan="3">Demographics</td>
+            <td rowspan="3">General Data</td>
+            <td>Name, Surname</td>
+        </tr>
+        <tr style="color:black;">
+            <td>administrative gender</td>
+        </tr>
+        <tr style="color:black;">
+            <td>Date of Birth</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="2">Allergies</td>
+            <td rowspan="2">General Data</td>
+            <td>Allergies (ATC drug codes, LOINC), intolerance codes</td>
+        </tr>
+        <tr style="color:black;">
+            <td>Allergies (ATC drug codes, LOINC), intolerance notes</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="3">Diseases</td>
+            <td rowspan="3">Main chronic conditions</td>
+            <td>Hypertension</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Hypertension starting date</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Ischemic heart disease</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="9">Diseases</td>
+            <td rowspan="9">General Data</td>
+            <td>Heart failure</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Pulmonary disease</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Abnormal kidney function</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Abnormal liver function</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Previous major surgery</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Previous major surgery date</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Active malignancy</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Current Medications, previous medications</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Backup Contacts</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Diseases</td>
+            <td>Eventual acute (ongoing) Diseases</td>
+            <td>Eventual acute (ongoing) Diseases</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="3">History</td>
+            <td rowspan="3">previous visits (pdf and structured data)</td>
+            <td>diagnosis</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>treatment plan (next visits, exams, etc)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>current Medications, previous medications</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>visit prescription</td>
+            <td>current visit prescribed drugs</td>
+            <td>prescribed drugs</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="10">Vital Signs</td>
+            <td rowspan="10">Vital parameters for the last ambulatory</td>
+            <td>weight (Kg)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>height (cm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>blood pressure (mmHg)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>resting heart rate (bpm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>peripheral edema (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>signs of lung congestion (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>pleural effusion (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>sign of ascites (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>jugular vein distension (presence/absence);</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Cardiac and lung auscultation (normal/abnormal)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="10">EKG</td>
+            <td rowspan="10">Latest EKG</td>
+            <td>rhythm (eg sinus rhythm, atrial fibrillation, paced, etc.)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>heart rate (bpm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>PR</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>QRS intervals (msec)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>QTc intervals (msec)(optional)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>left bundle branch block (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>EKG signal waveform</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>EKG signal pdf/other</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>EKG report (text)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>EKG report (pdf/other)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="10">Echo</td>
+            <td rowspan="10">Latest echocardiogram</td>
+            <td>LVEF (%)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>septum thickness</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>left ventricular end systolic/diastolic volume (mL)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>grade of diastolic dysfunction (0/1/2/3)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>estimated pulmonary artery pressure (mmHg)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>degree of mitral regurgitation (no, mild, moderate, severe)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>degree of tricuspid regurgitation (no, mild, moderate, severe)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>DICOM movie</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Report pdf</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Report text</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="2">X-Ray</td>
+            <td rowspan="2">Latest chest X-Ray</td>
+            <td>report</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>report</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="4">Latest Holter monitoring</td>
+            <td rowspan="4">Latest Holter monitoring</td>
+            <td>mean heart rate (bpm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>number of premature ventricular beats</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>number of ventricular tachycardias (with max length in bpm)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>atrial fibrillation (presence/absence)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="10">Latest bio-humoral values</td>
+            <td rowspan="10">Latest bio-humoral values</td>
+            <td>hemoglobin (g/dl)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>white blood count</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>creatinine (mg/dl)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>eGFR (ml/min/1.73m2)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>AST</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>ALT</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>GGT</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>bilirubin</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>BNP (ng/L)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>NT-proBNP (ng/L)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td rowspan="3">Latest cardiac magnetic resonance</td>
+            <td rowspan="3">Latest cardiac magnetic resonance</td>
+            <td>LVEF (%)</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>left ventricular end systolic/diastolic volumes</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>late gadolinium enhancement (presence/absence).</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Surgical history</td>
+            <td>Surgical history</td>
+            <td>Surgical history</td>
+        </tr>
+
+        <tr style="color:black;">
+            <td>Encounter</td>
+            <td>Encounter</td>
+            <td>Encounter</td>
+        </tr>
+    </table>
+    <p>See the requirements mapped to the profiles used for realization and links to handling instructions <a href="requirements.html">here</a>.</p>
+
+    <a name="relationship"> </a>
+    <h3> Relationship to other Guidelines / IGs </h3>
+    <p>
+        To increase the interoperability of this project already existing profiles where used to fulfill the requirements whenever it was possible.
+        If a new profile had to be defined, it was attempted to base them on profiles from already existing projects to make them conform to the requirements of the other project.
+        In addition to the base FHIR definitions two other IGs were used for this.
+    </p>
+
+    <table border="1" style="border-collapse:collapse; width:100%" bordercolor="#548dd4">
+        <caption style="caption-side:top; text-align:left">Table 1.2: Related IGs</caption>
+        <tr>
+            <th style="color:white;background-color: #548dd4;">Name</th>
+            <th style="color:white;background-color: #548dd4;">Workgroup</th>
+            <th style="color:white;background-color: #548dd4;">FHIR Version</th>
+            <th style="color:white;background-color: #548dd4;">Publishing date of used version</th>
+        </tr>
+        <tr style="color:black;">
+            <td><a href="http://hl7.org/fhir/R4/vitalsigns.html">FHIR</a></td>
+            <td>Health Level Seven International Orders and Observations Workgroup</td>
+            <td>4.0.1</td>
+            <td>2019-10-30</td>
+        </tr>
+        <tr style="color:black;">
+            <td><a href="http://www.hl7.org/fhir/uv/ips/STU1/index.html">International Patient Summary</a></td>
+            <td>Health Level Seven International-Patient Care Work Group</td>
+            <td>4.0.1</td>
+            <td>2020-05-19</td>
+        </tr>
+        <tr style="color:black;">
+            <td><a href="https://build.fhir.org/ig/HL7/US-Core-R4/index.html">HL7 FHIR® US Core Implementation Guide</a></td>
+            <td>HL7 International-US Realm Steering Committee</td>
+            <td>4.0.1</td>
+            <td>2020-08-28</td>
+        </tr>
+    </table>
+</div>

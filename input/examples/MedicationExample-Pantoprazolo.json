@@ -1,0 +1,47 @@
+{
+  "resourceType": "Medication",
+  "id": "9165",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR" ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://www.whocc.no/atc",
+      "code": "A02BD04",
+      "display": "pantoprazole, amoxicillin and clarithromycin",
+      "_display": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/translation",
+          "extension": [ {
+            "url": "lang",
+            "valueCode": "it-IT"
+          }, {
+            "url": "content",
+            "valueString": "Pantoprazolo (Pantorc)"
+          } ]
+        } ]
+      }
+    } ]
+  },
+  "form": {
+    "coding": [ {
+      "system": "http://standardterms.edqm.eu",
+      "code": "10219000",
+      "display": "Tablet"
+    } ]
+  },
+  "amount": {
+    "numerator": {
+      "value": 20,
+      "unit": "mg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+    },
+    "denominator": {
+      "value": 1,
+      "unit": "tablet",
+      "system": "http://unitsofmeasure.org",
+      "code": "{tablet}"
+    }
+  }
+}

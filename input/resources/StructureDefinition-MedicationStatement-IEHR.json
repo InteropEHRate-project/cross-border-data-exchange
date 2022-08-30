@@ -1,0 +1,66 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://interopehrate.eu/fhir/StructureDefinition/MedicationStatement-IEHR",
+  "name": "MedicationStatementIEHR",
+  "title": "MedicationStatement-IEHR",
+  "status": "draft",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationStatement.category",
+      "path": "MedicationStatement.category",
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://hl7.org/fhir/ValueSet/medication-statement-category"
+      }
+    }, {
+      "id": "MedicationStatement.medication[x]",
+      "path": "MedicationStatement.medication[x]",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR" ]
+      } ]
+    }, {
+      "id": "MedicationStatement.medication[x]:medicationReference",
+      "path": "MedicationStatement.medication[x]",
+      "sliceName": "medicationReference",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR" ]
+      } ]
+    }, {
+      "id": "MedicationStatement.medication[x]:medicationCodeableConcept",
+      "path": "MedicationStatement.medication[x]",
+      "sliceName": "medicationCodeableConcept",
+      "max": "0",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://hl7.org/fhir/uv/ips/ValueSet/absent-or-unknown-medications-uv-ips"
+      }
+    }, {
+      "id": "MedicationStatement.subject",
+      "path": "MedicationStatement.subject",
+      "type": [ {
+        "code": "Reference",
+        "targetProfile": [ "http://interopehrate.eu/fhir/StructureDefinition/Patient-IEHR" ]
+      } ]
+    }, {
+      "id": "MedicationStatement.effective[x]",
+      "path": "MedicationStatement.effective[x]",
+      "type": [ {
+        "code": "dateTime"
+      }, {
+        "code": "Period",
+        "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/Period-IEHR" ]
+      } ]
+    } ]
+  }
+}

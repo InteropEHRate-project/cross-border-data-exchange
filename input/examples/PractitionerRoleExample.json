@@ -1,0 +1,20 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "455736449",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/ips/StructureDefinition/PractitionerRole-uv-ips" ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/21"
+  },
+  "organization": {
+    "reference": "Organization/34432"
+  },
+  "code": [ {
+    "coding": [ {
+      "system": "urn:oid:2.16.840.1.113883.2.9.6.2.7",
+      "code": "221",
+      "display": "Medical doctors"
+    } ]
+  } ]
+}

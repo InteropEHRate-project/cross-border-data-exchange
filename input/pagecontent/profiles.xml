@@ -1,0 +1,219 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <a name="profiles_active"> </a>
+  <h3>List of active profiles</h3>
+  <p>This page contains a list with the name and a short description for all the active profiles, that are defined in this IG. </p>
+
+  <!-- A -->
+  <p><b>A</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Attachment-IEHR.html">Attachment - IEHR</a> <br/>
+      This profile represents the constraints applied to the Attachment resource when it is used in a DocumentReference-MedicalDocument resource. <br/>
+    </li>
+    <li><a href="StructureDefinition-AuditEvent-IEHR.html">AuditEvent - IEHR</a><br/>
+      This profile is based on the AuditEvent StructureDefinition and makes the agent performing the audit and the time it was perfomed mandatory.
+    </li>
+  </ul>
+
+  <!-- B -->
+  <p><b>B</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Observation-BioSignal-IEHR.html">BioSignal - IEHR</a><br/>
+      This profile is based on the Observation StructureDefinition and represents a BioSignal. Since a BioSignal may contain more than one value, the actual values of the BioSignal are included as components (Observation.component).
+    </li>
+    <li><a href="StructureDefinition-Bundle-IEHR.html">Bundle - IEHR</a><br/>
+      This profile is based on the Bundle StructureDefinition and adds a constraint, that makes the Signature mandatory, if the bundle has the type document.
+    </li>
+  </ul>
+
+  <!-- C -->
+  <p><b>C</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Condition-IEHR.html">Condition - IEHR</a><br/>
+      This profile is based on the Condition resource and constraints the code to be an ICD-10 code.
+    </li>
+
+    <li><a href="StructureDefinition-Composition-IEHR.html">Composition - IEHR</a><br/>
+      This profile is based on the ClinicalDocument StructureDefinition and constrains extensions that allow to add a signature to the Composition and its own confidentiality code to each section.
+    </li>
+
+    <li><a href="StructureDefinition-Composition-IPS-IEHR.html">Composition - IPS - IEHR</a><br/>
+      This profile is based on the Composition-IPS StructureDefinition and further constrains the result-section to avoid a potential error when referencing Observation-results.
+    </li>
+
+    <li><a href="StructureDefinition-Consent-IEHR.html">Consent - IEHR</a>  <br/>
+      This profile is based on the Consent resource and defines multiple mandatory attributes to ensure the accountability of a Patient's agreement to an attached structured Consent document.
+    </li>
+
+    <li>  <a href="StructureDefinition-ConsentApproval-IEHR.html">Consent - IEHR</a>
+      <br/>
+      This profile is based on the Provenance resource and constrains the Provenance's agent to be of type author, the target to reference a Consent-IEHR and the mandatory signature to be of type ConsentSignature-IEHR.
+    </li>
+  </ul>
+
+  <!-- D -->
+  <p><b>D</b></p>
+  <ul>
+    <li><a href="StructureDefinition-DiagnosticConclusion-IEHR.html">DiagnosticConclusion - IEHR</a><br/>
+      This profile is based in the Condition StructureDefinition and further constrains the code and note attributes to allow the addition of unstructured data to a CarePlan (TreatmentPlan-IEHR) in the form of free text.
+    </li>
+
+    <li><a href="StructureDefinition-DiagnosticReport-BioSignalReport-IEHR.html">DiagnosticReport BioSignalReport - IEHR</a><br/>
+      This profile represents the constraints applied to the DiagnosticReport when it represents findings of Instrumental Examination in the context of the CBDE.
+      It can be used to represent a BioSignal as well as single images, e.g EKG readouts, or complete ImagingStudies.
+    </li>
+
+    <li><a href="StructureDefinition-DiagnosticReport-IEHR.html">DiagnosticReport - IEHR</a><br/>
+      This profile represents the constraints applied to a general DiagnosticReport in the context of the CBDE.
+      The different types of reports in the CBDE context are derived from it.
+    </li>
+
+    <li><a href="StructureDefinition-DiagnosticReport-ImagingReport-IEHR.html">DiagnosticReport Imaging - IEHR</a> <br/>
+      This profile represents the constraints applied to the DiagnosticReport when it represents radiology findings in the context of the CBDE.
+      It is used to document the diagnostics generated from the results of imaging observations and the informations surrounding them.
+      It can be used to either represent single images, e.g EKG readouts, or complete ImagingStudies.
+    </li>
+
+    <li><a href="StructureDefinition-DiagnosticReport-LaboratoryReport-IEHR.html">DiagnosticReport LaboratoryResult - IEHR</a> <br/>
+      This profile represents the constraints applied to the DiagnosticReport when it represents laboratory findings in the context of the CBDE.
+      It is used to document the diagnostics generated from the results of laboratory observations and the informations surrounding them.
+    </li>
+
+    <li><a href="StructureDefinition-DiagnosticReport-VitalSignReport-IEHR.html">DiagnosticReport VitalSignReport - IEHR</a> <br/>
+      This profile represents the constraints applied to the DiagnosticReport when it represents vital signs in the context of CBDE.
+      It is used to document diagnoses generated from results of vital sign surveys and the information accompanying them.
+    </li>
+
+    <li><a href="StructureDefinition-DocumentManifest-IEHR.html">DocumentManifest-IEHR</a> <br/>
+      This profile represents the constraints applied to the DocumentManifest resource when it is used in the context of the CBDE.
+      It is used to represent a collection of unstructured documents, that can then be exchanged.
+    </li>
+
+    <li><a href="StructureDefinition-DocumentReference-IEHR.html">DocumentReference - IEHR</a> <br/>
+      This profile represents the constraints applied to the DocumentReference resource when it represents medicaldocuments in the context of the CBDE.
+      It is used to represent unstructered documents as structured resources, that can then be exchanged.
+    </li>
+  </ul>
+
+  <!-- E -->
+  <p><b>E</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Encounter-IEHR.html">Encounter - IEHR</a> <br/>
+      This profile represents the constraints applied to the Encounter resource, when it represents a visit in the context of the CBDE.
+    </li>
+  </ul>
+
+  <!-- F -->
+  <p><b>F</b><br/>
+  <!-- G -->
+  <b>G</b></p>
+
+  <!-- H -->
+  <p><b>H</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Composition-HospitalDischargeReport-IEHR.html">HospitalDischargeReport - IEHR</a> <br/>
+      This profile is based on the Composition-IEHR StructureDefinition and defines the relevant sections to represent a DischargeReport.
+      The sections contained are based on the table in the IEHR-Profiles-requirements mapping document and are not necessarily final.
+    </li>
+  </ul>
+
+  <!-- I -->
+  <p><b>I</b></p>
+  <ul>
+    <li>><a href="StructureDefinition-Immunization-IEHR.html">Immunization - IEHR</a><br/>
+    This profile is based on the Immunization-IPS StructuredDefinition and changes the preferred vaccineCode to an ATC code.</li>
+  </ul>
+
+  <!-- J -->
+  <p><b>J</b><br/>
+  <!-- K -->
+  <b>K</b><br/>
+  <!-- L -->
+  <b>L</b><br/>
+  <!-- M -->
+  <b>M</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Media-IEHR.html">Media - IEHR</a><br/>
+      This profile is based on the Media StructureDefinition and adds a mandatory signature.
+    </li>
+
+    <li><a href="StructureDefinition-Composition-VisitReport-IEHR.html">MedicalVisit - IEHR</a><br/>
+      This profile is based on the Composition-IEHR StructureDefinition and defines the relevant sections to represent a VisitReport.
+      The sections contained are based on the table in the IEHR-Profiles-requirements mapping document and are not necessarily final.
+    </li>
+
+    <li><a href="StructureDefinition-Medication-IEHR.html">Medication - IEHR</a><br/>
+      This profile is based on the <a href="http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips">MedicationIPS</a> profile and constraints the Medication.code to be an ATC code.
+    </li>
+
+    <li><a href="StructureDefinition-MedicationRequest-prescription-IEHR.html">MedicationRequest-Prescription - IEHR</a><br/>
+      This profile represents the constraints applied to the MedicationRequest in the context of the CBDE.
+      It is used to document the prescription of different medications in clinical contexts, e.g. CarePlans or hospital visits.
+    </li>
+
+    <li><a href="StructureDefinition-MedicationStatement-IEHR.html">MedicationStatement - IEHR</a><br/>
+      This profile is based on the <a href="http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips">MedicationStatementIPS</a> profile and constraints the MedicationStatement.medication to reference a Medication-IEHR.
+    </li>
+  </ul>
+
+  <!-- N -->
+  <b>N</b>
+  <!-- O -->
+  <p><b>O</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Observation-IEHR.html">Observation - IEHR</a><br/>
+      This profile constraints the codes used in Observation.code to be LOINC codes.
+    </li>
+  </ul>
+
+  <!-- P -->
+  <p><b>P</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Patient-IEHR.html">Patient - IEHR</a><br/>
+      This profile represents the constraints applied to the Patient StructureDefinition in the context of the CBDE.
+    </li>
+
+    <li><a href="StructureDefinition-Period-IEHR.html">Period - IEHR</a><br/>
+      This profile represents the constraints applied to the Period Datatype in the context of the CBDE. It is used to ensure the documentation of a start time.
+    </li>
+
+    <li><a href="StructureDefinition-Provenance-IEHR.html">Provenance - IEHR</a><br/>
+      This profile represents the constraints applied to the Provenance StructureDefinition in the contextof the CBDE. This includes the mandatory agents Author and Provider, as well as a mandatory signature.
+      A Provenance may be referenced by the direct children of the Provenance's target.
+    </li>
+  </ul>
+
+  <!-- Q -->
+  <p><b>Q</b><br/>
+  <!-- R -->
+  <b>R</b></p>
+
+  <!-- S -->
+  <p><b>S</b></p>
+  <ul>
+    <li><a href="StructureDefinition-Provenance-Signature-IEHR.html">Provenance-Signature - IEHR</a><br/>
+      This profile is based on the Signature StructureDefinition and defines the constraints applied to the resource when it is used in the context of the CBDE.
+    </li>
+  </ul>
+
+  <!-- T -->
+  <p><b>T</b></p>
+  <ul>
+    <li><a href="StructureDefinition-TreatmentPlan-IEHR.html">TreatmentPlan - IEHR</a><br/>
+      This profile is based on the CarePlan StructureDefinition and defines a TreatmentPlan, that uses the CarePlan.description attribute to describe the required activities.
+    </li>
+  </ul>
+
+  <!-- U -->
+  <p><b>U</b><br/>
+  <!-- V -->
+  <b>V</b><br/>
+  <!-- W -->
+  <b>W</b><br/>
+  <!-- X -->
+  <b>X</b><br/>
+  <!-- Y -->
+  <b>Y</b><br/>
+  <!-- Z -->
+  <b>Z</b></p>
+
+</div>

@@ -1,0 +1,34 @@
+{
+  "resourceType": "CarePlan",
+  "id": "1",
+  "meta": {
+    "profile": [ "http://interopehrate.eu/fhir/StructureDefinition/TreatmentPlan-IEHR" ]
+  },
+  "extension": [ {
+    "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+    "valueReference": {
+      "reference": "Provenance/37"
+    }
+  } ],
+  "status": "active",
+  "intent": "plan",
+  "category": [ {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "18776-5",
+      "display": "Plan of care note"
+    } ]
+  } ],
+  "title": "Treatment Plan",
+  "description": "This is an example TreatmentPlan",
+  "subject": {
+    "reference": "Patient/3466"
+  },
+  "encounter": {
+    "reference": "Encounter/363534"
+  },
+  "created": "2022-04-06T14:19:33+02:00",
+  "author": {
+    "reference": "Practitioner/21"
+  }
+}

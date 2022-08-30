@@ -1,0 +1,42 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+
+    <p align="justify">The InteropEHRate standard architecture is a high-level view of the InteropEHRate open specification. It enables citizen-centred and decentralised health data sharing, through the secure storage of health data on Citizen’s personal mobile devices and the direct exchange of health data between citizens and healthcare organisations or research centres trusted by the citizens, avoiding sharing health data with app vendors or other third parties.
+        The specification(s) defines a family of open-source communication protocols and a set of constraints for mobile applications and optional cloud services that support the secure cross any border exchange of health data with or without Internet, with or without cloud storage, in a GDPR-compliant way.
+        The InteropEHRate open specification is open in the sense that each one of the specified protocols and applications may have different implementations, possibly provided by different competing vendors. Conformance to the open specifications assure the interoperability among implementations of different vendors.
+        The InteropEHRate open specification is also modular: it is not required to implement the entire InteropEHRate standard architecture; each protocol may be used individually or in combination with the other ones, therefore in each context only the required portion of the InteropEHRate standard architecture may be implemented, depending on the usage scenario.
+        The purpose of this section is to describe the InteropEHRate standard architecture for EHR interoperability. It provides an overview of the involved actors and organisations, standard software services and applications, and standard interaction protocols.
+    </p>
+
+    <a name="overview"> </a>
+    <h3>Overview of applications and services</h3>
+    <p align="justify">The following figure shows in an informal and simplified way a typical set of actors, software services, and applications exploiting the new applications and protocols specified by InteropEHRate.</p>
+    <center>
+        <figure>
+            <img height="450" src="IEHR_CBDE_Example.png" alt="Examples of health data exchange"/>
+            <figcaption>Fig. 2.1: Examples of health data exchange using a S-EHR Mobile App and a S-EHR Cloud</figcaption>
+        </figure>
+    </center>
+    <br/>
+    <p align="justify">The main objective of InteropEHRate is to ease the exchange of health data between citizens, healthcare organisations and research centres.
+        The InteropEHRate architecture assumes that in the near future the EU citizens will own standard kinds of mobile applications called Smart EHRs (S-EHRs).
+        Note that a S-EHR is not a specific software, but a standard kind of software.
+        Citizens will be able to choose among different S-EHRs, conformant with InteropEHRate, offered by different vendors.
+        To emphasize the fact that it is a user application, throughout all this specification, a S-EHR is also called S-EHR Mobile App or S-EHR App.
+        It is able to store in a secure (encrypted) way on a mobile device any health data related to the history of the person that owns the device.
+        By mobile devices we mean mainly modern smartphones or tablets, but it could include in the future also other types of mobile devices with advanced computational capabilities,
+        like smartwatches or smart bracelets and other kinds of smart devices that may move with the citizen.
+        The stored health data may be produced by healthcare professionals, by sensors, or by the citizen that is the data subject.
+        A S-EHR can receive health data from any healthcare organisation that adopts the standard protocols specified by the InteropEHRate project.
+        These protocols guarantee the integrity of exchanged data, the traceability of their provenance and their trustability.
+    </p>
+    <p align="justify">The above picture shows an example of a citizen using a S-EHR for importing health data from an EHR that is connected to the National Healthcare System of the country of residence
+        (e.g., the EHR of a specific healthcare organisation or a national EHR) and for exchanging the same data and new health data with the EHR system of a hospital located in a different country. </p>
+
+    <p align="justify">In order to allow the exchange of health data with S-EHRs, the health data providers will need to extend their information systems
+        (e.g., internal general-purpose EHRs or more specific health applications) to provide the remote interfaces and the extended functionalities required by the InteropEHRate protocols.</p>
+
+    <p align="justify">In the InteropEHRate vision, different vendors may offer different S-EHRs to the final users and each user may choose the preferred one,
+        according to his or her needs and to the added-value functionalities offered by the specific S-EHR. Regardless of the differences,
+        all S-EHRs must satisfy a set of rules and requirements aimed to guarantee strong levels of security and trustability <mark>(specified in report [D3.2])</mark>
+        to citizens and organisations that interact with them.  </p>
+</div>

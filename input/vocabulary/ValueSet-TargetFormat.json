@@ -1,0 +1,20 @@
+{
+  "resourceType": "ValueSet",
+  "url": "http://interopehrate.eu/fhir/ValueSet/TargetFormat-IEHR",
+  "name": "TargetFormatValueSetIEHR",
+  "title": "TargetFormat ValueSet-IEHR",
+  "status": "draft",
+  "description": "This ValueSet contains the MimeTypes that indicates the technical format of the target resources signed by the signature.",
+  "compose": {
+    "include": [ {
+      "system": "urn:ietf:bcp:13",
+      "concept": [ {
+        "code": "json",
+        "display": "json"
+      }, {
+        "code": "xml",
+        "display": "xml"
+      } ]
+    } ]
+  }
+}

@@ -1,0 +1,1926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
+	<id value="fhir.uv.crossborderdataexchange"/>
+
+	<url value="http://interopehrate.eu/fhir/ImplementationGuide/fhir.uv.crossborderdataexchange"/>
+
+	<version value="1.0.0"/>
+	<name value="CBDS_IG"/>
+	<title value="Cross Border Data Exchange IG"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<publisher value="IEHR-Workgroup"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://hl7.org/Special/committees/IEHR-Workgroup"/>
+		</telecom>
+	</contact>
+	<description value="A brief description of what CBDS IG is about"/>
+	<jurisdiction>
+		<coding>
+
+			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+			<code value="001"/>
+
+		</coding>
+	</jurisdiction>
+	<packageId value="fhir.uv.crossborderdataexchange"/>
+
+	<license value="CC0-1.0"/>
+	<fhirVersion value="4.0.1"/>
+
+	<dependsOn>
+		<uri value="http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"/>
+		<version value="1.0.0"/>
+		<packageId value="hl7.fhir.uv.ips"/>
+	</dependsOn>
+
+	<definition>
+
+		<!-- Structure Definitions -->
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/AllergyIntolerance-IEHR"/>
+			</reference>
+			<name value="AllergyIntolerance - IEHR"/>
+			<description value="This profile describes an Allergy or Intolerance using an ATC code for afflictions caused by drugs or a snomed code for other causes."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Attachment-IEHR"/>
+			</reference>
+			<name value="Attachment - IEHR"/>
+			<description value="This profile describes an Attachment for a DocumentManifest."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/AuditEvent-IEHR"/>
+			</reference>
+			<name value="AuditEvent - IEHR"/>
+			<description value="This profile describes an AuditEvent manually performed by a Practitioner"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Observation-BioSignal-IEHR"/>
+			</reference>
+			<name value="BioSignal-IEHR"/>
+			<description value="This profile describes an observation used to document one or more pairs of code and values in its components."/>
+		</resource> 
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Bundle-IEHR"/>
+			</reference>
+			<name value="Bundle - IEHR"/>
+			<description value="This profile describes a Bundle profile that enforces signatures for documents"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Condition-IEHR"/>
+			</reference>
+			<name value="Condition - IEHR"/>
+			<description value="This profile describes a Condition that has the attributes marked as mandatory that are used in resource queries."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Consent-IEHR"/>
+			</reference>
+			<name value="Consent - IEHR"/>
+			<description value="This profile describes the agreement of a Patient to an attached structured Consent document."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/ConsentApproval-IEHR"/>
+			</reference>
+			<name value="ConsentApproval - IEHR"/>
+			<description value="This profile describes the approval of a Patient's agreement to an attached structured Consent document in form of a Signature."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/ConsentApprovalExtension-IEHR"/>
+			</reference>
+			<name value="ConsentApprovalExtension - IEHR"/>
+			<description value="This extension allows to add a reference to a ConsentApproval-IEHR and thus a signature of the patient to a Cosnent-IEHR."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/ConsentApproval-Signature-IEHR"/>
+			</reference>
+			<name value="Consent-Signature - IEHR"/>
+			<description value="This profile describes a signature for a consent."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Composition-IEHR"/>
+			</reference>
+			<name value="Composition - IEHR"/>
+			<description value="This profile describes a Composition with a confidentiality code for each section and a signature."/>
+		</resource>
+				
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Composition-IPS-IEHR"/>
+			</reference>
+			<name value="Composition - IPS - IEHR"/>
+			<description value="This profile constrains the IPS to fix the multiple possible target error."/>
+		</resource>
+
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/DiagnosticConclusion-IEHR"/>
+			</reference>
+			<name value="DiagnosticConclusion-IEHR"/>
+			<description value="This profile constrains a Condition describing the Conclusion of a Diagnosis."/>
+		</resource>
+		
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/DiagnosticReport-IEHR"/>
+			</reference>
+			<name value="DiagnosticReport - IEHR"/>
+			<description value="This profile describes the basic DiagnosticReport, from which the various types of reports in the CBDE context are derived."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/DiagnosticReport-ImagingReport-IEHR"/>
+			</reference>
+			<name value="DiagnosticReport Imaging - IEHR"/>
+			<description value="This profile describes a DiagnosticReport to document radiology findings in the context of the CBDE."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/DiagnosticReport-BioSignalReport-IEHR"/>
+			</reference>
+			<name value="DiagnosticReport BioSignal- IEHR"/>
+			<description value="This profiles describes a DiagnosticReport to document findings of Instrumental Examination."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/DiagnosticReport-LaboratoryReport-IEHR"/>
+			</reference>
+			<name value="DiagnosticReport Laboratory - IEHR"/>
+			<description value="This profile describes a DiagnosticReport to document laboratory findings in the context of the CBDE."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/DiagnosticReport-VitalSignReport-IEHR"/>
+			</reference>
+			<name value="DiagnosticReport VitalSignReport - IEHR"/>
+			<description value="This profile describes a DiagnosticReport containing multiple Vital Sign observations."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/DocumentReference-IEHR"/>
+			</reference>
+			<name value="DocumentReference - IEHR"/>
+			<description value="This profile describes a general DocumentReference."/>
+		</resource>
+		
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/DocumentManifest-IEHR"/>
+			</reference>
+			<name value="DocumentManifest - IEHR"/>
+			<description value="This profile describes a DocumentManifest."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Encounter-IEHR"/>
+			</reference>
+			<name value="Encounter - IEHR"/>
+			<description value="This profile describes a Encounter profile that allows signatures."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Composition-HospitalDischargeReport-IEHR"/>
+			</reference>
+			<name value="HospitalDischargeReport - IEHR"/>
+			<description value="This profile describes an hospital discharge report."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Immunization-IEHR"/>
+			</reference>
+			<name value="Immunization - IEHR"/>
+			<description value="This profile describes the documentation of an Immunization."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Media-IEHR"/>
+			</reference>
+			<name value="Media - IEHR"/>
+			<description value="This profile describes a Media profile that allows signatures."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Composition-VisitReport-IEHR"/>
+			</reference>
+			<name value="MedicalVisit - IEHR"/>
+			<description value="This profile describes the result of a medical visit."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Medication-IEHR"/>
+			</reference>
+			<name value="Medication - IEHR"/>
+			<description value="This profile describes a Medication using ATC codes"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/MedicationStatement-IEHR"/>
+			</reference>
+			<name value="MedicationStatement - IEHR"/>
+			<description value="This profile describes a MedicationStatement using MedicationIEHR as medicationReference."/>
+		</resource>
+
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/MedicationRequest-prescription-IEHR"/>
+			</reference>
+			<name value="MedicationRequest-Prescription - IEHR"/>
+			<description value="This profile describes prescriprions for different kinds of medication."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Observation-IEHR"/>
+			</reference>
+			<name value="Observation - IEHR"/>
+			<description value="This profile constraints the Observation.code attribute to LOINC codes."/>
+		</resource>
+				
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Patient-IEHR"/>
+			</reference>
+			<name value="Patient - IEHR"/>
+			<description value="This profile describes a Patient with a birthplace extension."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Period-IEHR"/>
+			</reference>
+			<name value="Period-IEHR"/>
+			<description value="This profile describes a time period defined by a mandatory start and an optional end date/time."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Provenance-IEHR"/>
+			</reference>
+			<name value="Provenance - IEHR"/>
+			<description value="This profile describes a Provenance with mandatory Author and Provider information and signature."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/ProvenanceExtension-IEHR"/>
+			</reference>
+			<name value="ProvenanceExtension - IEHR"/>
+			<description value="This extension allows to add a Provenance-IEHR to any DomainResource."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/ConfidentialityExtension-IEHR"/>
+			</reference>
+			<name value="Section Confidentiality Extension - IEHR"/>
+			<description value="This profile describes an Extension that displays the confidentiality for a section."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/Provenance-Signature-IEHR"/>
+			</reference>
+			<name value="Provenance-Signature - IEHR"/>
+			<description value="This profile describes a signature for a resource."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/ExtendedTranslation-IEHR"/>
+			</reference>
+			<name value="ExtendedTranslation Extension - IEHR"/>
+			<description value="This profile describes an extended Translation."/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/TreatmentPlan-IEHR"/>
+			</reference>
+			<name value="TreatmentPlan - IEHR"/>
+			<description value="This profile describes a CarePlan regarding the planned treatment of a patient."/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/UnstructuredResultExtension-IEHR"/>
+			</reference>
+			<name value="UnstructuredResultExtension - IEHR"/>
+			<description value="This profile describes an Extension to add unstructured results to a DiagnosticReport."/>
+		</resource>	
+		<!-- Examples -->
+		<!-- A -->
+		<resource>
+			<reference>
+				<reference value="AllergyIntolerance/1111"/>
+			</reference>
+			<name value="AllergyIntolerance Example - Transfusion"/>
+			<description value="This example shows the use of AllergyIntolerances to document a confiremd allergy to transfusions of blood products."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="AllergyIntolerance/1112"/>
+			</reference>
+			<name value="AllergyIntolerance Example - Dextran"/>
+			<description value="This example shows the use of AllergyIntolerances to document an intolerance to products containing dextran."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="AllergyIntolerance/1113"/>
+			</reference>
+			<name value="AllergyIntolerance Example - Strawberry"/>
+			<description value="This example shows the use of AllergyIntolerances to document a strawberry intolerance."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="AllergyIntolerance/1114"/>
+			</reference>
+			<name value="AllergyIntolerance Example - Tree and shrub pollen"/>
+			<description value="This example shows the use of AllergyIntolerances to document a tree and shrub pollen allergy."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="AllergyIntolerance/1115"/>
+			</reference>
+			<name value="AllergyIntolerance Example - Rabies Vaccine"/>
+			<description value="This example shows the use of AllergyIntolerances to document a Rabies Vaccination"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/AllergyIntolerance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/1883451"/>
+			</reference>
+			<name value="AllergyIntoleranceBundle Example - General Data"/>
+			<description value="This example shows the use of AllergyIntolerances to document the General Data of a Patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="AuditEvent/1"/>
+			</reference>
+			<name value="AuditEvent Example"/>
+			<description value="This example shows the use of the AuditEvent resource to document an audit."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/AuditEvent-IEHR"/>
+		</resource>
+		<!-- B -->
+
+		<resource>
+			<reference>
+				<reference value="Observation/9113"/>
+			</reference>
+			<name value="BioSignal Example - EKG"/>
+			<description value="This example shows the use of the BioSignal-IEHR profile to document the results of an EKG."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<reference value="Observation/9114"/>
+			</reference>
+			<name value="BioSignal Example - Echocardiogram"/>
+			<description value="This example shows the use of the BioSignal-IEHR profile to document the results of an Echocardiogram."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<reference value="Observation/69208519"/>
+			</reference>
+			<name value="BioSignal Example - Cardiac echo study Procedure"/>
+			<description value="This example shows the use of the BioSignal-IEHR profile to document the results of an Cardiac echo study Procedure, referenced in an HospitalDischargeReport."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/9115"/>
+			</reference>
+			<name value="BioSignal Example - HolterMonitoring"/>
+			<description value="This example shows the use of the BioSignal-IEHR profile to document the results of an Holter Monotoring."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Observation-BioSignal-IEHR"/>
+		</resource>
+
+		<!-- C -->
+		<resource>
+			<reference>
+				<reference value="Composition/db734647-fc99-424c-a864-7e3cda82e703"/>
+			</reference>
+			<name value="Composition Example - EncounterList"/>
+			<description value="This example shows a the use of the Composition-IEHR profile to represent a summary of episode note that documents two encounter."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/1111"/>
+			</reference>
+			<name value="Condition Example - Acute Ischemic Heart Disease"/>
+			<description value="This example shows a standalone Acute Ischemic Heart Disease Condition of a Patient"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/69208519"/>
+			</reference>
+			<name value="Condition Example - Alopecia areata (disorder)"/>
+			<description value="This example shows a standalone Alopecia Areata (disorder) Condition of a Patient"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/1112"/>
+			</reference>
+			<name value="Condition Example - Heart Failure"/>
+			<description value="This example shows a standalone Heart Failure Condition of a Patient"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/1113"/>
+			</reference>
+			<name value="Condition Example - COPD"/>
+			<description value="This example shows a standalone COPD Condition of a Patient"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/1114"/>
+			</reference>
+			<name value="Condition Example - Kidney Disease"/>
+			<description value="This example shows a standalone Kidney Disease Condition of a Patient"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/1115"/>
+			</reference>
+			<name value="Condition Example - Abnormal Liver Function"/>
+			<description value="This example shows a standalone Abnormal Liver Function Condition of a Patient."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/1116"/>
+			</reference>
+			<name value="Condition Example - Malignant Neoplastic Disease"/>
+			<description value="This example shows a standalone Malignant Neoplastic Disease Condition of a Patient."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/1117"/>
+			</reference>
+			<name value="Condition Example - Pulmonary Arterial Hypertension"/>
+			<description value="This example shows a standalone Pulmonary Arterial Hypertension Condition of a Patient."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/396385"/>
+			</reference>
+			<name value="Condition Example - General Data - Bundle"/>
+			<description value="This example shows the use of Conditions to document the General Data of a Patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="Condition/48239"/>
+			</reference>
+			<name value="Condition Example - Arrhythmia"/>
+			<description value="This example shows a standalone Arrhythmia Condition of a Patient"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/482343"/>
+			</reference>
+			<name value="Condition Example - Suspected conduction disorder"/>
+			<description value="This example shows a standalone Suspected Conduction Disorder Condition of a Patient"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Condition/b6fc0a56-704c-4196-af27-10a0c2195c08"/>
+			</reference>
+			<name value="Condition Example - Hypertension (FTGM)"/>
+			<description value="This example shows a standalone Essential hypertension Condition of a Patient, based on raw data provided by FTGM"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Condition-IEHR"/>
+		</resource>
+		
+		<!-- B -->
+		<resource>
+			<reference>
+				<reference value="DiagnosticReport/4111"/>
+			</reference>
+			<name value="BioSignalReport Example - Echocardiogramm"/>
+			<description value="This example shows a usage of the DiagnosticReport-BioSignalReport-IEHR profile to display an Echocardiogram report."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-BioSignalReport-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/50560"/>
+			</reference>
+			<name value="BioSignalReport Example - Echocardiogramm - Bundle"/>
+			<description value="This example shows a usage of the DiagnosticReport-BioSignalReport-IEHR profile to document the results of an Echocardiogram, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="DiagnosticReport/9111"/>
+			</reference>
+			<name value="BioSignalReport-IEHR Example - EKG"/>
+			<description value="This example shows a usage of the BioSignalReport-IEHR profile to document the results of an EKG."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-BioSignalReport-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/909080"/>
+			</reference>
+			<name value="BioSignalReport-IEHR Example - EKG - Bundle"/>
+			<description value="This example shows a usage of the BioSignalReport-IEHR profile to document the results of an EKG, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DiagnosticReport/5111"/>
+			</reference>
+			<name value="BioSignalReport Example - Holter Monitoring"/>
+			<description value="This example shows the use of the BioSignalReport-IEHR profile to document a HolterMonitoring."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/404050"/>
+			</reference>
+			<name value="BioSignalReport Example - Holter Monitoring - Bundle"/>
+			<description value="This example shows the use of the BioSignalReport-IEHR profile to document a HolterMonitoring, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<!-- C -->
+
+
+		<!-- D -->
+		<resource>
+			<reference>
+				<reference value="Condition/290320222"/>
+			</reference>
+			<name value="DiagnosticConclusion Example"/>
+			<description value="This example shows a usage of the Condition-DiagnosticConclusion-IEHR profile."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DiagnosticConclusion-IEHR"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="DocumentReference/91155"/>
+			</reference>
+			<name value="DocumentReference Example - Addendum Document"/>
+			<description value="This example shows a usage of the DocumentReference-MedicalDocument profile."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="DocumentReference/3456"/>
+			</reference>
+			<name value="DocumentReference Example - MedicalDocument 1"/>
+			<description value="This example shows a usage of the DocumentReference-MedicalDocument profile."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/321457"/>
+			</reference>
+			<name value="DocumentReference Example - MedicalDocument 2"/>
+			<description value="This example shows a usage of the DocumentReference-MedicalDocument profile."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/321457432"/>
+			</reference>
+			<name value="DocumentReference Example - multiple Bundle"/>
+			<description value="This example shows a usage of the DocumentManifest-IEHR profile with multiple References in a bundle."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DocumentReference/155136"/>
+			</reference>
+			<name value="DocumentReference Example - Attachment"/>
+			<description value="This example shows an simple example for an Attachment."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="DocumentReference/34561"/>
+			</reference>
+			<name value="DocumentReference Example - Cardiology Consult Note"/>
+			<description value="This example shows the usage of the DocumentReference-IEHR profile to represent a cardiology consult note as a pdf file."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DocumentReference/34562"/>
+			</reference>
+			<name value="DocumentReference Example - Heart Disease Action Plan"/>
+			<description value="This example shows the usage of the DocumentReference-IEHR profile to represent a heart disease action plan as a pdf file."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DocumentReference/34563"/>
+			</reference>
+			<name value="DocumentReference Example - Legal Document"/>
+			<description value="This example shows the usage of the DocumentReference-IEHR profile to represent a legal document as a pdf file."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DocumentReference/34564"/>
+			</reference>
+			<name value="DocumentReference Example - Cardiology Consult Note"/>
+			<description value="This example shows the usage of the DocumentReference-IEHR profile to represent a cardiology consult note as a pdf file."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DocumentReference/34565"/>
+			</reference>
+			<name value="DocumentReference Example - Cardiology Interventional Procedure Note"/>
+			<description value="This example shows the usage of the DocumentReference-IEHR profile to represent a cardiology interventional procedure note as a pdf file."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DocumentReference/34566"/>
+			</reference>
+			<name value="DocumentReference Example - Cardiology Hospital Admission history and physical note"/>
+			<description value="This example shows the usage of the DocumentReference-IEHR profile to represent the cardiology hospital admission history and a physical note as a pdf file."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DocumentReference/34567"/>
+			</reference>
+			<name value="DocumentReference Example - Patient's Home Education Note"/>
+			<description value="This example shows the usage of the DocumentReference-IEHR profile to represent a patient's home education note as a pdf file."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DocumentReference/34568"/>
+			</reference>
+			<name value="DocumentReference Example - Deprecated Plan of Care Note"/>
+			<description value="This example shows the usage of the DocumentReference-IEHR profile to represent a deprecated plan of care note as a pdf file."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DocumentReference-IEHR"/>
+		</resource>
+
+		<!-- E -->
+		<resource>
+			<reference>
+				<reference value="Bundle/3201111"/>
+			</reference>
+			<name value="Encounter Example - Encounter List"/>
+			<description value="This example shows a list of encounters as part of a summary of episode note, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Encounter/6129269"/>
+			</reference>
+			<name value="Encounter Example - Encounter List - 1"/>
+			<description value="This example shows a list of encounters as part of a summary of episode note."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Encounter/123456"/>
+			</reference>
+			<name value="Encounter Example - Encounter List - 2"/>
+			<description value="This example shows a list of encounters as part of a summary of episode note."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="Encounter/551"/>
+			</reference>
+			<name value="Encounter Example - Routine Encounter-PTH"/>
+			<description value="This example shows an encounter documenting a routine check of the PTH level."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="Encounter/363534"/>
+			</reference>
+			<name value="Encounter Example - Visit Encounter 2"/>
+			<description value="This example shows an encounter documenting a ambulatory visit."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Encounter/1"/>
+			</reference>
+			<name value="Encounter Example - Visit Encounter 1"/>
+			<description value="This example shows an encounter documenting a ambulatory visit."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="Endpoint/1111"/>
+			</reference>
+			<name value="Endpoint Example - 1"/>
+			<description value="This example shows an example endpoint."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Endpoint"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/363976534"/>
+			</reference>
+			<name value="Encounter Example - Emergency Encounter Heart Failure"/>
+			<description value="This example shows an encounter documenting a hospitalization due to heart failure."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/30366"/>
+			</reference>
+			<name value="ExtendedTranslation Example - Practitioner"/>
+			<description value="This example shows a usage of the ExtendedTranslation-Extension with a practitioner."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/30367"/>
+			</reference>
+			<name value="ExtendedTranslation Example - Device"/>
+			<description value="This example shows a usage of the ExtendedTranslation-Extension with a device."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/3036701"/>
+			</reference>
+			<name value="ExtendedTranslation Example - multiple ExtendedTranslation with Device"/>
+			<description value="This example shows a usage of three ExtendedTranslation-Extension with a device."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		<!-- F -->
+		<!-- G -->
+		
+		<!-- H -->
+		<resource>
+			<reference>
+				<reference value="Composition/69208519"/>
+			</reference>
+			<name value="HospitalDischargeReport Example"/>
+			<description value="This example shows a usage the HospitalDischargeReport profile."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Composition-HospitalDischargeReport-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/69208519"/>
+			</reference>
+			<name value="HospitalDischargeReport Example - Bundle"/>
+			<description value="This example shows a usage the HospitalDischargeReport profile, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<!-- I -->
+		<resource>
+			<reference>
+				<reference value="DiagnosticReport/8111"/>
+			</reference>
+			<name value="ImagingReport-IEHR Example - X-Ray"/>
+			<description value="This example shows a usage of the ImagingReport-IEHR profile to document the results of an X-Ray."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-ImagingReport-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/808090"/>
+			</reference>
+			<name value="ImagingReport-IEHR Example - X-Ray - Bundle"/>
+			<description value="This example shows a usage of the ImagingReport-IEHR profile to document the results of an X-Ray, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="DiagnosticReport/1"/>
+			</reference>
+			<name value="ImagingReport Example - ImagingStudy"/>
+			<description value="This example shows a usage of the DiagnosticReport-ImagingReport-IEHR profile to display a report with an ImagingStudy."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-ImagingReport-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/3035445"/>
+			</reference>
+			<name value="ImagingReport Example - ImagingStudy - Bundle"/>
+			<description value="This example shows a usage of the DiagnosticReport-ImagingReport-IEHR profile to display a report with an ImagingStudy, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="ImagingStudy/4111"/>
+			</reference>
+			<name value="ImagingStudy Example - Echo"/>
+			<description value="This example shows a usage of the ImagingStudy profile to document the results of an Echocardiogram."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ImagingStudy"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="ImagingStudy/3111"/>
+			</reference>
+			<name value="ImagingStudy Example - XRay"/>
+			<description value="This example shows a usage of the ImagingStudy profile to document the results of an XRay."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ImagingStudy"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="ImagingStudy/1"/>
+			</reference>
+			<name value="ImagingStudy Example"/>
+			<description value="This example shows a usage of the ImagingStudy profile."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ImagingStudy"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Immunization/20220607"/>
+			</reference>
+			<name value="Immunization Example - Influenza"/>
+			<description value="This example shows a usage of the Immunization-IEHR profile to document an Influenza immunization."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Immunization-IEHR"/>
+		</resource>
+		<!-- J -->
+		<!-- K -->
+		<!-- L -->
+
+		<resource>
+			<reference>
+				<reference value="DiagnosticReport/6111"/>
+			</reference>
+			<name value="LaboratoryReport Example - Blood Test"/>
+			<description value="This example shows the use of DiagnosticReport-LaboratoryReport-IEHR profile to document laboratory blood test results."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-LaboratoryReport-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/404060"/>
+			</reference>
+			<name value="LaboratoryReport Example - Blood Test - Bundle"/>
+			<description value="This example shows the use of DiagnosticReport-LaboratoryReport-IEHR profile to document laboratory blood test results, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6113"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - ALT"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the blood parameter Alanine Aminotransferase (ALT)."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6114"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - AST"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the blood parameter Aspartate Aminotransferase.Macromolecular (AST)."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6115"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - Bilirubin"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the blood parameter Bilirubin.direct."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6116"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - Creatinine"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the Creatinine value in blood."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6117"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - eGFR"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the Glomerular filtration rate in blood."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6118"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - Hemoglobin"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the Hemoglobin value in blood."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6119"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - Leukocytes"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the Leukocytes count in blood."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6120"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - BNP"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the Natriuretic peptide B value in blood."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6121"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - ntProBnp"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the Natriuretic peptide.B prohormone N-Terminal value in blood."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/6122"/>
+			</reference>
+			<name value="LaboratoryResult Example - Blood Test - GTT"/>
+			<description value="This example shows the use of Observation-results-laboratory-uv-ips profile to display the Gamma glutamyl transferase value in blood."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-uv-ips"/>
+		</resource>
+		<!-- M -->
+		<resource>
+			<reference>
+				<reference value="Media/4111"/>
+			</reference>
+			<name value="Media Example - Echocardiogram"/>
+			<description value="This example shows a usage the Media profile to display an Echocardiogram image."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Media"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Media/2111"/>
+			</reference>
+			<name value="Media Example - EKG - Waveform"/>
+			<description value="This example shows a usage the Media profile to display an EKG waveform (.ecg file)."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Media"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Media/2112"/>
+			</reference>
+			<name value="Media Example - EKG - Image"/>
+			<description value="This example shows a usage the Media profile to display an EKG image."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Media"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Media/5112"/>
+			</reference>
+			<name value="Media Example - HolterMonitoring - Waveform"/>
+			<description value="This example shows a usage the Media profile to display an Holter Monitoring waveform."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Media"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Media/8111"/>
+			</reference>
+			<name value="Media Example - X-Ray"/>
+			<description value="This example shows a usage the Media profile to display an X-Ray image."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Media"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Composition/1"/>
+			</reference>
+			<name value="MedicalVisitReport Example"/>
+			<description value="This example shows a report of a past ambulatory visit."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/58285"/>
+			</reference>
+			<name value="MedicalVisitReport Example - Bundle"/>
+			<description value="This example shows a usage the MedicalVisitReport profile, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Medication/5820"/>
+			</reference>
+			<name value="Medication Example - Bisoprolol"/>
+			<description value="This example shows an example Bisoprolol Medication."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Medication/4963"/>
+			</reference>
+			<name value="Medication Example - Fondaparinux"/>
+			<description value="This example shows an example Fondaparinux Medication."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Medication/4749"/>
+			</reference>
+			<name value="Medication Example - Furosemide"/>
+			<description value="This example shows an example Furosemide Medication."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Medication/11223344"/>
+			</reference>
+			<name value="Medication Example - Ibuprofen"/>
+			<description value="This example shows an example Ibuprofen Medication."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Medication/9165"/>
+			</reference>
+			<name value="Medication Example - Pantoprazol"/>
+			<description value="This example shows an example Pantoprazol Medication."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Medication/9149"/>
+			</reference>
+			<name value="Medication Example - Paroxetina"/>
+			<description value="This example shows an example Paroxetina Medication."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Medication-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationAdministration/733813"/>
+			</reference>
+			<name value="MedicationAdministration Example - Parotexine"/>
+			<description value="This example shows a MedicationAdministration for Parotexine."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="MedicationAdministration/733864"/>
+			</reference>
+			<name value="MedicationAdministration Example - Pantoprazol"/>
+			<description value="This example shows a MedicationAdministration for Pantoprazol."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration"/>
+		</resource>		
+		
+		<resource>
+			<reference>
+				<reference value="MedicationStatement/7358"/>
+			</reference>
+			<name value="MedicationStatement Example - Bisoprolol"/>
+			<description value="This example shows an example MedicationStatement for Bisoprolol."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationStatement-IEHR"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="Bundle/7338251"/>
+			</reference>
+			<name value="MedicationStatement Example - Bundle"/>
+			<description value="This example shows a Bundle with MedicationStatements and Medications."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="MedicationStatement/7349"/>
+			</reference>
+			<name value="MedicationStatement Example - Fondaparinux"/>
+			<description value="This example shows an example MedicationStatement for Fondaparinux."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationStatement-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationStatement/7347"/>
+			</reference>
+			<name value="MedicationStatement Example - Furosemide"/>
+			<description value="This example shows an example MedicationStatement for Furosemide."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationStatement-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationStatement/7301"/>
+			</reference>
+			<name value="MedicationStatement Example - Pantoprazole"/>
+			<description value="This example shows an example MedicationStatement for Pantoprazole."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationStatement-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationStatement/73014"/>
+			</reference>
+			<name value="MedicationStatement Example - Paroxetina"/>
+			<description value="This example shows an example MedicationStatement for Paroxetina."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationStatement-IEHR"/>
+		</resource>	
+
+		<resource>
+			<reference>
+				<reference value="MedicationRequest/69208519"/>
+			</reference>
+			<name value="MedicationRequest Example - Azacyclonol"/>
+			<description value="This example shows a usage of the MedicationRequest-prescription-IEHR profile."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationRequest/1"/>
+			</reference>
+			<name value="MedicationRequest Example - 1"/>
+			<description value="This example shows a usage of the MedicationRequest-prescription-IEHR profile."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationRequest/43158"/>
+			</reference>
+			<name value="MedicationRequest Example - Bisoprolol"/>
+			<description value="This example shows an example MedicationRequest for Bisoprolol."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationRequest/2"/>
+			</reference>
+			<name value="MedicationRequest Example - Azacyclonol"/>
+			<description value="This example shows an example MedicationRequest for Azacyclonol."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/4317325"/>
+			</reference>
+			<name value="MedicationRequest Example - Bundle"/>
+			<description value="This example shows a Bundle with MedicationRequests and Medications."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="MedicationRequest/43149"/>
+			</reference>
+			<name value="MedicationRequest Example - Fondaparinux"/>
+			<description value="This example shows an example MedicationRequest for Fondaparinux."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationRequest/43147"/>
+			</reference>
+			<name value="MedicationRequest Example - Furosemide"/>
+			<description value="This example shows an example MedicationRequest for Furosemide."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationRequest/43101"/>
+			</reference>
+			<name value="MedicationRequest Example - Pantoprazole"/>
+			<description value="This example shows an example MedicationRequest for Pantoprazole."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="MedicationRequest/431014"/>
+			</reference>
+			<name value="MedicationRequest Example - Paroxetina"/>
+			<description value="This example shows an example MedicationRequest for Paroxetina."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/MedicationRequest-prescription-IEHR"/>
+		</resource>	
+
+		<resource>
+			<reference>
+				<reference value="Bundle/30356"/>
+			</reference>
+			<name value="MedicationRequest Example - Prescription"/>
+			<description value="This example shows a usage of the MedicationRequest-prescription-IEHR profile."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<!-- N -->
+		<!-- O -->
+		<resource>
+			<reference>
+				<reference value="Observation/1"/>
+			</reference>
+			<name value="ObservationResult Example - XRay"/>
+			<description value="This example shows a usage of the Observation profile to display an Xray that has been interpreted as normal."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/3111"/>
+			</reference>
+			<name value="ObservationResult Example - XRay - Checkup"/>
+			<description value="This example shows a usage of the Observation profile to display a Left Bundle Branch Block observed by an EKG examination of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Organization/34432"/>
+			</reference>
+			<name value="Organization Example - FTGM"/>
+			<description value="This example shows an example organization."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"/>
+		</resource>
+		<!-- P -->
+		<resource>
+			<reference>
+				<reference value="Patient/3466"/>
+			</reference>
+			<name value="Patient Example - Smith"/>
+			<description value="This example shows an example patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Practitioner/21"/>
+			</reference>
+			<name value="Practitioner Example - Antonio"/>
+			<description value="This example shows an example practitioner."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="PractitionerRole/455736449"/>
+			</reference>
+			<name value="PractitionerRole Example"/>
+			<description value="This example shows an example practitioner role."/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/PractitionerRole-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Procedure/1111"/>
+			</reference>
+			<name value="Procedure Example - Surgical History - Appendectomy"/>
+			<description value="This example shows the usage of the Procedure profile to represent an Appendectomy of a patient"/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Procedure/1112"/>
+			</reference>
+			<name value="Procedure Example - Surgical History - Tonsillectomy"/>
+			<description value="This example shows the usage of the Procedure profile to represent a Tonsillectomy of a patient"/>
+			<exampleCanonical value="http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/808080"/>
+			</reference>
+			<name value="Procedure Example - Surgical History - Bundle"/>
+			<description value="This example shows the usage of the Procedure profile to represent one or more procedures of a patient, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/1"/>
+			</reference>
+			<name value="Provenance Example - DocumentReference - Addendum Document"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an DocumentReference-IEHR referencing a PDF document as an attachment."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/2"/>
+			</reference>
+			<name value="Provenance Example - BioSignalReport - EKG"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an BioSignalReport-IEHR using the example of an EKG."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/3"/>
+			</reference>
+			<name value="Provenance Example - DocumentReference - Attachment"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an DocumentReference-IEHR referencing a PDF document as an attachment."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/4"/>
+			</reference>
+			<name value="Provenance Example - BioSignalReport - Echocardiogram"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an BioSignalReport-IEHR using the example of an Echocardiogram."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/5"/>
+			</reference>
+			<name value="Provenance Example - BioSignalReport - HolterMonitoring"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an BioSignalReport-IEHR using the example of an Holter Monitoring."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/6"/>
+			</reference>
+			<name value="Provenance Example - ImagingReport - ImagingStudy"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an ImagingReport-IEHR containing an ImagingStudy."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/7"/>
+			</reference>
+			<name value="Provenance Example - ImagingReport - X-Ray"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an ImagingReport-IEHR using the example of an X-Ray that is included as a Media resource."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/8"/>
+			</reference>
+			<name value="Provenance Example - LaboratoryReport - Blood Test"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an LaboratoryReport-IEHR using the example of a Blood Test."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/9"/>
+			</reference>
+			<name value="Provenance Example - VitalSignReport"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an VitalSignReport-IEHR documenting different types of vital signs."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/10"/>
+			</reference>
+			<name value="Provenance Example - DocumentReference - MedicalDocument 1"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an DocumentReference-IEHR referencing a PDF document as an attachment."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/12"/>
+			</reference>
+			<name value="Provenance Example - Composition - Past Visits"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a Composition resource using the example of past visits."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/14"/>
+			</reference>
+			<name value="Provenance Example - Composition MedicalVisitReport"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a Composition resource using the example of a medical visit report."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/16"/>
+			</reference>
+			<name value="Provenance Example - HospitalDischargeReport"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an HospitalDischargeReport-IEHR."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/17"/>
+			</reference>
+			<name value="Provenance Example - Composition EncounterList"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a Composition resource using the example of list of Encounters."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/28"/>
+			</reference>
+			<name value="Provenance Example - Condition - Hypertension"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a Condition-IEHR resource."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/30"/>
+			</reference>
+			<name value="Provenance Example - DocumentManifest"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a DocumentManifest-IEHR resource containing multiple DocumentReferences."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/31"/>
+			</reference>
+			<name value="Provenance Example - TreatmentPlan - FTGM"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a TreatmentPlan-IEHR resource based on raw data provided by FTGM."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/32"/>
+			</reference>
+			<name value="Provenance Example - MedicationRequest - Furosemide"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a MedicationRequest-Prescription-IEHR resource using the example of Furosemide"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/33"/>
+			</reference>
+			<name value="Provenance Example - MedicationRequest - Bisoprolol"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a MedicationRequest-Prescription-IEHR resource using the example of Bisoprolol"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/34"/>
+			</reference>
+			<name value="Provenance Example - MedicationRequest - Fondaparinux"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a MedicationRequest-Prescription-IEHR resource using the example of Fondaparinux"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/35"/>
+			</reference>
+			<name value="Provenance Example - MedicationRequest - Pantoprazole"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a MedicationRequest-Prescription-IEHR resource using the example of Pantoprazole"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/36"/>
+			</reference>
+			<name value="Provenance Example - MedicationRequest - Paroxetina"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a MedicationRequest-Prescription-IEHR resource using the example of Paroxetina"/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/37"/>
+			</reference>
+			<name value="Provenance Example - TreatmentPlan"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a TreatmentPlan-IEHR resource."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/38"/>
+			</reference>
+			<name value="Provenance Example - Composition MedicalVisitReport"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a MedicalVisitReport-IEHR resource."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/39"/>
+			</reference>
+			<name value="Provenance Example - MedicationRequest - Example"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of a MedicationRequest-Prescription-IEHR resource."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Provenance/40"/>
+			</reference>
+			<name value="Provenance Example - Immunization - Example"/>
+			<description value="This example shows the usage of the Provenance-IEHR profile to represent the Provenance of an Immunization-IEHR resource."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"/>
+		</resource>
+
+
+		<!-- Q -->
+		<resource>
+			<reference>
+				<reference value="Questionnaire/3429"/>
+			</reference>
+			<name value="Questionnaire Example - Symptoms"/>
+			<description value="This example shows a questionnaire for the personal evaluation of symptoms."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Questionnaire"/>
+		</resource>
+		<!-- R -->
+		<!-- S -->
+		<resource>
+			<reference>
+				<reference value="Specimen/1"/>
+			</reference>
+			<name value="Specimen Example - Blood"/>
+			<description value="This example shows a simple Specimen."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Specimen"/>
+		</resource>
+
+		<!-- T -->
+		<resource>
+			<reference>
+				<reference value="CarePlan/1"/>
+			</reference>
+			<name value="TreatmentPlan Example"/>
+			<description value="This is a minimal example for the TreatmentPlan."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/TreatmentPlan-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="CarePlan/2"/>
+			</reference>
+			<name value="TreatmentPlan Example - FTGM"/>
+			<description value="This is a minimal example for an italien TreatmentPlan containing a DiagnosticConclusion-IEHR."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/TreatmentPlan-IEHR"/>
+		</resource>
+
+		<!-- U -->
+		<!-- V -->
+		<resource>
+			<reference>
+				<reference value="Composition/3970941"/>
+			</reference>
+			<name value="Visit Example - Past Visit"/>
+			<description value="This example shows a report of a past ambulatory visit."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/Composition-IEHR"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="Bundle/125482"/>
+			</reference>
+			<name value="Visit Example - Past Visit - Bundle"/>
+			<description value="This example shows a report of a past ambulatory visit in a bundle."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<reference value="Observation/1111"/>
+			</reference>
+			<name value="VitalSign Example - Heart Rate"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display the heart rate of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1112"/>
+			</reference>
+			<name value="VitalSign Example - Blood Pressure"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display the blood pressure of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1113"/>
+			</reference>
+			<name value="VitalSign Example - Body Weight"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display the body weight of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1114"/>
+			</reference>
+			<name value="VitalSign Example - Body Height"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display the body height of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1115"/>
+			</reference>
+			<name value="VitalSign Example - Degree of Ascites"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display the degree of ascites of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1116"/>
+			</reference>
+			<name value="VitalSign Example - Peripheral Edema"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display the absent of a peripheral edema of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1117"/>
+			</reference>
+			<name value="VitalSign Example - Breath Sounds"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display breath sounds of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1118"/>
+			</reference>
+			<name value="VitalSign Example - Jugular Vein Distension"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display jugular vein distension of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1119"/>
+			</reference>
+			<name value="VitalSign Example - Lung Congestion"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display lung congestion of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Observation/1120"/>
+			</reference>
+			<name value="VitalSign Example - Pleural Effusion"/>
+			<description value="This example shows a usage of the VitalSignObservation profile to display pleural effusion of a patient."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+		</resource>
+		
+				<resource>
+			<reference>
+				<reference value="DiagnosticReport/8911"/>
+			</reference>
+			<name value="VitalSignReport Example"/>
+			<description value="This example shows the use of DiagnosticReport-VitalSignReport-IEHR profile to document vital signs."/>
+			<exampleCanonical value="http://interopehrate.eu/fhir/StructureDefinition/DiagnosticReport-VitalSignReport-IEHR"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<reference value="Bundle/1216512"/>
+			</reference>
+			<name value="VitalSignReport Example - Bundle"/>
+			<description value="This example shows the use of DiagnosticReport-VitalSignReport-IEHR profile to document vital signs, bundled."/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		<!-- W -->
+		<!-- X -->
+		<!-- Y -->
+		<!-- Z -->
+
+		<!-- End of Examples -->
+		<page>
+			<nameUrl value="toc.html"/>
+			<title value="Table of Contents"/>
+			<generation value="html"/>
+			<page>
+				<nameUrl value="index.html"/>
+				<title value="CBDE IG Home Page"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="background.html"/>
+				<title value="Background"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="requirements.html"/>
+				<title value="IEHR Profile Requirements"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="instructions.html"/>
+				<title value="Profile Instructions"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="translation.html"/>
+				<title value="Translation Instructions"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="signature.html"/>
+				<title value="Signing Instructions"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="id_generation.html"/>
+				<title value="Identifier Generation"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="profiles.html"/>
+				<title value="Profiles"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="extensions.html"/>
+				<title value="Extensions"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="examples.html"/>
+				<title value="Examples"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="downloads.html"/>
+				<title value="Useful Downloads"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="changes.html"/>
+				<title value="IG Change History"/>
+				<generation value="html"/>
+			</page>
+		</page>
+
+		<parameter>
+			<code value="copyrightyear"/>
+			<value value="2019+"/>
+		</parameter>
+
+		<parameter>
+			<code value="releaselabel"/>
+			<value value="CI Build"/>
+		</parameter>
+
+		<parameter>
+			<code value="find-other-resources"/>
+			<value value="true"/>
+		</parameter>
+
+		<parameter>
+			<code value="path-resource"/>
+			<value value="input\history"/>
+		</parameter>
+
+		<parameter>
+			<code value="path-liquid"/>
+			<value value="templates\liquid"/>
+		</parameter>
+
+		<parameter>
+			<code value="path-binary"/>
+			<value value="input\cql"/>
+		</parameter>
+	</definition>
+</ImplementationGuide>
