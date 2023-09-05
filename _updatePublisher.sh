@@ -25,7 +25,7 @@ while [ "$#" -gt 0 ]; do
     case $1 in
     -f|--force)  FORCE=true ;;
     -y|--yes)  skipPrompts=true ; FORCE=true ;;
-    *)  echo "Unknown parameter passed: $1.  Exiting"; exit 1 ;;
+    *)  echo "Error Unknown parameter passed: $1.  Exiting"; exit 1 ;;
     esac
     shift
 done
